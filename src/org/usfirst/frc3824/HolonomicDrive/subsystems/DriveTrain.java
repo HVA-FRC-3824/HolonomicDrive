@@ -11,7 +11,6 @@
 package org.usfirst.frc3824.HolonomicDrive.subsystems;
 
 import org.usfirst.frc3824.HolonomicDrive.Constants;
-import org.usfirst.frc3824.HolonomicDrive.Robot;
 import org.usfirst.frc3824.HolonomicDrive.RobotMap;
 import org.usfirst.frc3824.HolonomicDrive.commands.*;
 
@@ -132,7 +131,10 @@ public class DriveTrain extends Subsystem
 			SmartDashboard.putNumber("direction", direction);
 			SmartDashboard.putNumber("angle", angle);
 			
+			// set the local angle value
 			setAngle(d);
+			
+			// drive the robot with mecanum drive and polar coordinates
 			holonomicDrive.mecanumDrive_Polar(magnitude, direction, angle);
 		}
 	}

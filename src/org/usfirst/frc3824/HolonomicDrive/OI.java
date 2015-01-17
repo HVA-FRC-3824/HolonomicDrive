@@ -62,6 +62,8 @@ public class OI
 
 	    
         // SmartDashboard Buttons
+        SmartDashboard.putData("ChassisDriveStraight", new ChassisDriveStraight());
+
         SmartDashboard.putData("AutonomousCommand", new AutonomousCommand());
 
 
