@@ -11,21 +11,29 @@
 package org.usfirst.frc3824.HolonomicDrive.commands;
 
 import org.usfirst.frc3824.HolonomicDrive.commands.ChassisDriveStraight;
-import org.usfirst.frc3824.HolonomicDrive.Constants;
+import org.usfirst.frc3824.HolonomicDrive.commands.ChassisTurnAngle;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.command.WaitCommand;
 
 /**
  *
  */
-public class AutonomousCommand extends CommandGroup
+public class ChassisDriveAndTurnTest extends CommandGroup
 {
-
-	public AutonomousCommand()
+	public ChassisDriveAndTurnTest()
 	{
-		// drive straight for the specified time and power
-        addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_STRAIGHT_DRIVE_TIME,
-                                               Constants.AUTONOMOUS_STRAIGHT_DRIVER_POWER,
-                                               Constants.AUTONOMOUS_STRAIGHT_DRIVE_ANGLE)); 
+		ChassisTurnAngle chassisTurn = new ChassisTurnAngle(90.0);
+
+		// Drive forward
+		addSequential(new ChassisDriveStraight(2.0, 0.5, 0.0));
+		addSequential(new WaitCommand(1.0));
+
+		// Turn around
+		addSequential(chassisTurn);
+		addSequential(new WaitCommand(1.0));
+
+		// Drive forward in opposite direction
+		addSequential(new ChassisDriveStraight(2.0, 0.5, 0.0, true));
 	}
 }
