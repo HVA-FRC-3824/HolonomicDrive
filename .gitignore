@@ -7,6 +7,7 @@
 
 # Eclipse
 .settings/
+.classpath
 
 # Eclipse CDT
 .cproject
