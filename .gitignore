@@ -1,0 +1,15 @@
+## generic ignore file
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+# Eclipse
+.settings/
+
+# Eclipse CDT
+.cproject
+
+bin/
+build/
