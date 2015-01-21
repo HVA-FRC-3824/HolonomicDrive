@@ -20,12 +20,12 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  */
 public class AutonomousCommand extends CommandGroup
 {
-
 	public AutonomousCommand()
 	{
 		// drive straight for the specified time and power
-        addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_STRAIGHT_DRIVE_TIME,
-                                               Constants.AUTONOMOUS_STRAIGHT_DRIVER_POWER,
-                                               Constants.AUTONOMOUS_STRAIGHT_DRIVE_ANGLE)); 
+		addSequential(new ChassisDriveStraight(
+				Constants.AUTONOMOUS_STRAIGHT_DRIVE_TIME,
+				Constants.AUTONOMOUS_STRAIGHT_DRIVER_POWER,
+				Constants.AUTONOMOUS_STRAIGHT_DRIVE_ANGLE));
 	}
 }
