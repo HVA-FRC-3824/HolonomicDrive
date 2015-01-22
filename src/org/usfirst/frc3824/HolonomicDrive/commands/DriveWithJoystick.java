@@ -31,16 +31,14 @@ public class DriveWithJoystick extends Command
 	// Called just before this Command runs the first time
 	protected void initialize()
 	{
-		Robot.forklift.StopPID();
+
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
 		Robot.driveTrain.holonomicDrive(Robot.oi.getJoystick());
-		SmartDashboard.putNumber("Position",
-				Robot.forklift.GetEncoderValue() / 1000);
-		SmartDashboard.putNumber("Forklift error", Robot.forklift.GetError());
+		SmartDashboard.putNumber("Forklift error", Robot.forkliftPID.GetError());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

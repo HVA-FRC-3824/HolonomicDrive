@@ -19,9 +19,4 @@ public class Constants
     public final static double AUTONOMOUS_STRAIGHT_DRIVE_TIME     = 1.0;
     public final static double AUTONOMOUS_STRAIGHT_DRIVER_POWER   = 0.5;
     public final static double AUTONOMOUS_STRAIGHT_DRIVE_ANGLE    = 0.0;
-    
-    public final static double ForkliftControllerP                = 10.0;
-    public final static double ForkliftControllerI                =  0.0;
-    public final static double ForkliftControllerD                =  0.0;
-
 }
