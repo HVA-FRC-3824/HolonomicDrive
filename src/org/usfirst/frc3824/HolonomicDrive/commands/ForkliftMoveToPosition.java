@@ -13,6 +13,7 @@ package org.usfirst.frc3824.HolonomicDrive.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+import org.usfirst.frc3824.HolonomicDrive.Constants;
 import org.usfirst.frc3824.HolonomicDrive.Robot;
 
 /**
@@ -33,10 +34,17 @@ public class ForkliftMoveToPosition extends Command
 	// Called just before this Command runs the first time
 	protected void initialize()
 	{
-		double position;
+		double position = 0.5;
 
-		position = SmartDashboard.getNumber("ForkliftPosition");
+		//position = SmartDashboard.getNumber("ForkliftPosition");
 
+		// Determine which button was pressed
+		if (Robot.oi.tote0.get() == true) 
+			position=Constants.FORKLIFT_TOTE0_POSITION;
+		else if (Robot.oi.tote1.get() == true)
+			position=Constants.FORKLIFT_TOTE1_POSITION;
+
+		
 		Robot.forkliftPID.SetSetpoint(position);
 		Robot.forkliftPID.StartPID();
 	}

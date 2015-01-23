@@ -19,4 +19,7 @@ public class Constants
     public final static double AUTONOMOUS_STRAIGHT_DRIVE_TIME     = 1.0;
     public final static double AUTONOMOUS_STRAIGHT_DRIVER_POWER   = 0.5;
     public final static double AUTONOMOUS_STRAIGHT_DRIVE_ANGLE    = 0.0;
+    
+    public final static double FORKLIFT_TOTE0_POSITION            = 0.1;
+    public final static double FORKLIFT_TOTE1_POSITION            = 0.2;
 }
