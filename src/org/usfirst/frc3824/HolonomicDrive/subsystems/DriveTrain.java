@@ -58,7 +58,7 @@ public class DriveTrain extends Subsystem
 	{
 		SmartDashboard.putNumber("magnitude", joy.getMagnitude());
 		SmartDashboard.putNumber("direction", joy.getDirectionDegrees());
-		SmartDashboard.putNumber("angle", joy.getTwist() * 0.5);
+		SmartDashboard.putNumber("angle",     joy.getTwist() * 0.5);
 
 		holonomicDrive.mecanumDrive_Polar(joy.getMagnitude(),
 				joy.getDirectionDegrees(), joy.getTwist() * 0.5);

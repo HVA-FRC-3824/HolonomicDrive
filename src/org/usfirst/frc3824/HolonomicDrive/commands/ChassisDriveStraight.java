@@ -11,7 +11,6 @@
 package org.usfirst.frc3824.HolonomicDrive.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Timer;
 
 import org.usfirst.frc3824.HolonomicDrive.Robot;
@@ -35,8 +34,8 @@ public class ChassisDriveStraight extends Command
 		timer = new Timer();
 
 		// default test values when called from the SmartDashboard
-		driveDuration = 2.0;
-		drivePower = 0.5;
+		driveDuration  = 2.0;
+		drivePower     = 0.5;
 		driveDirection = 0.0;
 	}
 
@@ -51,8 +50,8 @@ public class ChassisDriveStraight extends Command
 		timer = new Timer();
 
 		// copy the parameters to the class variables
-		driveDuration = duration;
-		drivePower = power;
+		driveDuration  = duration;
+		drivePower     = power;
 		driveDirection = direction;
 	}
 
@@ -66,8 +65,7 @@ public class ChassisDriveStraight extends Command
 				Constants.DrivetrainAngleGyroControllerD);
 
 		// Robot.drivetrain.resetGyro();
-		Robot.driveTrain.getAngleGyroController().setSetpoint(
-				Robot.driveTrain.getGyroValue());
+		Robot.driveTrain.getAngleGyroController().setSetpoint(Robot.driveTrain.getGyroValue());
 
 		// update the PID direction and power
 		Robot.driveTrain.setDirection(driveDirection);
@@ -84,9 +82,7 @@ public class ChassisDriveStraight extends Command
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		// SmartDashboard Buttons
-		SmartDashboard.putNumber("PID", Robot.driveTrain
-				.getAngleGyroController().get());
+
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

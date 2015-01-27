@@ -1,8 +1,5 @@
 package org.usfirst.frc3824.HolonomicDrive;
 
-/**
- * Put any important constants here.
- */
 public class Constants
 {
     /* Contants which might require tuning */
@@ -14,7 +11,7 @@ public class Constants
     public final static double DrivetrainAngleGyroControllerTurnI = 0.00005;
     public final static double DrivetrainAngleGyroControllerTurnD = 0.0004;
 
-    public final static double TURN_THRESHOLD    = 1.5; //works with 1 but is a bit slow    
+    public final static double TURN_THRESHOLD                     = 10.0; //works with 1 but is a bit slow;    was 1.5
     
     public final static double AUTONOMOUS_STRAIGHT_DRIVE_TIME     = 1.0;
     public final static double AUTONOMOUS_STRAIGHT_DRIVER_POWER   = 0.5;

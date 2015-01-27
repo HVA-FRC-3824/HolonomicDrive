@@ -11,7 +11,6 @@
 package org.usfirst.frc3824.HolonomicDrive.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc3824.HolonomicDrive.Robot;
 
@@ -38,7 +37,6 @@ public class DriveWithJoystick extends Command
 	protected void execute()
 	{
 		Robot.driveTrain.holonomicDrive(Robot.oi.getJoystick());
-		SmartDashboard.putNumber("Forklift error", Robot.forkliftPID.GetError());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
