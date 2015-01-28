@@ -34,8 +34,8 @@ public class ChassisDriveStraight extends Command
 		timer = new Timer();
 
 		// default test values when called from the SmartDashboard
-		driveDuration  = 2.0;
-		drivePower     = 0.5;
+		driveDuration = 2.0;
+		drivePower = 0.5;
 		driveDirection = 0.0;
 	}
 
@@ -50,8 +50,8 @@ public class ChassisDriveStraight extends Command
 		timer = new Timer();
 
 		// copy the parameters to the class variables
-		driveDuration  = duration;
-		drivePower     = power;
+		driveDuration = duration;
+		drivePower = power;
 		driveDirection = direction;
 	}
 
@@ -65,7 +65,8 @@ public class ChassisDriveStraight extends Command
 				Constants.DrivetrainAngleGyroControllerD);
 
 		// Robot.drivetrain.resetGyro();
-		Robot.driveTrain.getAngleGyroController().setSetpoint(Robot.driveTrain.getGyroValue());
+		Robot.driveTrain.getAngleGyroController().setSetpoint(
+				Robot.driveTrain.getGyroValue());
 
 		// update the PID direction and power
 		Robot.driveTrain.setDirection(driveDirection);

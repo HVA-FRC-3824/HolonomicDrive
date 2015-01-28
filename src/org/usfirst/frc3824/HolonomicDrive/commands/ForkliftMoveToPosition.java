@@ -11,6 +11,7 @@
 package org.usfirst.frc3824.HolonomicDrive.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc3824.HolonomicDrive.Constants;
 import org.usfirst.frc3824.HolonomicDrive.Robot;
@@ -41,6 +42,14 @@ public class ForkliftMoveToPosition extends Command
 			position = Constants.FORKLIFT_TOTE0_POSITION;
 		else if (Robot.oi.tote1.get() == true)
 			position = Constants.FORKLIFT_TOTE1_POSITION;
+		else if (Robot.oi.tote2.get() == true)
+			position = Constants.FORKLIFT_TOTE2_POSITION;
+		else if (Robot.oi.tote3.get() == true)
+			position = Constants.FORKLIFT_TOTE3_POSITION;
+		else if (Robot.oi.tote4.get() == true)
+			position = Constants.FORKLIFT_TOTE4_POSITION;
+		else if (Robot.oi.tote5.get() == true)
+			position = Constants.FORKLIFT_TOTE5_POSITION;
 
 		Robot.forkliftPID.SetSetpoint(position);
 		Robot.forkliftPID.StartPID();
@@ -49,7 +58,7 @@ public class ForkliftMoveToPosition extends Command
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-
+		SmartDashboard.putNumber("Error", Robot.forkliftPID.GetError());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

@@ -31,7 +31,6 @@ public class RobotMap
     public static RobotDrive driveTrainHolonomicDrive;
     public static Gyro driveTrainGyro;
     public static SpeedController forkliftPIDMotor;
-    public static AnalogPotentiometer forkliftPIDPotentiometer;
     public static Encoder forkliftPIDEncoder;
     public static SpeedController forkliftWithJoystickMotor;
 
@@ -68,12 +67,9 @@ public class RobotMap
         forkliftPIDMotor = new Talon(4);
         LiveWindow.addActuator("Forklift PID", "Motor", (Talon) forkliftPIDMotor);
         
-        forkliftPIDPotentiometer = new AnalogPotentiometer(1, 1.0, 0.0);
-        LiveWindow.addSensor("Forklift PID", "Potentiometer", forkliftPIDPotentiometer);
-        
         forkliftPIDEncoder = new Encoder(0, 1, false, EncodingType.k4X);
         LiveWindow.addSensor("Forklift PID", "Encoder", forkliftPIDEncoder);
-        forkliftPIDEncoder.setDistancePerPulse(0.001);
+        forkliftPIDEncoder.setDistancePerPulse(0.012);
         forkliftPIDEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
         forkliftWithJoystickMotor = new Talon(5);
         LiveWindow.addActuator("Forklift With Joystick", "Motor", (Talon) forkliftWithJoystickMotor);

@@ -38,7 +38,8 @@ public class LiftWithJoystick extends Command
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		Robot.forkliftWithJoystick.forkliftWithJoystick(Robot.oi.getForkliftJoystick());
+		Robot.forkliftWithJoystick.forkliftWithJoystick(Robot.oi
+				.getForkliftJoystick());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
