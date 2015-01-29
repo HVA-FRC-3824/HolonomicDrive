@@ -18,7 +18,7 @@ public class Constants
     public final static double AUTONOMOUS_STRAIGHT_DRIVE_ANGLE    = 0.0;
     
     public final static double FORKLIFT_TOTE0_POSITION            = 0.1;
-    public final static double FORKLIFT_TOTE1_POSITION            = 12.0;
+    public final static double FORKLIFT_TOTE1_POSITION            = 12.0; //going to be well over the height of one tote
     public final static double FORKLIFT_TOTE2_POSITION            = 24.0;
     public final static double FORKLIFT_TOTE3_POSITION            = 36.0;
     public final static double FORKLIFT_TOTE4_POSITION            = 48.0;

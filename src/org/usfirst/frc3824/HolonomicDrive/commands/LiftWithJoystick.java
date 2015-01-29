@@ -13,9 +13,6 @@ package org.usfirst.frc3824.HolonomicDrive.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc3824.HolonomicDrive.Robot;
 
-/**
- *
- */
 public class LiftWithJoystick extends Command
 {
 	public LiftWithJoystick()

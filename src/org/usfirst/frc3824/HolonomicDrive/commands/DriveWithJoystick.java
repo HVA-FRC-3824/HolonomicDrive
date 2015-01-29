@@ -14,9 +14,6 @@ import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc3824.HolonomicDrive.Robot;
 
-/**
- *
- */
 public class DriveWithJoystick extends Command
 {
 	public DriveWithJoystick()

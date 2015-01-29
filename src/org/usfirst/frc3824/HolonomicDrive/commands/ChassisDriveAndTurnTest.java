@@ -15,9 +15,6 @@ import org.usfirst.frc3824.HolonomicDrive.commands.ChassisTurnAngle;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-/**
- *
- */
 public class ChassisDriveAndTurnTest extends CommandGroup
 {
 	public ChassisDriveAndTurnTest()

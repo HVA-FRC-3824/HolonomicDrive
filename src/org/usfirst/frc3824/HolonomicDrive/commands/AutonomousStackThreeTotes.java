@@ -10,30 +10,33 @@
 
 package org.usfirst.frc3824.HolonomicDrive.commands;
 
+import org.usfirst.frc3824.HolonomicDrive.Constants;
+
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-/**
- *
- */
 public class AutonomousStackThreeTotes extends CommandGroup
 {
 	public AutonomousStackThreeTotes()
 	{
-		// Add Commands here:
-		// e.g. addSequential(new Command1());
-		// addSequential(new Command2());
-		// these will run in order.
-
-		// To run multiple commands at the same time,
-		// use addParallel()
-		// e.g. addParallel(new Command1());
-		// addSequential(new Command2());
-		// Command1 and Command2 will run in parallel.
-
-		// A command group will require all of the subsystems that each member
-		// would require.
-		// e.g. if Command1 requires chassis, and Command2 requires arm,
-		// a CommandGroup containing them would require both the chassis and the
-		// arm.
+		//goes for first tote
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION));
+		addSequential(new ChassisDriveStraight(1.0, 0.5, 0));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION));
+		
+		//goes for second tote
+		addSequential(new ChassisDriveStraight(1.0, 0.5, 0));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION));
+				
+		//goes for third tote
+		addSequential(new ChassisDriveStraight(1.0, 0.5, 0));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION));
+				
+		// takes robot and totes to autozone
+		addSequential(new ChassisDriveStraight(2.0, 0.7, 90));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION));
+		addSequential(new ChassisDriveStraight(1.0, 0.5, 180));
 	}
 }

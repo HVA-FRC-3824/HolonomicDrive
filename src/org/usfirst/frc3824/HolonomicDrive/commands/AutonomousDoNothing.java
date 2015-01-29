@@ -12,9 +12,6 @@ package org.usfirst.frc3824.HolonomicDrive.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-/**
- *
- */
 public class AutonomousDoNothing extends CommandGroup
 {
 	public AutonomousDoNothing()
