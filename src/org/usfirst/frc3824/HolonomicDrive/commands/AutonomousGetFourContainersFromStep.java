@@ -10,6 +10,8 @@
 
 package org.usfirst.frc3824.HolonomicDrive.commands;
 
+import org.usfirst.frc3824.HolonomicDrive.Constants;
+
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class AutonomousGetFourContainersFromStep extends CommandGroup
@@ -19,7 +21,7 @@ public class AutonomousGetFourContainersFromStep extends CommandGroup
 		//collect from step; mechanism pending
 		
 		//backing up
-		addSequential(new ChassisDriveStraight(1.0, 0.5, 180));
+		addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_CONTAINER_DRIVE_TIME, Constants.AUTONOMOUS_CONTAINER_DRIVER_POWER, Constants.AUTONOMOUS_CONTAINER_DRIVE_ANGLE));
 		
 		//do three more times		
 		
