@@ -16,12 +16,13 @@ public class Constants
     
     //***************************************************************************************
     // forklift positions for each tote height
-    public final static double FORKLIFT_TOTE0_POSITION            = 0.1;
-    public final static double FORKLIFT_TOTE1_POSITION            = 12.0; //going to be well over the height of one tote
-    public final static double FORKLIFT_TOTE2_POSITION            = 24.0;
-    public final static double FORKLIFT_TOTE3_POSITION            = 36.0;
-    public final static double FORKLIFT_TOTE4_POSITION            = 48.0;
-    public final static double FORKLIFT_TOTE5_POSITION            = 60.0;
+    public final static double FORKLIFT_TOTEPICKUP_POSITION       = 0.0;
+    public final static double FORKLIFT_TOTE1_POSITION            = 5.0; //going to be well over the height of one tote
+    public final static double FORKLIFT_TOTE2_POSITION            = 17.0;
+    public final static double FORKLIFT_TOTE3_POSITION            = 28.0;
+    public final static double FORKLIFT_TOTE4_POSITION            = 38.0;
+    public final static double FORKLIFT_TOTE5_POSITION            = 47.0;
+    public final static double FORKLIFT_TOTE6_POSITION            = 54.50;
     
     //***************************************************************************************
     // autonomous command constants
