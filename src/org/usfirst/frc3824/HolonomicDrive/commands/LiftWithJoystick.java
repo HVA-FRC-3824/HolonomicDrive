@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc3824.HolonomicDrive.Robot;
 import org.usfirst.frc3824.HolonomicDrive.RobotMap;
+import org.usfirst.frc3824.HolonomicDrive.Constants;
 
 public class LiftWithJoystick extends Command
 {
@@ -42,7 +43,7 @@ public class LiftWithJoystick extends Command
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		
+		Robot.forkliftPID.SetSetpoint(-joy.getY()*Constants.FORKLIFT_JOYSTICK_MULTIPLIER);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

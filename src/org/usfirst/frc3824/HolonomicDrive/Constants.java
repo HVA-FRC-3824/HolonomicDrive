@@ -29,6 +29,8 @@ public class Constants
     public final static double FORKLIFT_TOTE5_POSITION                       = 47.0;
     public final static double FORKLIFT_TOTE6_POSITION                       = 54.50;
     
+    public final static double FORKLIFT_JOYSTICK_MULTIPLIER                  = 54.50;
+    
     //***************************************************************************************
     // autonomous command constants
     public final static double AUTONOMOUS_AUTOZONE_DRIVE_TIME                = 1.0;
