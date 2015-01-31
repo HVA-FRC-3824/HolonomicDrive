@@ -33,5 +33,10 @@ public class Constants
     public final static double AUTONOMOUS_CONTAINER_DRIVER_POWER  = 0.5;
     public final static double AUTONOMOUS_CONTAINER_DRIVE_REVERSE_DIRECTION   = 180.0;
     public final static double AUTONOMOUS_CONTAINER_DRIVE_FORWARDS_DIRECTION = 0;
+    
+    //***************************************************************************************
+    // robot motor controller power  
+    public final static int 	FORKLIFT_MOTOR1_PDP_CHANNEL = 14;
+    public final static int 	FORKLIFT_MOTOR2_PDP_CHANNEL = 15;    
 
 }
