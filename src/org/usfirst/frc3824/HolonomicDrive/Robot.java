@@ -142,7 +142,16 @@ public class Robot extends IterativeRobot
 	public void testPeriodic()
 	{
 		LiveWindow.run();
-		//SmartDashboard.putNumber("Forklift Current Channel 4", RobotMap.powerDistributionPanel.getCurrent(4));
-		//SmartDashboard.putNumber("Forklift Current Channel 5", RobotMap.powerDistributionPanel.getCurrent(5));
+		try {
+			SmartDashboard.putBoolean("PDP", true);
+			SmartDashboard.putNumber("Current 1", RobotMap.powerDistributionPanel.getCurrent(14));
+			SmartDashboard.putNumber("Current 2", RobotMap.powerDistributionPanel.getCurrent(15));
+		}
+		catch 
+		{
+			SmartDashboard.putBoolean("PDP", false);
+		} finally {
+			
+		}
 	}
 }
