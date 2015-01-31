@@ -21,8 +21,10 @@ public class AutonomousGetLeftContainerFromStep extends CommandGroup
 		//collect from step; mechanism pending
 		
 		//backing up
-		addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_CONTAINER_DRIVE_TIME, Constants.AUTONOMOUS_CONTAINER_DRIVER_POWER, Constants.AUTONOMOUS_CONTAINER_DRIVE_ANGLE));
+		addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_CONTAINER_DRIVE_TIME, Constants.AUTONOMOUS_CONTAINER_DRIVER_POWER, Constants.AUTONOMOUS_CONTAINER_DRIVE_REVERSE_DIRECTION));
 				
-		//deposit and get clear from container
+		//deposit container
+		addSequential(new ChassisTurnAngle(-90, 0.0));
+		addSequential(new ChassisDriveStraight(0.75, Constants.AUTONOMOUS_AUTOZONE_DRIVER_POWER, Constants.AUTONOMOUS_CONTAINER_DRIVE_REVERSE_DIRECTION));
 	}
 }
