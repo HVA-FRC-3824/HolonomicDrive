@@ -29,7 +29,7 @@ public class RobotMap
     public static SpeedController driveTrainRightFront;
     public static SpeedController driveTrainRightRear;
     public static RobotDrive driveTrainHolonomicDrive;
-    public static GyroRelative driveTrainGyro;
+    public static Gyro driveTrainGyro;
     public static SpeedController forkliftPIDMotor;
     public static Encoder forkliftPIDEncoder;
     public static SpeedController forkliftWithJoystickMotor;
@@ -71,7 +71,7 @@ public class RobotMap
 
         driveTrainHolonomicDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
         driveTrainHolonomicDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-        driveTrainGyro = new GyroRelative(0);
+        driveTrainGyro = new Gyro(0);
         LiveWindow.addSensor("DriveTrain", "Gyro", driveTrainGyro);
         driveTrainGyro.setSensitivity(0.007);
         forkliftPIDMotor = new Talon(4);
@@ -92,7 +92,7 @@ public class RobotMap
         
         toteCaptureLeftArm = new PIDController(1.0, 0.0, 0.0, 0.0, toteCaptureLeftPosition, toteCaptureLeftMotor, 0.02);
         LiveWindow.addActuator("Tote Capture", "Left Arm", toteCaptureLeftArm);
-        toteCaptureLeftArm.setContinuous(false); toteCaptureLeftArm.setAbsoluteTolerance(0.2); 
+        toteCaptureLeftArm.setContinuous(true); toteCaptureLeftArm.setAbsoluteTolerance(0.2); 
         toteCaptureLeftArm.setOutputRange(-1.0, 1.0);        
 
         toteCaptureRightPosition = new AnalogPotentiometer(2, 1.0, 0.0);
@@ -103,7 +103,7 @@ public class RobotMap
         
         toteCaptureRightArm = new PIDController(1.0, 0.0, 0.0, 0.0, toteCaptureRightPosition, toteCaptureRightMotor, 0.02);
         LiveWindow.addActuator("Tote Capture", "Right Arm", toteCaptureRightArm);
-        toteCaptureRightArm.setContinuous(false); toteCaptureRightArm.setAbsoluteTolerance(0.2); 
+        toteCaptureRightArm.setContinuous(true); toteCaptureRightArm.setAbsoluteTolerance(0.2); 
         toteCaptureRightArm.setOutputRange(-1.0, 1.0);        
 
         toteCaptureLeftWheel = new Talon(8);
