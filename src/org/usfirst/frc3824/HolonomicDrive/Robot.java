@@ -126,8 +126,8 @@ public class Robot extends IterativeRobot
 	/*
 	 * This function is called periodically during operator control
 	 */
-	public void teleopPeriodic()
-	{
+	public void teleopPeriodic() {
+	
 		Scheduler.getInstance().run();
 		
 		//add current gyro angle to smart dashboard
@@ -140,5 +140,7 @@ public class Robot extends IterativeRobot
 	public void testPeriodic()
 	{
 		LiveWindow.run();
+		SmartDashboard.putNumber("Forklift Current Channel 4", RobotMap.powerDistributionPanel.getCurrent(4));
+		SmartDashboard.putNumber("Forklift Current Channel 5", RobotMap.powerDistributionPanel.getCurrent(5));
 	}
 }
