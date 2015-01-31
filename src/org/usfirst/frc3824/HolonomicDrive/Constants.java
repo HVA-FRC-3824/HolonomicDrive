@@ -24,7 +24,7 @@ public class Constants
     public final static double AUTONOMOUS_AUTOZONE_DRIVER_POWER   = 0.5;
     public final static double AUTONOMOUS_AUTOZONE_DRIVE_ANGLE    = 0.0;
     
-    public final static double AUTONOMOUS_CONTAINER_DRIVE_TIME    = 2.0;
+    public final static double AUTONOMOUS_CONTAINER_DRIVE_TIME    = 1.25;
     public final static double AUTONOMOUS_CONTAINER_DRIVER_POWER  = 0.5;
     public final static double AUTONOMOUS_CONTAINER_DRIVE_ANGLE   = 180.0;
 

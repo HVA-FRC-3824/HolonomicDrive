@@ -23,6 +23,9 @@ public class AutonomousGetRightContainerFromStep extends CommandGroup
 		//backing up
 		addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_CONTAINER_DRIVE_TIME, Constants.AUTONOMOUS_CONTAINER_DRIVER_POWER, Constants.AUTONOMOUS_CONTAINER_DRIVE_ANGLE));
 		
+		//turn to fit container in auto zone
+		addSequential(new ChassisTurnAngle(-90.0, 0.0));
+		
 		//deposit and get clear from container
 	}
 }
