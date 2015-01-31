@@ -29,7 +29,7 @@ public class RobotMap
     public static SpeedController driveTrainRightFront;
     public static SpeedController driveTrainRightRear;
     public static RobotDrive driveTrainHolonomicDrive;
-    public static GyroRelative driveTrainGyro;
+    public static Gyro driveTrainGyro;
     public static SpeedController forkliftPIDMotor;
     public static Encoder forkliftPIDEncoder;
     public static SpeedController forkliftWithJoystickMotor;
@@ -63,7 +63,7 @@ public class RobotMap
 
         driveTrainHolonomicDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
         driveTrainHolonomicDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-        driveTrainGyro = new GyroRelative(0);
+        driveTrainGyro = new Gyro(0);
         LiveWindow.addSensor("DriveTrain", "Gyro", driveTrainGyro);
         driveTrainGyro.setSensitivity(0.007);
         forkliftPIDMotor = new Talon(4);

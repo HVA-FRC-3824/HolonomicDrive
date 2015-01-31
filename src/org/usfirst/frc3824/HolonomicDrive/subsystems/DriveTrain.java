@@ -80,6 +80,22 @@ public class DriveTrain extends Subsystem
 	{
 		return (gyro.getAngle());
 	}
+	
+	public double getRelativeAngle() {
+		double absAngle = gyro.getAngle();
+		
+		if (absAngle < 0.0) {
+			while (absAngle < 0.0) {
+				absAngle += 360.0;
+			}
+		} else if (absAngle >= 360.0) {
+			while (absAngle >= 360.0) {
+				absAngle -= 360.0;
+			}
+		}
+		
+		return absAngle;
+	}
 
 	public void resetGyro()
 	{
