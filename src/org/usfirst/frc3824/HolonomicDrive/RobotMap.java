@@ -30,8 +30,8 @@ public class RobotMap
     public static SpeedController driveTrainRightRear;
     public static RobotDrive driveTrainHolonomicDrive;
     public static Gyro driveTrainGyro;
-    public static SpeedController forkliftPIDMotor;
-    public static Encoder forkliftPIDEncoder;
+    public static SpeedController forkliftMotor;
+    public static Encoder forkliftEncoder;
     public static AnalogPotentiometer toteCaptureLeftPosition;
     public static SpeedController toteCaptureLeftMotor;
     public static PIDController toteCaptureLeftArm;
@@ -74,13 +74,13 @@ public class RobotMap
         driveTrainGyro = new Gyro(0);
         LiveWindow.addSensor("DriveTrain", "Gyro", driveTrainGyro);
         driveTrainGyro.setSensitivity(0.007);
-        forkliftPIDMotor = new Talon(4);
-        LiveWindow.addActuator("Forklift PID", "Motor", (Talon) forkliftPIDMotor);
+        forkliftMotor = new Talon(4);
+        LiveWindow.addActuator("Forklift", "Motor", (Talon) forkliftMotor);
         
-        forkliftPIDEncoder = new Encoder(0, 1, false, EncodingType.k4X);
-        LiveWindow.addSensor("Forklift PID", "Encoder", forkliftPIDEncoder);
-        forkliftPIDEncoder.setDistancePerPulse(0.012);
-        forkliftPIDEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
+        forkliftEncoder = new Encoder(0, 1, false, EncodingType.k4X);
+        LiveWindow.addSensor("Forklift", "Encoder", forkliftEncoder);
+        forkliftEncoder.setDistancePerPulse(0.012);
+        forkliftEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
         toteCaptureLeftPosition = new AnalogPotentiometer(1, 1.0, 0.0);
         LiveWindow.addSensor("Tote Capture", "Left Position", toteCaptureLeftPosition);
         
