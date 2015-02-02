@@ -29,7 +29,8 @@ public class Constants
     public final static double FORKLIFT_TOTE5_POSITION                       = 47.0;
     public final static double FORKLIFT_TOTE6_POSITION                       = 54.50;
     
-    public final static double FORKLIFT_JOYSTICK_MULTIPLIER                  = 54.50;
+    public final static double FORKLIFT_JOYSTICK_MULTIPLIER                  = 5.0;
+    public final static double FORKLIFT_JOYSTICK_THRESHOLD                   = .05; // how far joystick must move to start joystick override
     
     //***************************************************************************************
     // autonomous command constants
