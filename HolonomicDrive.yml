@@ -585,7 +585,7 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '3'
+          value: '2'
         Command: !!robotbuilder.data.properties.TypeSelectionProperty
           default: None
           name: Command
@@ -597,9 +597,9 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whenPressed
+          value: whileHeld
       Base: Joystick Button
-      Name: Return to Joystick
+      Name: Unlock Joystick
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
         choices: *id011
