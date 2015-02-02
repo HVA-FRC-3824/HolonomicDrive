@@ -45,5 +45,29 @@ public class Constants
     //***************************************************************************************
     // robot motor controller power  
     public final static int    FORKLIFT_MOTOR1_PDP_CHANNEL                   = 14;
-    public final static int    FORKLIFT_MOTOR2_PDP_CHANNEL                   = 15;    
+    public final static int    FORKLIFT_MOTOR2_PDP_CHANNEL                   = 15;   
+    
+    //***************************************************************************************
+    // forklift velocity and position PID parameters
+    public final static int    FORKLIFT_POSITION_MODE                       = 0;
+    public final static int    FORKLIFT_VELOCITY_MODE                       = 1;
+    
+    public final static double FORKLIFT_MAXIMUM_POSITION                     = 50.0;
+    
+    public final static double FORKLIFT_AT_POSITION_DISTANCE                 = 0.5;
+        
+    public final static double FORKLIFT_SWITCH_TO_POSITION_DISTANCE          = 1.0;
+    
+    public final static double FORKLIFT_JOG_STEP                             = 5.0;
+    
+    public final static double FORKLIFT_VELOCITY_SETPOINT                    = 1.0;                         
+    
+    public final static double FORKLIFT_VELOCITY_P                           = 0.20;
+    public final static double FORKLIFT_VELOCITY_I                           = 0.01;
+    public final static double FORKLIFT_VELOCITY_D                           = 0.15;
+    
+    public final static double FORKLIFT_POSITION_P                           = 0.2;
+    public final static double FORKLIFT_POSITION_I                           = 0.0;
+    public final static double FORKLIFT_POSITION_D                           = 0.0;
+    
 }

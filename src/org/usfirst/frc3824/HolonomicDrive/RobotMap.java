@@ -32,12 +32,6 @@ public class RobotMap
     public static Gyro driveTrainGyro;
     public static SpeedController forkliftMotor;
     public static Encoder forkliftEncoder;
-    public static AnalogPotentiometer toteCaptureLeftPosition;
-    public static SpeedController toteCaptureLeftMotor;
-    public static PIDController toteCaptureLeftArm;
-    public static AnalogPotentiometer toteCaptureRightPosition;
-    public static SpeedController toteCaptureRightMotor;
-    public static PIDController toteCaptureRightArm;
     public static SpeedController toteCaptureLeftWheel;
     public static SpeedController toteCaptureRightWheel;
     public static SpeedController containerCaptureMotor;
@@ -81,28 +75,6 @@ public class RobotMap
         LiveWindow.addSensor("Forklift", "Encoder", forkliftEncoder);
         forkliftEncoder.setDistancePerPulse(0.012);
         forkliftEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
-        toteCaptureLeftPosition = new AnalogPotentiometer(1, 1.0, 0.0);
-        LiveWindow.addSensor("Tote Capture", "Left Position", toteCaptureLeftPosition);
-        
-        toteCaptureLeftMotor = new Talon(6);
-        LiveWindow.addActuator("Tote Capture", "Left Motor", (Talon) toteCaptureLeftMotor);
-        
-        toteCaptureLeftArm = new PIDController(1.0, 0.0, 0.0, 0.0, toteCaptureLeftPosition, toteCaptureLeftMotor, 0.02);
-        LiveWindow.addActuator("Tote Capture", "Left Arm", toteCaptureLeftArm);
-        toteCaptureLeftArm.setContinuous(true); toteCaptureLeftArm.setAbsoluteTolerance(0.2); 
-        toteCaptureLeftArm.setOutputRange(-1.0, 1.0);        
-
-        toteCaptureRightPosition = new AnalogPotentiometer(2, 1.0, 0.0);
-        LiveWindow.addSensor("Tote Capture", "Right Position", toteCaptureRightPosition);
-        
-        toteCaptureRightMotor = new Talon(7);
-        LiveWindow.addActuator("Tote Capture", "Right Motor", (Talon) toteCaptureRightMotor);
-        
-        toteCaptureRightArm = new PIDController(1.0, 0.0, 0.0, 0.0, toteCaptureRightPosition, toteCaptureRightMotor, 0.02);
-        LiveWindow.addActuator("Tote Capture", "Right Arm", toteCaptureRightArm);
-        toteCaptureRightArm.setContinuous(true); toteCaptureRightArm.setAbsoluteTolerance(0.2); 
-        toteCaptureRightArm.setOutputRange(-1.0, 1.0);        
-
         toteCaptureLeftWheel = new Talon(8);
         LiveWindow.addActuator("Tote Capture", "Left Wheel", (Talon) toteCaptureLeftWheel);
         
