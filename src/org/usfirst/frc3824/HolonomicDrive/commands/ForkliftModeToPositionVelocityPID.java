@@ -64,6 +64,10 @@ public class ForkliftModeToPositionVelocityPID extends Command
 			position = Constants.FORKLIFT_TOTE5_POSITION;
 		else if (Robot.oi.tote6.get() == true)
 			position = Constants.FORKLIFT_TOTE6_POSITION;
+		else if (Robot.oi.forkliftJogUp.get() == true)
+			position += Constants.FORKLIFT_JOG_STEP;
+		else if (Robot.oi.forkliftJogDown.get() == true)
+			position -= Constants.FORKLIFT_JOG_STEP;
 		else if (positionSpecified == false) {
 			position = Robot.forklift.getPosition();
 		}
