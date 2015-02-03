@@ -112,7 +112,7 @@ Children:
           validators: [RobotDrive4, ChildDropdownSelected]
           value: DriveTrain Left Front
       Base: Robot Drive 4
-      Name: Holonomic Drive
+      Name: Holonomic Drive Place Holder
     - Children: []
       Properties:
         Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 0.007,
@@ -519,6 +519,14 @@ Children:
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
     Name: Lift With Joystick
+  - Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: DriveTrain}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command
+    Name: TestOffsetRotation
   Properties: {}
   Base: Commands
   Name: Commands

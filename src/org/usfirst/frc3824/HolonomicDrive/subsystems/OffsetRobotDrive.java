@@ -20,6 +20,8 @@ public class OffsetRobotDrive extends RobotDrive {
     boolean wheelbaseSet = false;
     double xWheelbase = 0.0;
     double yWheelbase = 0.0;
+    double xOffset = 0.0;
+    double yOffset = 0.0;
     double xDistFromCenter[] = new double[kMaxNumberOfMotors];
     double yDistFromCenter[] = new double[kMaxNumberOfMotors];
 
@@ -73,17 +75,8 @@ public class OffsetRobotDrive extends RobotDrive {
 	 */
 	public void setRotationOffset(double xdist, double ydist)
 	{		
-		xDistFromCenter[kFrontLeft_val] = (xdist / 2.0) - xdist;
-		yDistFromCenter[kFrontLeft_val] = (ydist / 2.0) + ydist;
-		
-		xDistFromCenter[kFrontRight_val] = (xdist / 2.0) + xdist;
-		yDistFromCenter[kFrontRight_val] = (ydist / 2.0) + ydist;
-		
-		xDistFromCenter[kRearLeft_val] = (xdist / 2.0) - xdist;
-		yDistFromCenter[kRearLeft_val] = (ydist / 2.0) - ydist;
-		
-		xDistFromCenter[kRearRight_val] = (xdist / 2.0) + xdist;
-		yDistFromCenter[kRearRight_val] = (ydist / 2.0) - ydist;		
+		xOffset = xdist;
+		yOffset = ydist;
 	}
 
 	/**
@@ -120,7 +113,7 @@ public class OffsetRobotDrive extends RobotDrive {
             UsageReporting.report(tResourceType.kResourceType_RobotDrive, getNumMotors(), tInstances.kRobotDrive_MecanumPolar);
             kMecanumPolar_Reported = true;
         }
-        double frontLeftSpeed, rearLeftSpeed, frontRightSpeed, rearRightSpeed;
+
         // Normalized for full power along the Cartesian axes.
         magnitude = limit(magnitude) * Math.sqrt(2.0);
         // The rollers are at 45 degree angles.
@@ -129,7 +122,19 @@ public class OffsetRobotDrive extends RobotDrive {
         double sinD = Math.sin(dirInRad);
         double offsetRotation[] = new double[kMaxNumberOfMotors];
 
-        if(offsetCenter == true)
+		xDistFromCenter[kFrontLeft_val] = (xWheelbase / 2.0) + xOffset;
+		yDistFromCenter[kFrontLeft_val] = (yWheelbase / 2.0) - yOffset;
+		
+		xDistFromCenter[kFrontRight_val] = (xWheelbase / 2.0) - xOffset;
+		yDistFromCenter[kFrontRight_val] = (yWheelbase / 2.0) - yOffset;
+		
+		xDistFromCenter[kRearLeft_val] = (xWheelbase / 2.0) + xOffset;
+		yDistFromCenter[kRearLeft_val] = (yWheelbase / 2.0) + yOffset;
+		
+		xDistFromCenter[kRearRight_val] = (xWheelbase / 2.0) - xOffset;
+		yDistFromCenter[kRearRight_val] = (yWheelbase / 2.0) + yOffset;		
+
+		if(offsetCenter == true)
         {
         	offsetRotation[kFrontLeft_val] = rotation *
         			((xDistFromCenter[kFrontLeft_val] + yDistFromCenter[kFrontLeft_val]) / ((xWheelbase + yWheelbase) / 2.0));
