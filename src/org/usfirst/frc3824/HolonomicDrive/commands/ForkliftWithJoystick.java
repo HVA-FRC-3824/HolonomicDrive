@@ -11,12 +11,10 @@
 
 package org.usfirst.frc3824.HolonomicDrive.commands;
 
-import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
 import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc3824.HolonomicDrive.Constants;
 import org.usfirst.frc3824.HolonomicDrive.Robot;
-import org.usfirst.frc3824.HolonomicDrive.RobotMap;
 
 /**
  *
@@ -61,6 +59,6 @@ public class  ForkliftWithJoystick extends Command {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-        Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, 0.0);
+        end();
     }
 }
