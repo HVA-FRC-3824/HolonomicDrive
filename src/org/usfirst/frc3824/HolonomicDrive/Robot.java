@@ -143,6 +143,11 @@ public class Robot extends IterativeRobot
 		// add current gyro angle to smart dashboard
 		SmartDashboard.putNumber("Gyro Angle",
 				RobotMap.driveTrainGyro.getAngle());
+		
+		SmartDashboard.putNumber("Current 1",
+				RobotMap.powerDistributionPanel.getCurrent(14));
+		SmartDashboard.putNumber("Current 2",
+				RobotMap.powerDistributionPanel.getCurrent(15));
 	}
 
 	/*
@@ -151,18 +156,5 @@ public class Robot extends IterativeRobot
 	public void testPeriodic()
 	{
 		LiveWindow.run();
-		try
-		{
-			SmartDashboard.putBoolean("PDP", true);
-			SmartDashboard.putNumber("Current 1",
-					RobotMap.powerDistributionPanel.getCurrent(14));
-			SmartDashboard.putNumber("Current 2",
-					RobotMap.powerDistributionPanel.getCurrent(15));
-		} catch (Exception e)
-		{
-			e.printStackTrace();
-
-			SmartDashboard.putBoolean("PDP", false);
-		}
 	}
 }
