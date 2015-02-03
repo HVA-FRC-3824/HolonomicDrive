@@ -14,17 +14,52 @@ import org.usfirst.frc3824.HolonomicDrive.Constants;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-public class AutonomousGetTwoContainersFromStep extends CommandGroup
-{
-	public AutonomousGetTwoContainersFromStep()
-	{
-		// collect from step; mechanism pending
-		
+public class AutonomousGetTwoContainersFromStep extends CommandGroup {
+	public AutonomousGetTwoContainersFromStep() {
+		//TODO collect from step; mechanism pending
+
 		// backing up
-		addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_CONTAINER_DRIVE_TIME, Constants.AUTONOMOUS_CONTAINER_DRIVER_POWER, Constants.AUTONOMOUS_CONTAINER_DRIVE_REVERSE_DIRECTION));
-		
-		// do one more time	
-		
+		addSequential(new ChassisDriveStraight(
+				Constants.AUTONOMOUS_CONTAINER_DRIVE_TIME,
+				Constants.AUTONOMOUS_CONTAINER_DRIVER_POWER,
+				Constants.AUTONOMOUS_CONTAINER_DRIVE_REVERSE_DIRECTION));
+
+		// turn to fit container in auto zone
+		addSequential(new ChassisTurnAngle(90.0, 0.0));
+
+		// TODO add command to deposit container
+
 		// deposit and get clear from container
+		addSequential(new ChassisDriveStraight(1.25,
+				Constants.AUTONOMOUS_CONTAINER_DRIVER_POWER,
+				Constants.AUTONOMOUS_CONTAINER_DRIVE_REVERSE_DIRECTION));
+
+		// going to turn towards to next container
+		addSequential(new ChassisTurnAngle(-90.0, 0.0));
+
+		// Drives towards the step to get next container
+		addSequential(new ChassisDriveStraight(
+				Constants.AUTONOMOUS_CONTAINER_DRIVE_TIME,
+				Constants.AUTONOMOUS_CONTAINER_DRIVER_POWER,
+				Constants.AUTONOMOUS_CONTAINER_DRIVE_FORWARD_DIRECTION));
+
+		// TODO add command to retrieve container
+
+		// backing up
+		addSequential(new ChassisDriveStraight(
+				Constants.AUTONOMOUS_CONTAINER_DRIVE_TIME,
+				Constants.AUTONOMOUS_CONTAINER_DRIVER_POWER,
+				Constants.AUTONOMOUS_CONTAINER_DRIVE_REVERSE_DIRECTION));
+
+		// turn to fit container in auto zone
+		addSequential(new ChassisTurnAngle(90.0, 0.0));
+
+		// TODO add command to deposit container
+
+		// deposit and get clear from container
+		addSequential(new ChassisDriveStraight(0.75,
+				Constants.AUTONOMOUS_CONTAINER_DRIVER_POWER,
+				Constants.AUTONOMOUS_CONTAINER_DRIVE_REVERSE_DIRECTION));
+
 	}
 }
