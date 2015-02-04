@@ -71,17 +71,17 @@ public class RobotMap
         driveTrainGyro = new Gyro(0);
         LiveWindow.addSensor("DriveTrain", "Gyro", driveTrainGyro);
         driveTrainGyro.setSensitivity(0.007);
-        forkliftPIDMotor = new Talon(4);
+        forkliftPIDMotor = new Talon(12);
         LiveWindow.addActuator("Forklift PID", "Motor", (Talon) forkliftPIDMotor);
         
-        forkliftPIDEncoder = new Encoder(0, 1, false, EncodingType.k4X);
+        forkliftPIDEncoder = new Encoder(2, 3, false, EncodingType.k4X);
         LiveWindow.addSensor("Forklift PID", "Encoder", forkliftPIDEncoder);
         forkliftPIDEncoder.setDistancePerPulse(0.012);
         forkliftPIDEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
-        forkliftMotor = new Talon(11);
+        forkliftMotor = new Talon(4);
         LiveWindow.addActuator("Forklift", "Motor", (Talon) forkliftMotor);
         
-        forkliftEncoder = new Encoder(2, 3, false, EncodingType.k4X);
+        forkliftEncoder = new Encoder(0, 1, false, EncodingType.k4X);
         LiveWindow.addSensor("Forklift", "Encoder", forkliftEncoder);
         forkliftEncoder.setDistancePerPulse(0.012);
         forkliftEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);

@@ -144,7 +144,7 @@ Children:
           default: '0'
           name: Output Channel (PWM)
           validators: *id003
-          value: '4'
+          value: '12'
       Base: Speed Controller
       Name: Motor
     - Children: []
@@ -156,7 +156,7 @@ Children:
           default: '0'
           name: Channel A Channel (Digital)
           validators: &id005 [DigitalChannel]
-          value: '0'
+          value: '2'
         Distance Per Pulse: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Distance Per Pulse, validators: null, value: 0.012}
         PID Source: !!robotbuilder.data.properties.ChoicesProperty
@@ -180,7 +180,7 @@ Children:
           default: '0'
           name: Channel B Channel (Digital)
           validators: &id009 [DigitalChannel]
-          value: '1'
+          value: '3'
       Base: Quadrature Encoder
       Name: Encoder
     Properties:
@@ -238,7 +238,7 @@ Children:
           default: '0'
           name: Output Channel (PWM)
           validators: *id003
-          value: '11'
+          value: '4'
       Base: Speed Controller
       Name: Motor
     - Children: []
@@ -248,7 +248,7 @@ Children:
           default: '0'
           name: Channel A Channel (Digital)
           validators: *id005
-          value: '2'
+          value: '0'
         Distance Per Pulse: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Distance Per Pulse, validators: null, value: 0.012}
         PID Source: !!robotbuilder.data.properties.ChoicesProperty
@@ -270,7 +270,7 @@ Children:
           default: '0'
           name: Channel B Channel (Digital)
           validators: *id009
-          value: '3'
+          value: '1'
       Base: Quadrature Encoder
       Name: Encoder
     Properties:
@@ -391,7 +391,7 @@ Children:
           name: Command
           type: Command
           validators: &id011 [TypeDropdownSelected]
-          value: Forklift Move To Position
+          value: Forklift Move To Position Velocity PID
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: &id012 [whileHeld, whenPressed, whenReleased]
           default: whileHeld
@@ -415,7 +415,7 @@ Children:
           name: Command
           type: Command
           validators: *id011
-          value: Forklift Move To Position
+          value: Forklift Move To Position Velocity PID
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id012
           default: whileHeld
@@ -439,7 +439,7 @@ Children:
           name: Command
           type: Command
           validators: *id011
-          value: Forklift Move To Position
+          value: Forklift Move To Position Velocity PID
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id012
           default: whileHeld
@@ -463,7 +463,7 @@ Children:
           name: Command
           type: Command
           validators: *id011
-          value: Forklift Move To Position
+          value: Forklift Move To Position Velocity PID
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id012
           default: whileHeld
@@ -487,7 +487,7 @@ Children:
           name: Command
           type: Command
           validators: *id011
-          value: Forklift Move To Position
+          value: Forklift Move To Position Velocity PID
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id012
           default: whileHeld
@@ -511,7 +511,7 @@ Children:
           name: Command
           type: Command
           validators: *id011
-          value: Forklift Move To Position
+          value: Forklift Move To Position Velocity PID
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id012
           default: whileHeld
@@ -535,7 +535,7 @@ Children:
           name: Command
           type: Command
           validators: *id011
-          value: Forklift Move To Position
+          value: Forklift Move To Position Velocity PID
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id012
           default: whileHeld
@@ -559,7 +559,7 @@ Children:
           name: Command
           type: Command
           validators: *id011
-          value: Forklift Mode To Position Velocity PID
+          value: Forklift Move To Position Velocity PID
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id012
           default: whileHeld
@@ -583,7 +583,7 @@ Children:
           name: Command
           type: Command
           validators: *id011
-          value: Forklift Mode To Position Velocity PID
+          value: Forklift Move To Position Velocity PID
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id012
           default: whileHeld
@@ -776,7 +776,7 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
     Base: Command
-    Name: Forklift Mode To Position Velocity PID
+    Name: Forklift Move To Position Velocity PID
   - Children: []
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
