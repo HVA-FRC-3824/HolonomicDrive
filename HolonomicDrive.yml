@@ -279,7 +279,7 @@ Children:
           name: Command
           type: Command
           validators: &id005 [TypeDropdownSelected]
-          value: Forklift Mode To Position Velocity PID
+          value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: &id006 [whileHeld, whenPressed, whenReleased]
           default: whileHeld
@@ -303,7 +303,7 @@ Children:
           name: Command
           type: Command
           validators: *id005
-          value: Forklift Mode To Position Velocity PID
+          value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id006
           default: whileHeld
@@ -327,7 +327,7 @@ Children:
           name: Command
           type: Command
           validators: *id005
-          value: Forklift Mode To Position Velocity PID
+          value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id006
           default: whileHeld
@@ -351,7 +351,7 @@ Children:
           name: Command
           type: Command
           validators: *id005
-          value: Forklift Mode To Position Velocity PID
+          value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id006
           default: whileHeld
@@ -375,7 +375,7 @@ Children:
           name: Command
           type: Command
           validators: *id005
-          value: Forklift Mode To Position Velocity PID
+          value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id006
           default: whileHeld
@@ -399,7 +399,7 @@ Children:
           name: Command
           type: Command
           validators: *id005
-          value: Forklift Mode To Position Velocity PID
+          value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id006
           default: whileHeld
@@ -423,7 +423,7 @@ Children:
           name: Command
           type: Command
           validators: *id005
-          value: Forklift Mode To Position Velocity PID
+          value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id006
           default: whileHeld
@@ -447,7 +447,7 @@ Children:
           name: Command
           type: Command
           validators: *id005
-          value: Forklift Mode To Position Velocity PID
+          value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id006
           default: whileHeld
@@ -471,7 +471,7 @@ Children:
           name: Command
           type: Command
           validators: *id005
-          value: Forklift Mode To Position Velocity PID
+          value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id006
           default: whileHeld
@@ -656,7 +656,7 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
     Base: Command
-    Name: Forklift Mode To Position Velocity PID
+    Name: Forklift Move To Position
   - Children: []
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
@@ -681,14 +681,6 @@ Children:
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
     Name: Tote Capture Control
-  - Children: []
-    Properties:
-      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: None}
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: false}
-    Base: Command
-    Name: Watch Forklift Joystick
   Properties: {}
   Base: Commands
   Name: Commands

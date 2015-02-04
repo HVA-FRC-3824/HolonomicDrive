@@ -50,10 +50,9 @@ public class Constants
     
     //***************************************************************************************
     // forklift velocity and position PID parameters
-
     public final static int    FORKLIFT_POSITION_MODE                        = 0;
     public final static int    FORKLIFT_VELOCITY_MODE                        = 1;
-   
+    
     public final static double FORKLIFT_MAXIMUM_POSITION                     = 50.0;
     
     public final static double FORKLIFT_AT_POSITION_DISTANCE                 = 0.5;
