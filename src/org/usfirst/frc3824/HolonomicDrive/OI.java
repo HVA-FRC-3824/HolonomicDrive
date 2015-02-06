@@ -81,23 +81,23 @@ public class OI
         toteCaptureIn = new JoystickButton(forkliftJoystick, 4);
         toteCaptureIn.whenPressed(new ToteCaptureControl());
         forkliftJogDown = new JoystickButton(forkliftJoystick, 3);
-        forkliftJogDown.whileHeld(new ForkliftMoveToPositionVelocityPID());
+        forkliftJogDown.whileHeld(new ForkliftMoveToPosition());
         forkliftJogUp = new JoystickButton(forkliftJoystick, 2);
-        forkliftJogUp.whenPressed(new ForkliftMoveToPositionVelocityPID());
+        forkliftJogUp.whenPressed(new ForkliftMoveToPosition());
         tote6 = new JoystickButton(forkliftJoystick, 7);
-        tote6.whenPressed(new ForkliftMoveToPositionVelocityPID());
+        tote6.whenPressed(new ForkliftMoveToPosition());
         tote5 = new JoystickButton(forkliftJoystick, 8);
-        tote5.whenPressed(new ForkliftMoveToPositionVelocityPID());
+        tote5.whenPressed(new ForkliftMoveToPosition());
         tote4 = new JoystickButton(forkliftJoystick, 9);
-        tote4.whenPressed(new ForkliftMoveToPositionVelocityPID());
+        tote4.whenPressed(new ForkliftMoveToPosition());
         tote3 = new JoystickButton(forkliftJoystick, 10);
-        tote3.whenPressed(new ForkliftMoveToPositionVelocityPID());
+        tote3.whenPressed(new ForkliftMoveToPosition());
         tote2 = new JoystickButton(forkliftJoystick, 11);
-        tote2.whenPressed(new ForkliftMoveToPositionVelocityPID());
+        tote2.whenPressed(new ForkliftMoveToPosition());
         tote1 = new JoystickButton(forkliftJoystick, 12);
-        tote1.whenPressed(new ForkliftMoveToPositionVelocityPID());
+        tote1.whenPressed(new ForkliftMoveToPosition());
         totePickUp = new JoystickButton(forkliftJoystick, 1);
-        totePickUp.whenPressed(new ForkliftMoveToPositionVelocityPID());
+        totePickUp.whenPressed(new ForkliftMoveToPosition());
         joystick = new Joystick(0);
         
 
