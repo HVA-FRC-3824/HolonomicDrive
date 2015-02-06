@@ -142,7 +142,7 @@ public class Robot extends IterativeRobot
 		
 		SmartDashboard.putNumber("Current 1", RobotMap.powerDistributionPanel.getCurrent(14));
 		SmartDashboard.putNumber("Current 2", RobotMap.powerDistributionPanel.getCurrent(15));
-		
+	}	
 	/*
 	 * This function is called periodically during test mode
 	 */
