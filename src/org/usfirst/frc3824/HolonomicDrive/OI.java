@@ -75,11 +75,11 @@ public class OI
         forkliftJoystick = new Joystick(1);
         
         wheelsOff = new JoystickButton(forkliftJoystick, 2);
-        wheelsOff.whileHeld(new WheelsControl());
+        wheelsOff.whenPressed(new WheelsControl());
         wheelsOut = new JoystickButton(forkliftJoystick, 6);
         wheelsOut.whileHeld(new WheelsControl());
         wheelsIn = new JoystickButton(forkliftJoystick, 4);
-        wheelsIn.whenPressed(new WheelsControl());
+        wheelsIn.whileHeld(new WheelsControl());
         forkliftJogDown = new JoystickButton(forkliftJoystick, 3);
         forkliftJogDown.whenPressed(new ForkliftMoveToPosition());
         forkliftJogUp = new JoystickButton(forkliftJoystick, 5);
@@ -99,6 +99,8 @@ public class OI
         totePickUp = new JoystickButton(forkliftJoystick, 1);
         totePickUp.whenPressed(new ForkliftMoveToPosition());
         driverJoystick = new Joystick(0);
+        
+
 	    
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Drive To Auto Zone", new AutonomousDriveToAutoZone());
