@@ -1,0 +1,4 @@
+*.java  eol=crlf
+*.xml	eol=crlf
+*.yml	eol=crlf
+*.html	eol=crlf

@@ -76,9 +76,7 @@ public class ForkliftMoveToPositionVelocityPID extends Command
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
-	{
-		System.out.println("***** In ForkliftMoveToPositionVelocityPID");
-		
+	{	
 		// determine if the distance from set point is close enough to use the
 		// position PID
 		if (Math.abs(Robot.forklift.getPosition() - position) < Constants.FORKLIFT_SWITCH_TO_POSITION_DISTANCE)
@@ -106,23 +104,28 @@ public class ForkliftMoveToPositionVelocityPID extends Command
 			}
 		}
 
-		SmartDashboard.putBoolean("Velocity PID Enabled", Robot.forklift.isEnabled(Constants.FORKLIFT_VELOCITY_MODE));
-		SmartDashboard.putBoolean("Position PID Enabled", Robot.forklift.isEnabled(Constants.FORKLIFT_POSITION_MODE));
+//		SmartDashboard.putBoolean("Velocity PID Enabled", Robot.forklift.isEnabled(Constants.FORKLIFT_VELOCITY_MODE));
+//		SmartDashboard.putBoolean("Position PID Enabled", Robot.forklift.isEnabled(Constants.FORKLIFT_POSITION_MODE));
 		SmartDashboard.putNumber("Error", Robot.forklift.getError());
 		SmartDashboard.putNumber("Encoder Velocity", Robot.forklift.getVelocity());
 		
-		System.out.println(Robot.forklift.isEnabled(Constants.FORKLIFT_POSITION_MODE));
-		System.out.println(Robot.forklift.isEnabled(Constants.FORKLIFT_VELOCITY_MODE));		
-		System.out.println(Robot.forklift.getError());
+//		System.out.println("***");
+//		System.out.println(Robot.forklift.isEnabled(Constants.FORKLIFT_POSITION_MODE));
+//		System.out.println(Robot.forklift.isEnabled(Constants.FORKLIFT_VELOCITY_MODE));		
+//		System.out.println(Robot.forklift.getError());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished()
 	{
 		// determine if the forklift is in the desire position
-		// if (Math.abs(Robot.forklift.getPosition() - position) <
-		// Constants.FORKLIFT_AT_POSITION_DISTANCE)
-		// return(true);
+		if ((Math.abs(Robot.forklift.getPosition() - position) < 
+				Constants.FORKLIFT_AT_POSITION_DISTANCE) &&
+				(Robot.forklift.getPIDMode() == Constants.FORKLIFT_POSITION_MODE))
+		 {
+			 System.out.println("Finished");
+			 return(true);
+		 }
 
 		return (false);
 	}
