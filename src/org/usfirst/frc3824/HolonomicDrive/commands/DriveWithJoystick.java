@@ -33,7 +33,7 @@ public class DriveWithJoystick extends Command
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		Robot.driveTrain.holonomicDrive(Robot.oi.getJoystick());
+		Robot.driveTrain.holonomicDrive(Robot.oi.getDriverJoystick());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
