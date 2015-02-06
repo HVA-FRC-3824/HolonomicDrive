@@ -107,18 +107,22 @@ public class ForkliftMoveToPosition extends Command
 		        Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, -Constants.FORKLIFT_VELOCITY_SETPOINT);				
 			}
 		}
-			
-		SmartDashboard.putNumber("Error", Robot.forklift.getError());		
+		
+		SmartDashboard.putNumber("Error", Robot.forklift.getError());
+		SmartDashboard.putNumber("Encoder Velocity", Robot.forklift.getVelocity());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
 	protected boolean isFinished()
 	{
 		// determine if the forklift is in the desire position
-		if (Math.abs(Robot.forklift.getPosition() - position) < Constants.FORKLIFT_AT_POSITION_DISTANCE)
-			return(true);
-			
-		return(false);
+		if ((Math.abs(Robot.forklift.getPosition() - position) < Constants.FORKLIFT_AT_POSITION_DISTANCE)
+				&& (Robot.forklift.getPIDMode() == Constants.FORKLIFT_POSITION_MODE)) {
+			System.out.println("Finished");
+			return (true);
+		}
+
+		return (false);
 	}
 
 	// Called once after isFinished returns true
