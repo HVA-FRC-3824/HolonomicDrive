@@ -44,11 +44,11 @@ public class  ForkliftWithJoystick extends Command {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-    	if (Math.abs(Robot.oi.forkliftJoystick.getY()) < Constants.FORKLIFT_JOYSTICK_THRESHOLD) {
-    		return true;
-    	} else {
+//    	if (Math.abs(Robot.oi.forkliftJoystick.getY()) < Constants.FORKLIFT_JOYSTICK_THRESHOLD) {
+//    		return true;
+//    	} else {
     		return false;
-    	}
+//    	}
     }
 
     // Called once after isFinished returns true
