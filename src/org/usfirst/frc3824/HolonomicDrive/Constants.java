@@ -38,7 +38,7 @@ public class Constants
     public final static double AUTONOMOUS_CONTAINER_DRIVE_TIME               = 1.25;
     public final static double AUTONOMOUS_CONTAINER_DRIVER_POWER             = 0.5;
     public final static double AUTONOMOUS_CONTAINER_DRIVE_REVERSE_DIRECTION  = 180.0;
-    public final static double AUTONOMOUS_CONTAINER_DRIVE_FORWARDS_DIRECTION = 0;
+    public final static double AUTONOMOUS_CONTAINER_DRIVE_FORWARD_DIRECTION  = 0;
     
     //***************************************************************************************
     // robot motor controller power  
