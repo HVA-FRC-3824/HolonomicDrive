@@ -117,7 +117,8 @@ public class ForkliftMoveToPosition extends Command
 	{
 		// determine if the forklift is in the desire position
 		if ((Math.abs(Robot.forklift.getPosition() - position) < Constants.FORKLIFT_AT_POSITION_DISTANCE)
-				&& (Robot.forklift.getPIDMode() == Constants.FORKLIFT_POSITION_MODE)) {
+				&& (Robot.forklift.getPIDMode() == Constants.FORKLIFT_POSITION_MODE)) 
+		{
 			System.out.println("Finished");
 			return (true);
 		}
