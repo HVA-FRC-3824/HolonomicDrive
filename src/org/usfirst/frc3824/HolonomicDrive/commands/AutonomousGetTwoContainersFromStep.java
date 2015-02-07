@@ -11,16 +11,11 @@
 package org.usfirst.frc3824.HolonomicDrive.commands;
 
 import org.usfirst.frc3824.HolonomicDrive.Constants;
-import org.usfirst.frc3824.HolonomicDrive.Robot;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class AutonomousGetTwoContainersFromStep extends CommandGroup {
 	public AutonomousGetTwoContainersFromStep() {
-		double gyroValue;
-		double relativeAngle;
-
 		//TODO collect from step; mechanism pending
 
 		// backing up
@@ -29,18 +24,8 @@ public class AutonomousGetTwoContainersFromStep extends CommandGroup {
 				Constants.AUTONOMOUS_CONTAINER_DRIVER_POWER,
 				Constants.AUTONOMOUS_CONTAINER_DRIVE_REVERSE_DIRECTION));
 
-		gyroValue = Robot.driveTrain.getGyroValue();
-		relativeAngle = Robot.driveTrain.getRelativeAngle();
-		SmartDashboard.putNumber("Gyro Angle after backup", gyroValue);
-		SmartDashboard.putNumber("Relative Angle after backup", relativeAngle);
-
 		// turn to fit container in auto zone
 		addSequential(new ChassisTurnAngle(90.0, 0.0));
-		gyroValue = Robot.driveTrain.getGyroValue();
-		relativeAngle = Robot.driveTrain.getRelativeAngle();
-		SmartDashboard.putNumber("Gyro Angle after turn to right", gyroValue);
-		SmartDashboard.putNumber("Relative Angle after turn to right",
-				relativeAngle);
 
 		// TODO add command to deposit container
 
@@ -49,35 +34,14 @@ public class AutonomousGetTwoContainersFromStep extends CommandGroup {
 				Constants.AUTONOMOUS_CONTAINER_DRIVER_POWER,
 				Constants.AUTONOMOUS_CONTAINER_DRIVE_REVERSE_DIRECTION));
 
-		gyroValue = Robot.driveTrain.getGyroValue();
-		relativeAngle = Robot.driveTrain.getRelativeAngle();
-		SmartDashboard.putNumber("Gyro Angle after backup after turn",
-				gyroValue);
-		SmartDashboard.putNumber("Relative Angle after backup after turn",
-				relativeAngle);
-
-		
 		// going to turn towards to next container
 		addSequential(new ChassisTurnAngle(-90.0, 0.0));
-		gyroValue = Robot.driveTrain.getGyroValue();
-		relativeAngle = Robot.driveTrain.getRelativeAngle();
-		SmartDashboard.putNumber("Gyro Angle after turn toward step",
-				gyroValue);
-		SmartDashboard.putNumber("Relative Angle after turn toward step",
-				relativeAngle);
 
 		// Drives towards the step to get next container
 		addSequential(new ChassisDriveStraight(
 				Constants.AUTONOMOUS_CONTAINER_DRIVE_TIME,
 				Constants.AUTONOMOUS_CONTAINER_DRIVER_POWER,
 				Constants.AUTONOMOUS_CONTAINER_DRIVE_FORWARD_DIRECTION));
-
-		gyroValue = Robot.driveTrain.getGyroValue();
-		relativeAngle = Robot.driveTrain.getRelativeAngle();
-		SmartDashboard.putNumber("Gyro Angle after move to step",
-				gyroValue);
-		SmartDashboard.putNumber("Relative Angle after move to step",
-				relativeAngle);
 
 		// TODO add command to retrieve container
 
@@ -87,21 +51,8 @@ public class AutonomousGetTwoContainersFromStep extends CommandGroup {
 				Constants.AUTONOMOUS_CONTAINER_DRIVER_POWER,
 				Constants.AUTONOMOUS_CONTAINER_DRIVE_REVERSE_DIRECTION));
 
-		gyroValue = Robot.driveTrain.getGyroValue();
-		relativeAngle = Robot.driveTrain.getRelativeAngle();
-		SmartDashboard.putNumber("Gyro Angle after backup after 2nd container",
-				gyroValue);
-		SmartDashboard.putNumber("Relative Angle after backup after 2nd container",
-				relativeAngle);
-
 		// turn to fit container in auto zone
 		addSequential(new ChassisTurnAngle(90.0, 0.0));
-		gyroValue = Robot.driveTrain.getGyroValue();
-		relativeAngle = Robot.driveTrain.getRelativeAngle();
-		SmartDashboard.putNumber("Gyro Angle after turn after 2nd container",
-				gyroValue);
-		SmartDashboard.putNumber("Relative Angle after turn after 2nd container",
-				relativeAngle);
 
 		// TODO add command to deposit container
 
@@ -109,12 +60,6 @@ public class AutonomousGetTwoContainersFromStep extends CommandGroup {
 		addSequential(new ChassisDriveStraight(0.75,
 				Constants.AUTONOMOUS_CONTAINER_DRIVER_POWER,
 				Constants.AUTONOMOUS_CONTAINER_DRIVE_REVERSE_DIRECTION));
-		gyroValue = Robot.driveTrain.getGyroValue();
-		relativeAngle = Robot.driveTrain.getRelativeAngle();
-		SmartDashboard.putNumber("Gyro Angle after backup after turn after 2nd container",
-				gyroValue);
-		SmartDashboard.putNumber("Relative Angle after backup after turn after 2nd container",
-				relativeAngle);
 
 	}
 }
