@@ -13,6 +13,8 @@ package org.usfirst.frc3824.HolonomicDrive.commands;
 import edu.wpi.first.wpilibj.command.Command;
 //import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc3824.HolonomicDrive.Robot;
 import org.usfirst.frc3824.HolonomicDrive.Constants;
 
@@ -70,6 +72,8 @@ public class ForkliftMoveToPosition extends Command
 
 		if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
 			position = Constants.FORKLIFT_MAXIMUM_POSITION;
+		
+		SmartDashboard.putNumber("Forklift Position Setpoint", position);
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -98,7 +102,9 @@ public class ForkliftMoveToPosition extends Command
 			}
 		}
 
-//		SmartDashboard.putNumber("Error", Robot.forklift.getError());
+		
+		SmartDashboard.putNumber("Forklift Position", Robot.forklift.getPosition());
+		SmartDashboard.putNumber("Error", Robot.forklift.getError());
 //		SmartDashboard.putNumber("Encoder Velocity", Robot.forklift.getVelocity());
 	}
 
