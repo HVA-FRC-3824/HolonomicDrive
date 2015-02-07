@@ -9,7 +9,7 @@ public class Constants
 	
     //***************************************************************************************
     /* Contants which might require tuning */
-    public final static double DrivetrainAngleGyroControllerP                = 0.040;  // 0.04;	John Young's nums
+    public final static double DrivetrainAngleGyroControllerP                = 0.040;  // 0.04;
     public final static double DrivetrainAngleGyroControllerI                = 0.004;  // 0.004;
     public final static double DrivetrainAngleGyroControllerD                = 0.040;  // 0.04;
 
@@ -68,4 +68,17 @@ public class Constants
     public final static double FORKLIFT_POSITION_I                           = 0.01;
     public final static double FORKLIFT_POSITION_D                           = 0.15;
     
+    //***************************************************************************************
+    // tote capture PID parameters
+    public final static double TOTE_CAPTURE_ARM_P                            = 0.1;
+    public final static double TOTE_CAPTURE_ARM_I                            = 0.01;
+    public final static double TOTE_CAPTURE_ARM_D                            = 0.00;
+
+    public final static double TOTE_CAPTURE_RIGHT_ARM_OFFSET                 = 0.20;
+    public final static double TOTE_CAPTURE_LEFT_ARM_OFFSET                  = 0.60;
+
+    public final static double TOTE_CAPTURE_DIRECTION_SCALE_FACTOR           = 1.00;
+    public final static double TOTE_CAPTURE_DISTANCE_SCALE_FACTOR            = 1.00;
+
+    public final static double TOTE_CAPTURE_MOTOR_POWER                      = 0.50;
 }

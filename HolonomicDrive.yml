@@ -283,7 +283,7 @@ Children:
       Name: Right Arm Pot
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: None}
+        name: Default Command, type: Command, validators: null, value: Tote Capture Control}
     Base: Subsystem
     Name: Tote Capture
   - Children:
@@ -561,7 +561,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
       Base: Joystick Button
       Name: Wheels In
     - Children: []
@@ -585,7 +585,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
       Base: Joystick Button
       Name: Wheels Out
     - Children: []
@@ -741,6 +741,14 @@ Children:
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
     Name: Wheels Control
+  - Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: None}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command
+    Name: Set Capture Arm Offsets
   Properties: {}
   Base: Commands
   Name: Commands
