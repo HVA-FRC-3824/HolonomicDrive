@@ -59,9 +59,9 @@ public class DriveTrain extends Subsystem
 	 */
 	public void holonomicDrive(Joystick joy)
 	{
-		SmartDashboard.putNumber("magnitude", joy.getMagnitude());
-		SmartDashboard.putNumber("direction", joy.getDirectionDegrees());
-		SmartDashboard.putNumber("angle",     joy.getTwist() * 0.5);
+//		SmartDashboard.putNumber("magnitude", joy.getMagnitude());
+//		SmartDashboard.putNumber("direction", joy.getDirectionDegrees());
+//		SmartDashboard.putNumber("angle",     joy.getTwist() * 0.5);
 
 		holonomicDrive.mecanumDrive_Polar(joy.getMagnitude(),
 				joy.getDirectionDegrees(), joy.getTwist() * 0.5);
@@ -87,15 +87,21 @@ public class DriveTrain extends Subsystem
 		return (gyro.getAngle());
 	}
 	
-	public double getRelativeAngle() {
+	public double getRelativeAngle() 
+	{
 		double absAngle = gyro.getAngle();
 		
-		if (absAngle < 0.0) {
-			while (absAngle < 0.0) {
+		if (absAngle < 0.0) 
+		{
+			while (absAngle < 0.0) 
+			{
 				absAngle += 360.0;
 			}
-		} else if (absAngle >= 360.0) {
-			while (absAngle >= 360.0) {
+		} 
+		else if (absAngle >= 360.0) 
+		{
+			while (absAngle >= 360.0) 
+			{
 				absAngle -= 360.0;
 			}
 		}
@@ -145,9 +151,9 @@ public class DriveTrain extends Subsystem
 	{
 		public void pidWrite(double d)
 		{
-			SmartDashboard.putNumber("magnitude", magnitude);
-			SmartDashboard.putNumber("direction", direction);
-			SmartDashboard.putNumber("angle", angle);
+//			SmartDashboard.putNumber("magnitude", magnitude);
+//			SmartDashboard.putNumber("direction", direction);
+//			SmartDashboard.putNumber("angle", angle);
 
 			// set the local angle value
 			setAngle(d);

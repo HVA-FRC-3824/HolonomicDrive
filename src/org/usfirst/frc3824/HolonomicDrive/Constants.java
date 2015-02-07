@@ -67,5 +67,4 @@ public class Constants
     public final static double FORKLIFT_POSITION_P                           = 0.20;
     public final static double FORKLIFT_POSITION_I                           = 0.01;
     public final static double FORKLIFT_POSITION_D                           = 0.15;
-    
 }

@@ -11,7 +11,7 @@
 package org.usfirst.frc3824.HolonomicDrive.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc3824.HolonomicDrive.Robot;
 import org.usfirst.frc3824.HolonomicDrive.Constants;
@@ -64,8 +64,6 @@ public class ForkliftMoveToPosition extends Command
 		else if (Robot.oi.forkliftJogDown.get() == true)
 			position -= Constants.FORKLIFT_JOG_STEP;
 
-		SmartDashboard.putString("Command Init", "Yes");
-
 		// ensure the range of the position
 		if (position < 0.0)
 			position = 0.0;
@@ -81,16 +79,12 @@ public class ForkliftMoveToPosition extends Command
 		// position PID
 		if (Math.abs(Robot.forklift.getPosition() - position) < Constants.FORKLIFT_SWITCH_TO_POSITION_DISTANCE)
 		{
-			SmartDashboard.putString("PID Mode", "Position");
-
 			// set the forklift PID to position control
 			// Note: the method enables the position encoder
 			Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_POSITION_MODE, position);
 		}
 		else
 		{
-			SmartDashboard.putString("PID Mode", "Velocity");
-
 			// determine if above or below the desired set point
 			if (Robot.forklift.getPosition() < position)
 			{
@@ -104,8 +98,8 @@ public class ForkliftMoveToPosition extends Command
 			}
 		}
 
-		SmartDashboard.putNumber("Error", Robot.forklift.getError());
-		SmartDashboard.putNumber("Encoder Velocity", Robot.forklift.getVelocity());
+//		SmartDashboard.putNumber("Error", Robot.forklift.getError());
+//		SmartDashboard.putNumber("Encoder Velocity", Robot.forklift.getVelocity());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
@@ -116,7 +110,6 @@ public class ForkliftMoveToPosition extends Command
 				Constants.FORKLIFT_AT_POSITION_DISTANCE) &&
 				(Robot.forklift.getPIDMode() == Constants.FORKLIFT_POSITION_MODE))
 		 {
-			 System.out.println("Finished");
 			 return(true);
 		 }
 
