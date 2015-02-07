@@ -34,8 +34,8 @@ public class ChassisDriveStraight extends Command
 		timer = new Timer();
 
 		// default test values when called from the SmartDashboard
-		driveDuration = 2.0;
-		drivePower = 0.5;
+		driveDuration  = 2.0;
+		drivePower     = 0.5;
 		driveDirection = 0.0;
 	}
 
