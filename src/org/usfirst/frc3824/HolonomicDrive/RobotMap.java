@@ -32,7 +32,6 @@ public class RobotMap
     public static Gyro driveTrainGyro;
     public static SpeedController forkliftMotor;
     public static Encoder forkliftEncoder;
-    public static SpeedController forkliftWithJoystickMotor;
     public static SpeedController toteCaptureLeftWheel;
     public static SpeedController toteCaptureRightWheel;
     public static SpeedController containerCaptureMotor;
@@ -76,9 +75,6 @@ public class RobotMap
         LiveWindow.addSensor("Forklift", "Encoder", forkliftEncoder);
         forkliftEncoder.setDistancePerPulse(0.012);
         forkliftEncoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
-        forkliftWithJoystickMotor = new Talon(5);
-        LiveWindow.addActuator("Forklift With Joystick", "Motor", (Talon) forkliftWithJoystickMotor);
-        
         toteCaptureLeftWheel = new Talon(8);
         LiveWindow.addActuator("Tote Capture", "Left Wheel", (Talon) toteCaptureLeftWheel);
         
