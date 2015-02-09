@@ -70,6 +70,9 @@ public class ForkliftMoveToPosition extends Command
 
 		if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
 			position = Constants.FORKLIFT_MAXIMUM_POSITION;
+		
+		System.out.print("Position: ");
+		System.out.println(position);
 	}
 
 	// Called repeatedly when this Command is scheduled to run

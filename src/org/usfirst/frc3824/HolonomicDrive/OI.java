@@ -74,15 +74,15 @@ public class OI
 
         forkliftJoystick = new Joystick(1);
         
-        toteCaptureOff = new JoystickButton(forkliftJoystick, 6);
+        toteCaptureOff = new JoystickButton(forkliftJoystick, 2);
         toteCaptureOff.whenPressed(new ToteCaptureControl());
-        toteCaptureOut = new JoystickButton(forkliftJoystick, 5);
+        toteCaptureOut = new JoystickButton(forkliftJoystick, 6);
         toteCaptureOut.whenPressed(new ToteCaptureControl());
         toteCaptureIn = new JoystickButton(forkliftJoystick, 4);
         toteCaptureIn.whenPressed(new ToteCaptureControl());
         forkliftJogDown = new JoystickButton(forkliftJoystick, 3);
         forkliftJogDown.whileHeld(new ForkliftMoveToPosition());
-        forkliftJogUp = new JoystickButton(forkliftJoystick, 2);
+        forkliftJogUp = new JoystickButton(forkliftJoystick, 5);
         forkliftJogUp.whenPressed(new ForkliftMoveToPosition());
         tote6 = new JoystickButton(forkliftJoystick, 7);
         tote6.whenPressed(new ForkliftMoveToPosition());
