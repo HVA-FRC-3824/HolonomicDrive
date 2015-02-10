@@ -59,7 +59,7 @@ public class Constants
         
     public final static double FORKLIFT_SWITCH_TO_POSITION_DISTANCE          = 1.0;
     
-    public final static double FORKLIFT_JOG_STEP                             = 5.0;
+    public final static double FORKLIFT_JOG_STEP                             = 2.5;
     
     public final static double FORKLIFT_VELOCITY_SETPOINT                    = 20.0;                         
     
