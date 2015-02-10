@@ -62,9 +62,9 @@ public class ForkliftMoveToPosition extends Command
 		else if (Robot.oi.tote6.get() == true)
 			position = Constants.FORKLIFT_TOTE6_POSITION;
 		else if (Robot.oi.forkliftJogUp.get() == true)
-			position += Constants.FORKLIFT_JOG_STEP;
+			position = Robot.forklift.getPosition() + Constants.FORKLIFT_JOG_STEP;
 		else if (Robot.oi.forkliftJogDown.get() == true)
-			position -= Constants.FORKLIFT_JOG_STEP;
+			position = Robot.forklift.getPosition() + Constants.FORKLIFT_JOG_STEP;
 
 		// ensure the range of the position
 		if (position < 0.0)
@@ -76,6 +76,8 @@ public class ForkliftMoveToPosition extends Command
 		System.out.print("Position: ");
 		System.out.println(position);
 		SmartDashboard.putNumber("Forklift Position Setpoint", position);
+		
+		execute();
 	}
 
 	// Called repeatedly when this Command is scheduled to run
