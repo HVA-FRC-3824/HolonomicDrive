@@ -40,7 +40,7 @@ public class ForkliftMoveToPosition extends Command
 		this();
 
 		// remember the desired position
-		this.position = position;
+		ForkliftMoveToPosition.position = position;
 	}
 
 	// Called just before this Command runs the first time
@@ -72,23 +72,17 @@ public class ForkliftMoveToPosition extends Command
 
 		if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
 			position = Constants.FORKLIFT_MAXIMUM_POSITION;
-		
-//		System.out.print("Position: ");
-//		System.out.println(position);
+
 		SmartDashboard.putNumber("Forklift Position Setpoint", position);
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{	
-//		System.out.println("Execute");
-		
 		// determine if the distance from set point is close enough to use the
 		// position PID
 		if (Math.abs(Robot.forklift.getPosition() - position) < Constants.FORKLIFT_SWITCH_TO_POSITION_DISTANCE)
 		{
-//			System.out.println("P PID");
-			
 			// set the forklift PID to position control
 			// Note: the method enables the position encoder
 			Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_POSITION_MODE, position);
@@ -98,15 +92,11 @@ public class ForkliftMoveToPosition extends Command
 			// determine if above or below the desired set point
 			if (Robot.forklift.getPosition() < position)
 			{
-//				System.out.println("V PID U");
-				
 				// set the fork-lift mode to position and set the position
 				Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, Constants.FORKLIFT_VELOCITY_SETPOINT);
 			}
 			else
 			{
-//				System.out.println("V PID D");
-				
 				// set the fork-lift mode to position and set the position
 				Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, -Constants.FORKLIFT_VELOCITY_SETPOINT);
 			}
@@ -114,8 +104,6 @@ public class ForkliftMoveToPosition extends Command
 
 		SmartDashboard.putNumber("Forklift Position", Robot.forklift.getPosition());
 		SmartDashboard.putNumber("Error", Robot.forklift.getError());
-//		SmartDashboard.putNumber("Error", Robot.forklift.getError());
-//		SmartDashboard.putNumber("Encoder Velocity", Robot.forklift.getVelocity());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
@@ -126,7 +114,6 @@ public class ForkliftMoveToPosition extends Command
 				Constants.FORKLIFT_AT_POSITION_DISTANCE) &&
 				(Robot.forklift.getPIDMode() == Constants.FORKLIFT_POSITION_MODE))
 		 {
-//			 System.out.println("Finished");
 			 return(true);
 		 }
 
@@ -136,13 +123,13 @@ public class ForkliftMoveToPosition extends Command
 	// Called once after isFinished returns true
 	protected void end()
 	{
-//		System.out.println("*** End");
+
 	}
 
 	// Called when another command which requires one or more of the same
 	// subsystems is scheduled to run
 	protected void interrupted()
 	{
-//		System.out.println("*** Interrupted");
+
 	}
 }
