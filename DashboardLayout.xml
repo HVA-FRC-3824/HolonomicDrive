@@ -1,0 +1,131 @@
+<xml version="1.0">
+<dashboard>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.VideoStreamViewerExtension">
+		<location x="804" y="32"/>
+		<width>508</width>
+		<height>385</height>
+	</static-widget>
+	<widget field="Chassis Drive Straight" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="96" y="383"/>
+	</widget>
+	<widget field="Autonomous Get Left Container From Step" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="6" y="95"/>
+	</widget>
+	<widget field="Gyro Angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="597" y="172"/>
+		<property name="Background" value="255.255.51.255"/>
+	</widget>
+	<widget field="Forklift Set PIDs" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="360" y="303"/>
+	</widget>
+	<widget field="angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="624" y="76"/>
+		<property name="Background" value="255.255.51.255"/>
+	</widget>
+	<widget field="magnitude" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="600" y="140"/>
+		<height>20</height>
+		<property name="Background" value="255.255.51.255"/>
+	</widget>
+	<widget field="Autonomous Get Four Containers From Step" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="-2" y="128"/>
+	</widget>
+	<widget field="Forklift Position" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="578" y="305"/>
+		<height>20</height>
+		<property name="Background" value="102.102.255.255"/>
+	</widget>
+	<widget field="Tote Capture Control" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="96" y="415"/>
+	</widget>
+	<widget field="Autonomous Stack Three Totes" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="60" y="160"/>
+	</widget>
+	<widget field="Velocity D" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="384" y="240"/>
+		<property name="Background" value="102.255.51.255"/>
+	</widget>
+	<widget field="Autonomous Stack Two Totes" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="64" y="288"/>
+	</widget>
+	<widget field="Velocity I" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="384" y="208"/>
+		<height>20</height>
+		<property name="Background" value="102.255.51.255"/>
+	</widget>
+	<widget field="direction" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="608" y="108"/>
+		<property name="Background" value="255.255.51.255"/>
+	</widget>
+	<widget field="Velocity P" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="380" y="176"/>
+		<property name="Background" value="51.255.0.255"/>
+	</widget>
+	<widget field="Chassis Turn Angle" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="112" y="352"/>
+	</widget>
+	<widget field="Autonomous Get Two Containers From Step" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="256"/>
+	</widget>
+	<widget field="Chassis Drive And Turn Test" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="64" y="320"/>
+	</widget>
+	<widget field="Autonomous Stack One Tote" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="73" y="224"/>
+	</widget>
+	<widget field="Autonomous Drive To Auto Zone" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="54" y="192"/>
+	</widget>
+	<widget field="Position D" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="379" y="128"/>
+		<property name="Background" value="51.255.255.255"/>
+	</widget>
+	<widget field="Position I" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="384" y="96"/>
+		<property name="Background" value="51.255.255.255"/>
+	</widget>
+	<widget field="Error" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="400" y="352"/>
+		<property name="Background" value="102.102.255.255"/>
+	</widget>
+	<widget field="Position P" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="384" y="64"/>
+		<property name="Background" value="51.255.255.255"/>
+	</widget>
+	<widget field="PID Mode" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="380" y="384"/>
+		<height>20</height>
+		<property name="Background" value="102.102.255.255"/>
+	</widget>
+	<widget field="Velocity PID Setpoint" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="330" y="273"/>
+		<height>20</height>
+		<property name="Background" value="102.255.51.255"/>
+	</widget>
+	<widget field="Forklift Position Setpoint" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="534" y="338"/>
+		<property name="Background" value="102.102.255.255"/>
+	</widget>
+	<widget field="AutonomousModes" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="16" y="480"/>
+	</widget>
+	<widget field="Autonomous Get Right Container From Step" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="63"/>
+	</widget>
+	<widget field="Current 1" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="604" y="220"/>
+		<property name="Background" value="102.102.255.255"/>
+	</widget>
+	<widget field="PID Setpoint" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="368" y="416"/>
+		<height>20</height>
+		<property name="Background" value="102.255.255.255"/>
+	</widget>
+	<widget field="Current 2" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="604" y="252"/>
+		<property name="Background" value="102.102.255.255"/>
+	</widget>
+</dashboard>
+<live-window>
+</live-window>
+</xml>
