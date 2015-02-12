@@ -20,9 +20,6 @@ public class AutonomousStackTwoTotes extends CommandGroup
 	{
 		//goes for first tote
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION));
-		addSequential(new ChassisDriveStraight(1.0, 0.5, 0));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION));
 		
 		//goes for second tote
 		addSequential(new ChassisDriveStraight(1.0, 0.5, 0));
