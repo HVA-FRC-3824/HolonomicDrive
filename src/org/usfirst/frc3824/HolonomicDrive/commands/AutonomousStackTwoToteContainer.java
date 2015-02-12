@@ -1,7 +1,7 @@
 package org.usfirst.frc3824.HolonomicDrive.commands;
 import org.usfirst.frc3824.HolonomicDrive.Constants;
 import edu.wpi.first.wpilibj.command.CommandGroup;
-public class AutonomousStackThreeToteContainer extends CommandGroup
+public class AutonomousStackTwoToteContainer extends CommandGroup
 {
 	public AutonomousStackThreeTotes(){
 		ChassisTurnAngle chassisTurn45 = new ChassisTurnAngle(-45.0, 0.0);
@@ -14,11 +14,6 @@ public class AutonomousStackThreeToteContainer extends CommandGroup
 		//goes for second tote
 		addSequential(new ChassisDriveStraight(1.0, 0.5, 45));
 		addSequential(chassisTurn0);
-		addSequential(new ChassisDriveStraight(1.0, 0.5, 0));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION));
-		
-		//goes for third tote
 		addSequential(new ChassisDriveStraight(1.0, 0.5, 0));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION));
