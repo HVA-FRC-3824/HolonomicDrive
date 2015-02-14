@@ -31,7 +31,7 @@ public class Constants
     
     //***************************************************************************************
     // autonomous command constants
-    public final static double AUTONOMOUS_AUTOZONE_DRIVE_TIME                = 1.0;
+    public final static double AUTONOMOUS_AUTOZONE_DRIVE_TIME                = 1.25;
     public final static double AUTONOMOUS_AUTOZONE_DRIVER_POWER              = 0.5;
     public final static double AUTONOMOUS_AUTOZONE_DRIVE_ANGLE               = 0.0;
     
@@ -58,7 +58,8 @@ public class Constants
     
     public final static double FORKLIFT_JOG_STEP                             = 2.5;
     
-    public final static double FORKLIFT_VELOCITY_SETPOINT                    = 15.0;                         
+    public final static double FORKLIFT_VELOCITY_SETPOINT_LOW                = 10.0;                         
+    public final static double FORKLIFT_VELOCITY_SETPOINT_HIGH               = 25.0;                       
     
     public final static double FORKLIFT_VELOCITY_P                           = 0.01;
     public final static double FORKLIFT_VELOCITY_I                           = 0.01;
