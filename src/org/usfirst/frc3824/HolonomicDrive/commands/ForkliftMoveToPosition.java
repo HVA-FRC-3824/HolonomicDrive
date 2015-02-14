@@ -25,6 +25,7 @@ import org.usfirst.frc3824.HolonomicDrive.Constants;
 public class ForkliftMoveToPosition extends Command
 {
 	static double position = 0.0;
+	static double velocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT;
 
 	public ForkliftMoveToPosition()
 	{
@@ -47,20 +48,20 @@ public class ForkliftMoveToPosition extends Command
 	protected void initialize()
 	{
 		// Determine which button was pressed
-		if (Robot.oi.totePickUp.get() == true)
+//		if (Robot.oi.totePickUp.get() == true)
+//			position = Constants.FORKLIFT_TOTEPICKUP_POSITION;
+		if (Robot.oi.tote1.get() == true)
 			position = Constants.FORKLIFT_TOTEPICKUP_POSITION;
-		else if (Robot.oi.tote1.get() == true)
-			position = Constants.FORKLIFT_TOTE0_POSITION;
 		else if (Robot.oi.tote2.get() == true)
-			position = Constants.FORKLIFT_TOTE1_POSITION;
+			position = Constants.FORKLIFT_TOTE0_POSITION;
 		else if (Robot.oi.tote3.get() == true)
-			position = Constants.FORKLIFT_TOTE2_POSITION;
+			position = Constants.FORKLIFT_TOTE1_POSITION;
 		else if (Robot.oi.tote4.get() == true)
-			position = Constants.FORKLIFT_TOTE3_POSITION;
+			position = Constants.FORKLIFT_TOTE2_POSITION;
 		else if (Robot.oi.tote5.get() == true)
-			position = Constants.FORKLIFT_TOTE4_POSITION;
+			position = Constants.FORKLIFT_TOTE3_POSITION;
 		else if (Robot.oi.tote6.get() == true)
-			position = Constants.FORKLIFT_TOTE5_POSITION;
+			position = Constants.FORKLIFT_TOTE4_POSITION;
 		else if (Robot.oi.forkliftJogUp.get() == true)
 			position += Constants.FORKLIFT_JOG_STEP;
 		else if (Robot.oi.forkliftJogDown.get() == true)
@@ -118,6 +119,10 @@ public class ForkliftMoveToPosition extends Command
 		 }
 
 		return (false);
+	}
+	
+	public static void setVelocitySetpoint(double setpoint) {
+		velocitySetpoint = setpoint;
 	}
 
 	// Called once after isFinished returns true
