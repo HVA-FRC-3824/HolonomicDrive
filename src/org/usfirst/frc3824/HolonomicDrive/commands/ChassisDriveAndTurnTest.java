@@ -23,11 +23,9 @@ public class ChassisDriveAndTurnTest extends CommandGroup
 
 		// Drive forward
 		addSequential(new ChassisDriveStraight(1.0, 0.5, 0.0));
-		// addSequential(new WaitCommand(1.0));
 
 		// Turn around
 		addSequential(chassisTurn90);
-		// addSequential(new WaitCommand(1.0));
 
 		// Drive forward in opposite directions
 		addSequential(new ChassisDriveStraight(1.0, 0.5, 0.0));

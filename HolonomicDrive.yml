@@ -122,7 +122,7 @@ Children:
           default: '0'
           name: Input Channel (Analog)
           validators: [AnalogInput]
-          value: '0'
+          value: '1'
       Base: Gyro
       Name: Gyro
     Properties:
@@ -569,11 +569,23 @@ Children:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Forklift Joystick}
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id004
           default: '1'
           name: Button
           validators: null
           value: '6'
+        Command: !!robotbuilder.data.properties.TypeSelectionProperty
+          default: None
+          name: Command
+          type: Command
+          validators: *id005
+          value: Tote Capture Control
+        When to Run: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id006
+          default: '1'
+          name: Button
+          validators: null
+          value: '2'
         Command: !!robotbuilder.data.properties.TypeSelectionProperty
           default: None
           name: Command
@@ -749,6 +761,26 @@ Children:
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
     Name: Set Capture Arm Offsets
+    Base: Command Group
+    Name: Autonomous Get Container To Autozone
+  - Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command Group
+    Name: Autonomous Stack Container and Tote
+  - Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command Group
+    Name: Autonomous Stack Two Tote Container
+  - Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command Group
+    Name: Autonomous Stack Three Tote Container
   Properties: {}
   Base: Commands
   Name: Commands

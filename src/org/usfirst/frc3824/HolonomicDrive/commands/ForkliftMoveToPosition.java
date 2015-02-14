@@ -13,6 +13,8 @@ package org.usfirst.frc3824.HolonomicDrive.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc3824.HolonomicDrive.Robot;
 import org.usfirst.frc3824.HolonomicDrive.Constants;
 
@@ -22,7 +24,7 @@ import org.usfirst.frc3824.HolonomicDrive.Constants;
  */
 public class ForkliftMoveToPosition extends Command
 {
-	double position = 0.0;
+	static double position = 0.0;
 
 	public ForkliftMoveToPosition()
 	{
@@ -38,7 +40,7 @@ public class ForkliftMoveToPosition extends Command
 		this();
 
 		// remember the desired position
-		this.position = position;
+		ForkliftMoveToPosition.position = position;
 	}
 
 	// Called just before this Command runs the first time
@@ -48,30 +50,30 @@ public class ForkliftMoveToPosition extends Command
 		if (Robot.oi.totePickUp.get() == true)
 			position = Constants.FORKLIFT_TOTEPICKUP_POSITION;
 		else if (Robot.oi.tote1.get() == true)
-			position = Constants.FORKLIFT_TOTE1_POSITION;
+			position = Constants.FORKLIFT_TOTE0_POSITION;
 		else if (Robot.oi.tote2.get() == true)
-			position = Constants.FORKLIFT_TOTE2_POSITION;
+			position = Constants.FORKLIFT_TOTE1_POSITION;
 		else if (Robot.oi.tote3.get() == true)
-			position = Constants.FORKLIFT_TOTE3_POSITION;
+			position = Constants.FORKLIFT_TOTE2_POSITION;
 		else if (Robot.oi.tote4.get() == true)
-			position = Constants.FORKLIFT_TOTE4_POSITION;
+			position = Constants.FORKLIFT_TOTE3_POSITION;
 		else if (Robot.oi.tote5.get() == true)
-			position = Constants.FORKLIFT_TOTE5_POSITION;
+			position = Constants.FORKLIFT_TOTE4_POSITION;
 		else if (Robot.oi.tote6.get() == true)
-			position = Constants.FORKLIFT_TOTE6_POSITION;
+			position = Constants.FORKLIFT_TOTE5_POSITION;
 		else if (Robot.oi.forkliftJogUp.get() == true)
 			position += Constants.FORKLIFT_JOG_STEP;
 		else if (Robot.oi.forkliftJogDown.get() == true)
 			position -= Constants.FORKLIFT_JOG_STEP;
 
-		SmartDashboard.putString("Command Init", "Yes");
-
 		// ensure the range of the position
-		if (position < 0.0)
-			position = 0.0;
+//		if (position < 0.0)
+//			position = 0.0;
+//
+//		if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
+//			position = Constants.FORKLIFT_MAXIMUM_POSITION;
 
-		if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
-			position = Constants.FORKLIFT_MAXIMUM_POSITION;
+		SmartDashboard.putNumber("Forklift Position Setpoint", position);
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -81,16 +83,12 @@ public class ForkliftMoveToPosition extends Command
 		// position PID
 		if (Math.abs(Robot.forklift.getPosition() - position) < Constants.FORKLIFT_SWITCH_TO_POSITION_DISTANCE)
 		{
-			SmartDashboard.putString("PID Mode", "Position");
-
 			// set the forklift PID to position control
 			// Note: the method enables the position encoder
 			Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_POSITION_MODE, position);
 		}
 		else
 		{
-			SmartDashboard.putString("PID Mode", "Velocity");
-
 			// determine if above or below the desired set point
 			if (Robot.forklift.getPosition() < position)
 			{
@@ -104,8 +102,8 @@ public class ForkliftMoveToPosition extends Command
 			}
 		}
 
+		SmartDashboard.putNumber("Forklift Position", Robot.forklift.getPosition());
 		SmartDashboard.putNumber("Error", Robot.forklift.getError());
-		SmartDashboard.putNumber("Encoder Velocity", Robot.forklift.getVelocity());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
@@ -116,7 +114,6 @@ public class ForkliftMoveToPosition extends Command
 				Constants.FORKLIFT_AT_POSITION_DISTANCE) &&
 				(Robot.forklift.getPIDMode() == Constants.FORKLIFT_POSITION_MODE))
 		 {
-			 System.out.println("Finished");
 			 return(true);
 		 }
 

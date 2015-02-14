@@ -69,7 +69,7 @@ public class RobotMap
 
         driveTrainHolonomicDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
         driveTrainHolonomicDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-        driveTrainGyro = new Gyro(0);
+        driveTrainGyro = new Gyro(1);
         LiveWindow.addSensor("DriveTrain", "Gyro", driveTrainGyro);
         driveTrainGyro.setSensitivity(0.007);
         forkliftMotor = new Talon(4);
