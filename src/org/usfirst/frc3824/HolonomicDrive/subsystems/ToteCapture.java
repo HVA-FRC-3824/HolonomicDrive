@@ -46,4 +46,10 @@ public class ToteCapture extends Subsystem
 	{
 		leftWheel.set(power);
 	}
+
+	public void setMotors(double power){
+		setLeftMotor(power);
+		setRightMotor(power);
+	}
+
 }
