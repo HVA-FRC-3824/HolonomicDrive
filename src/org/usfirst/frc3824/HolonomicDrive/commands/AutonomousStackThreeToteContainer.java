@@ -3,7 +3,7 @@ import org.usfirst.frc3824.HolonomicDrive.Constants;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 public class AutonomousStackThreeToteContainer extends CommandGroup
 {
-	public AutonomousStackThreeTotes(){
+	public AutonomousStackThreeToteContainer(){
 		ChassisTurnAngle chassisTurn45 = new ChassisTurnAngle(-45.0, 0.0);
 		ChassisTurnAngle chassisTurn0 = new ChassisTurnAngle(0.0, 0.0);
 
