@@ -122,7 +122,7 @@ Children:
           default: '0'
           name: Input Channel (Analog)
           validators: [AnalogInput]
-          value: '0'
+          value: '1'
       Base: Gyro
       Name: Gyro
     Properties:
@@ -673,6 +673,18 @@ Children:
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
     Name: Tote Capture Control
+  - Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command Group
+    Name: Autonomous Get Container To Autozone
+  - Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command Group
+    Name: Autonomous Stack Container and Tote
   Properties: {}
   Base: Commands
   Name: Commands

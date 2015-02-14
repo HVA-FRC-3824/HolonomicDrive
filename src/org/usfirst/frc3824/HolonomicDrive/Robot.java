@@ -101,8 +101,10 @@ public class Robot extends IterativeRobot
 	public void autonomousInit()
 	{
 		// schedule the autonomous command (example)
-		if (autonomousCommand != null)
+		if (chooser.getSelected() != null) {
+			Command autonomousCommand = (edu.wpi.first.wpilibj.command.Command)chooser.getSelected();
 			autonomousCommand.start();
+		}
 	}
 
 	/*
@@ -131,15 +133,27 @@ public class Robot extends IterativeRobot
 	 */
 	public void teleopPeriodic()
 	{
-
 		Scheduler.getInstance().run();
 
 		// add current gyro angle to smart dashboard
-		SmartDashboard.putNumber("Gyro Angle",
-				RobotMap.driveTrainGyro.getAngle());
+		SmartDashboard.putNumber("Gyro Angle", RobotMap.driveTrainGyro.getAngle());
 		
-		SmartDashboard.putNumber("Current 1", RobotMap.powerDistributionPanel.getCurrent(14));
-		SmartDashboard.putNumber("Current 2", RobotMap.powerDistributionPanel.getCurrent(15));
+		SmartDashboard.putNumber("Current 0", RobotMap.powerDistributionPanel.getCurrent(0));
+		SmartDashboard.putNumber("Current 1", RobotMap.powerDistributionPanel.getCurrent(1));
+		SmartDashboard.putNumber("Current 2", RobotMap.powerDistributionPanel.getCurrent(2));
+		SmartDashboard.putNumber("Current 3", RobotMap.powerDistributionPanel.getCurrent(3));
+		SmartDashboard.putNumber("Current 4", RobotMap.powerDistributionPanel.getCurrent(4));
+		SmartDashboard.putNumber("Current 5", RobotMap.powerDistributionPanel.getCurrent(5));
+		SmartDashboard.putNumber("Current 6", RobotMap.powerDistributionPanel.getCurrent(6));
+		SmartDashboard.putNumber("Current 7", RobotMap.powerDistributionPanel.getCurrent(7));
+		SmartDashboard.putNumber("Current 8", RobotMap.powerDistributionPanel.getCurrent(8));
+		SmartDashboard.putNumber("Current 9", RobotMap.powerDistributionPanel.getCurrent(9));
+		SmartDashboard.putNumber("Current 10", RobotMap.powerDistributionPanel.getCurrent(10));
+		SmartDashboard.putNumber("Current 11", RobotMap.powerDistributionPanel.getCurrent(11));
+		SmartDashboard.putNumber("Current 12", RobotMap.powerDistributionPanel.getCurrent(12));
+		SmartDashboard.putNumber("Current 13", RobotMap.powerDistributionPanel.getCurrent(13));
+		SmartDashboard.putNumber("Current 14", RobotMap.powerDistributionPanel.getCurrent(14));
+		SmartDashboard.putNumber("Current 15", RobotMap.powerDistributionPanel.getCurrent(15));
 	}	
 	/*
 	 * This function is called periodically during test mode
