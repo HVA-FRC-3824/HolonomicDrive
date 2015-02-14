@@ -30,8 +30,8 @@ public class  ToteCaptureControl extends Command {
 	intakePower = 0.5;
     }
 
-    public ToteCaptureControle(double power){
-	intakePower = power;
+    public ToteCaptureControl(double power){
+    	intakePower = power;
     }
 
     // Called just before this Command runs the first time

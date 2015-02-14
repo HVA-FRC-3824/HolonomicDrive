@@ -25,7 +25,7 @@ import org.usfirst.frc3824.HolonomicDrive.Constants;
 public class ForkliftMoveToPosition extends Command
 {
 	static double position = 0.0;
-	static double velocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_LOW;
+	public static double velocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_LOW;
 
 	public ForkliftMoveToPosition()
 	{
