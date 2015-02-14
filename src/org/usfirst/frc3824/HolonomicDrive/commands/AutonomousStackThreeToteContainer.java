@@ -8,7 +8,7 @@ public class AutonomousStackThreeToteContainer extends CommandGroup
 		ChassisTurnAngle chassisTurn0 = new ChassisTurnAngle(0.0, 0.0);
 
 		//goes for first tote
-		addParallel(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION));
+		addParallel(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION));
 		addSequential(chassisTurn45);
 
 		//goes for second tote
@@ -16,12 +16,12 @@ public class AutonomousStackThreeToteContainer extends CommandGroup
 		addSequential(chassisTurn0);
 		addSequential(new ChassisDriveStraight(1.0, 0.5, 0));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION));
 		
 		//goes for third tote
 		addSequential(new ChassisDriveStraight(1.0, 0.5, 0));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION));
 				
 		// takes robot and totes to autozone
 		addSequential(new ChassisDriveStraight(2.0, 0.7, 90));

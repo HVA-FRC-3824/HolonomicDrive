@@ -21,10 +21,10 @@ public class AutonomousStackContainerandTote extends CommandGroup {
     
     public  AutonomousStackContainerandTote() {
     	
-    	addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE3_POSITION));
+    	addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION));
     	addSequential(new ChassisDriveStraight(0.5, 0.5, 0));
     	addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION));
-    	addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION));
+    	addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION));
 		addSequential(new ChassisDriveStraight(2.5, 0.5, -90));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION));
 		addSequential(new ChassisDriveStraight(1.0, 0.5, 180));

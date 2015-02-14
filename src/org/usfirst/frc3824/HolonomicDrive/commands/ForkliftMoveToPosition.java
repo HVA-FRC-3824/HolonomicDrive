@@ -50,28 +50,28 @@ public class ForkliftMoveToPosition extends Command
 		if (Robot.oi.totePickUp.get() == true)
 			position = Constants.FORKLIFT_TOTEPICKUP_POSITION;
 		else if (Robot.oi.tote1.get() == true)
-			position = Constants.FORKLIFT_TOTE1_POSITION;
+			position = Constants.FORKLIFT_TOTE0_POSITION;
 		else if (Robot.oi.tote2.get() == true)
-			position = Constants.FORKLIFT_TOTE2_POSITION;
+			position = Constants.FORKLIFT_TOTE1_POSITION;
 		else if (Robot.oi.tote3.get() == true)
-			position = Constants.FORKLIFT_TOTE3_POSITION;
+			position = Constants.FORKLIFT_TOTE2_POSITION;
 		else if (Robot.oi.tote4.get() == true)
-			position = Constants.FORKLIFT_TOTE4_POSITION;
+			position = Constants.FORKLIFT_TOTE3_POSITION;
 		else if (Robot.oi.tote5.get() == true)
-			position = Constants.FORKLIFT_TOTE5_POSITION;
+			position = Constants.FORKLIFT_TOTE4_POSITION;
 		else if (Robot.oi.tote6.get() == true)
-			position = Constants.FORKLIFT_TOTE6_POSITION;
+			position = Constants.FORKLIFT_TOTE5_POSITION;
 		else if (Robot.oi.forkliftJogUp.get() == true)
 			position += Constants.FORKLIFT_JOG_STEP;
 		else if (Robot.oi.forkliftJogDown.get() == true)
 			position -= Constants.FORKLIFT_JOG_STEP;
 
 		// ensure the range of the position
-		if (position < 0.0)
-			position = 0.0;
-
-		if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
-			position = Constants.FORKLIFT_MAXIMUM_POSITION;
+//		if (position < 0.0)
+//			position = 0.0;
+//
+//		if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
+//			position = Constants.FORKLIFT_MAXIMUM_POSITION;
 
 		SmartDashboard.putNumber("Forklift Position Setpoint", position);
 	}

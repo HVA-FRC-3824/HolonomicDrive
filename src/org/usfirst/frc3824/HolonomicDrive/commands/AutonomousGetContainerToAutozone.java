@@ -21,7 +21,7 @@ public class AutonomousGetContainerToAutozone extends CommandGroup {
     
     public  AutonomousGetContainerToAutozone() {
         
-    	addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE3_POSITION));
+    	addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION));
 		addSequential(new ChassisDriveStraight(2.0, 0.7, -90));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION));
 		addSequential(new ChassisDriveStraight(1.0, 0.5, 180));
