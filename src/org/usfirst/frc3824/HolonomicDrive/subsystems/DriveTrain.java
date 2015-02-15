@@ -32,10 +32,7 @@ public class DriveTrain extends Subsystem
 
 	private AnglePIDOutput angleOutput = new AnglePIDOutput();
 
-	private PIDController angleGyroController = new PIDController(
-			Constants.DrivetrainAngleGyroControllerP,
-			Constants.DrivetrainAngleGyroControllerI,
-			Constants.DrivetrainAngleGyroControllerD, gyro, angleOutput);
+	private PIDController angleGyroController = new PIDController(Constants.DrivetrainAngleGyroControllerP, Constants.DrivetrainAngleGyroControllerI, Constants.DrivetrainAngleGyroControllerD, gyro, angleOutput);
 
 	// used as the value for drive while running under PIDControl. Those values
 	// not set by the controller can be set by a command directly
@@ -61,10 +58,9 @@ public class DriveTrain extends Subsystem
 	{
 		SmartDashboard.putNumber("magnitude", joy.getMagnitude());
 		SmartDashboard.putNumber("direction", joy.getDirectionDegrees());
-		SmartDashboard.putNumber("angle",     joy.getTwist() * 0.5);
+		SmartDashboard.putNumber("angle", joy.getTwist() * 0.5);
 
-		holonomicDrive.mecanumDrive_Polar(joy.getMagnitude(),
-				joy.getDirectionDegrees(), joy.getTwist() * 0.5);
+		holonomicDrive.mecanumDrive_Polar(joy.getMagnitude(), joy.getDirectionDegrees(), joy.getTwist() * 0.5);
 	}
 
 	public void holonomicDrive(double magnitude, double direction, double angle)
@@ -86,20 +82,26 @@ public class DriveTrain extends Subsystem
 	{
 		return (gyro.getAngle());
 	}
-	
-	public double getRelativeAngle() {
+
+	public double getRelativeAngle()
+	{
 		double absAngle = gyro.getAngle();
-		
-		if (absAngle < 0.0) {
-			while (absAngle < 0.0) {
+
+		if (absAngle < 0.0)
+		{
+			while (absAngle < 0.0)
+			{
 				absAngle += 360.0;
 			}
-		} else if (absAngle >= 360.0) {
-			while (absAngle >= 360.0) {
+		}
+		else if (absAngle >= 360.0)
+		{
+			while (absAngle >= 360.0)
+			{
 				absAngle -= 360.0;
 			}
 		}
-		
+
 		return absAngle;
 	}
 
@@ -138,7 +140,7 @@ public class DriveTrain extends Subsystem
 	 */
 	public PIDController getAngleGyroController()
 	{
-		return(angleGyroController);
+		return (angleGyroController);
 	}
 
 	public class AnglePIDOutput implements PIDOutput

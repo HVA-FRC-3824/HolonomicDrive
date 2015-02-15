@@ -25,6 +25,7 @@ import org.usfirst.frc3824.HolonomicDrive.Constants;
 public class ForkliftMoveToPosition extends Command
 {
 	static double position = 0.0;
+	public static double velocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_LOW;
 
 	public ForkliftMoveToPosition()
 	{
@@ -47,8 +48,12 @@ public class ForkliftMoveToPosition extends Command
 	protected void initialize()
 	{
 		// Determine which button was pressed
+//		if (Robot.oi.totePickUp.get() == true)
+//			position = Constants.FORKLIFT_TOTEPICKUP_POSITION;
 		if (Robot.oi.totePickUp.get() == true)
 			position = Constants.FORKLIFT_TOTEPICKUP_POSITION;
+		else if (Robot.oi.tote0.get() == true)
+			position = Constants.FORKLIFT_TOTE0_POSITION;
 		else if (Robot.oi.tote1.get() == true)
 			position = Constants.FORKLIFT_TOTE1_POSITION;
 		else if (Robot.oi.tote2.get() == true)
@@ -59,19 +64,17 @@ public class ForkliftMoveToPosition extends Command
 			position = Constants.FORKLIFT_TOTE4_POSITION;
 		else if (Robot.oi.tote5.get() == true)
 			position = Constants.FORKLIFT_TOTE5_POSITION;
-		else if (Robot.oi.tote6.get() == true)
-			position = Constants.FORKLIFT_TOTE6_POSITION;
 		else if (Robot.oi.forkliftJogUp.get() == true)
 			position += Constants.FORKLIFT_JOG_STEP;
 		else if (Robot.oi.forkliftJogDown.get() == true)
 			position -= Constants.FORKLIFT_JOG_STEP;
 
 		// ensure the range of the position
-		if (position < 0.0)
-			position = 0.0;
-
-		if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
-			position = Constants.FORKLIFT_MAXIMUM_POSITION;
+//		if (position < 0.0)
+//			position = 0.0;
+//
+//		if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
+//			position = Constants.FORKLIFT_MAXIMUM_POSITION;
 
 		SmartDashboard.putNumber("Forklift Position Setpoint", position);
 	}
@@ -93,12 +96,12 @@ public class ForkliftMoveToPosition extends Command
 			if (Robot.forklift.getPosition() < position)
 			{
 				// set the fork-lift mode to position and set the position
-				Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, Constants.FORKLIFT_VELOCITY_SETPOINT);
+				Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, velocitySetpoint);
 			}
 			else
 			{
 				// set the fork-lift mode to position and set the position
-				Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, -Constants.FORKLIFT_VELOCITY_SETPOINT);
+				Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, -velocitySetpoint);
 			}
 		}
 
@@ -118,6 +121,10 @@ public class ForkliftMoveToPosition extends Command
 		 }
 
 		return (false);
+	}
+	
+	public static void setVelocitySetpoint(double setpoint) {
+		velocitySetpoint = setpoint;
 	}
 
 	// Called once after isFinished returns true

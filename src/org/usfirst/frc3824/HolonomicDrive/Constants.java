@@ -22,16 +22,16 @@ public class Constants
     //***************************************************************************************
     // forklift positions for each tote height
     public final static double FORKLIFT_TOTEPICKUP_POSITION                  = 0.0;
-    public final static double FORKLIFT_TOTE1_POSITION                       = 5.0; //going to be well over the height of one tote
-    public final static double FORKLIFT_TOTE2_POSITION                       = 17.0;
-    public final static double FORKLIFT_TOTE3_POSITION                       = 28.0;
+    public final static double FORKLIFT_TOTE0_POSITION                       = 5.0; //going to be well over the height of one tote
+    public final static double FORKLIFT_TOTE1_POSITION                       = 17.0;
+    public final static double FORKLIFT_TOTE2_POSITION                       = 23.0;
+    public final static double FORKLIFT_TOTE3_POSITION                       = 30.5;
     public final static double FORKLIFT_TOTE4_POSITION                       = 38.0;
-    public final static double FORKLIFT_TOTE5_POSITION                       = 47.0;
-    public final static double FORKLIFT_TOTE6_POSITION                       = 54.50;
+    public final static double FORKLIFT_TOTE5_POSITION                       = 45.5;
     
     //***************************************************************************************
     // autonomous command constants
-    public final static double AUTONOMOUS_AUTOZONE_DRIVE_TIME                = 1.0;
+    public final static double AUTONOMOUS_AUTOZONE_DRIVE_TIME                = 1.25;
     public final static double AUTONOMOUS_AUTOZONE_DRIVER_POWER              = 0.5;
     public final static double AUTONOMOUS_AUTOZONE_DRIVE_ANGLE               = 0.0;
     
@@ -58,7 +58,8 @@ public class Constants
     
     public final static double FORKLIFT_JOG_STEP                             = 2.5;
     
-    public final static double FORKLIFT_VELOCITY_SETPOINT                    = 20.0;                         
+    public final static double FORKLIFT_VELOCITY_SETPOINT_LOW                = 10.0;                         
+    public final static double FORKLIFT_VELOCITY_SETPOINT_HIGH               = 25.0;                       
     
     public final static double FORKLIFT_VELOCITY_P                           = 0.01;
     public final static double FORKLIFT_VELOCITY_I                           = 0.01;
