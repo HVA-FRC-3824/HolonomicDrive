@@ -87,7 +87,8 @@ public class Robot extends IterativeRobot
 	 */
 	public void disabledInit()
 	{
-		
+		// Reset Position to 0.0 when disabled
+		ForkliftMoveToPosition.setPositionSetpoint(0.0);
 	}
 
 	public void disabledPeriodic()
