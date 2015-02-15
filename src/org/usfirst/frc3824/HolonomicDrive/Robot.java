@@ -43,7 +43,7 @@ public class Robot extends IterativeRobot
 
 	public static SendableChooser chooser;
 
-	/**
+	/*
 	 * This function is run when the robot is first started up and should be
 	 * used for any initialization code.
 	 */
@@ -72,6 +72,8 @@ public class Robot extends IterativeRobot
 		chooser = new SendableChooser();
 		chooser.addDefault("1) Do Nothing", new AutonomousDoNothing());
 		chooser.addObject("2) Drive to Auto Zone", new AutonomousDriveToAutoZone());
+		chooser.addObject("3) Drag Tote Right to Autozone", new AutonomousDragToteRight());
+		chooser.addObject("4) Drag Container to Autozone", new AutonomousGetContainerToAutozone());
 		chooser.addObject("3) Stack One Tote", new AutonomousStackOneTote());
 		chooser.addObject("4) Stack Two Totes", new AutonomousStackTwoTotes());
 		chooser.addObject("5) Stack Three Totes", new AutonomousStackThreeTotes());
@@ -138,22 +140,22 @@ public class Robot extends IterativeRobot
 		// add current gyro angle to smart dashboard
 		SmartDashboard.putNumber("Gyro Angle", RobotMap.driveTrainGyro.getAngle());
 		
-		SmartDashboard.putNumber("Current 0", RobotMap.powerDistributionPanel.getCurrent(0));
-		SmartDashboard.putNumber("Current 1", RobotMap.powerDistributionPanel.getCurrent(1));
-		SmartDashboard.putNumber("Current 2", RobotMap.powerDistributionPanel.getCurrent(2));
-		SmartDashboard.putNumber("Current 3", RobotMap.powerDistributionPanel.getCurrent(3));
-		SmartDashboard.putNumber("Current 4", RobotMap.powerDistributionPanel.getCurrent(4));
-		SmartDashboard.putNumber("Current 5", RobotMap.powerDistributionPanel.getCurrent(5));
-		SmartDashboard.putNumber("Current 6", RobotMap.powerDistributionPanel.getCurrent(6));
-		SmartDashboard.putNumber("Current 7", RobotMap.powerDistributionPanel.getCurrent(7));
-		SmartDashboard.putNumber("Current 8", RobotMap.powerDistributionPanel.getCurrent(8));
-		SmartDashboard.putNumber("Current 9", RobotMap.powerDistributionPanel.getCurrent(9));
-		SmartDashboard.putNumber("Current 10", RobotMap.powerDistributionPanel.getCurrent(10));
-		SmartDashboard.putNumber("Current 11", RobotMap.powerDistributionPanel.getCurrent(11));
-		SmartDashboard.putNumber("Current 12", RobotMap.powerDistributionPanel.getCurrent(12));
-		SmartDashboard.putNumber("Current 13", RobotMap.powerDistributionPanel.getCurrent(13));
-		SmartDashboard.putNumber("Current 14", RobotMap.powerDistributionPanel.getCurrent(14));
-		SmartDashboard.putNumber("Current 15", RobotMap.powerDistributionPanel.getCurrent(15));
+//		SmartDashboard.putNumber("Current 0", RobotMap.powerDistributionPanel.getCurrent(0));
+//		SmartDashboard.putNumber("Current 1", RobotMap.powerDistributionPanel.getCurrent(1));
+//		SmartDashboard.putNumber("Current 2", RobotMap.powerDistributionPanel.getCurrent(2));
+//		SmartDashboard.putNumber("Current 3", RobotMap.powerDistributionPanel.getCurrent(3));
+//		SmartDashboard.putNumber("Current 4", RobotMap.powerDistributionPanel.getCurrent(4));
+//		SmartDashboard.putNumber("Current 5", RobotMap.powerDistributionPanel.getCurrent(5));
+//		SmartDashboard.putNumber("Current 6", RobotMap.powerDistributionPanel.getCurrent(6));
+//		SmartDashboard.putNumber("Current 7", RobotMap.powerDistributionPanel.getCurrent(7));
+//		SmartDashboard.putNumber("Current 8", RobotMap.powerDistributionPanel.getCurrent(8));
+//		SmartDashboard.putNumber("Current 9", RobotMap.powerDistributionPanel.getCurrent(9));
+//		SmartDashboard.putNumber("Current 10", RobotMap.powerDistributionPanel.getCurrent(10));
+//		SmartDashboard.putNumber("Current 11", RobotMap.powerDistributionPanel.getCurrent(11));
+//		SmartDashboard.putNumber("Current 12", RobotMap.powerDistributionPanel.getCurrent(12));
+//		SmartDashboard.putNumber("Current 13", RobotMap.powerDistributionPanel.getCurrent(13));
+//		SmartDashboard.putNumber("Current 14", RobotMap.powerDistributionPanel.getCurrent(14));
+//		SmartDashboard.putNumber("Current 15", RobotMap.powerDistributionPanel.getCurrent(15));
 	}	
 	/*
 	 * This function is called periodically during test mode

@@ -25,7 +25,7 @@ import org.usfirst.frc3824.HolonomicDrive.Constants;
 public class ForkliftMoveToPosition extends Command
 {
 	static double position = 0.0;
-	public static double velocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_LOW;
+	static double velocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_LOW;
 
 	public ForkliftMoveToPosition()
 	{
@@ -40,6 +40,9 @@ public class ForkliftMoveToPosition extends Command
 		// call the default constructor
 		this();
 
+		System.out.println("Position:");
+		System.out.println(position);
+
 		// remember the desired position
 		ForkliftMoveToPosition.position = position;
 	}
@@ -48,8 +51,6 @@ public class ForkliftMoveToPosition extends Command
 	protected void initialize()
 	{
 		// Determine which button was pressed
-//		if (Robot.oi.totePickUp.get() == true)
-//			position = Constants.FORKLIFT_TOTEPICKUP_POSITION;
 		if (Robot.oi.totePickUp.get() == true)
 			position = Constants.FORKLIFT_TOTEPICKUP_POSITION;
 		else if (Robot.oi.tote0.get() == true)
@@ -70,18 +71,18 @@ public class ForkliftMoveToPosition extends Command
 			position -= Constants.FORKLIFT_JOG_STEP;
 
 		// ensure the range of the position
-//		if (position < 0.0)
-//			position = 0.0;
-//
-//		if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
-//			position = Constants.FORKLIFT_MAXIMUM_POSITION;
+		// if (position < 0.0)
+		// position = 0.0;
+		//
+		// if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
+		// position = Constants.FORKLIFT_MAXIMUM_POSITION;
 
 		SmartDashboard.putNumber("Forklift Position Setpoint", position);
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
-	{	
+	{
 		// determine if the distance from set point is close enough to use the
 		// position PID
 		if (Math.abs(Robot.forklift.getPosition() - position) < Constants.FORKLIFT_SWITCH_TO_POSITION_DISTANCE)
@@ -113,19 +114,14 @@ public class ForkliftMoveToPosition extends Command
 	protected boolean isFinished()
 	{
 		// determine if the forklift is in the desire position
-		if ((Math.abs(Robot.forklift.getPosition() - position) < 
-				Constants.FORKLIFT_AT_POSITION_DISTANCE) &&
-				(Robot.forklift.getPIDMode() == Constants.FORKLIFT_POSITION_MODE))
-		 {
-			 return(true);
-		 }
+		if ((Math.abs(Robot.forklift.getPosition() - position) < Constants.FORKLIFT_AT_POSITION_DISTANCE) && (Robot.forklift.getPIDMode() == Constants.FORKLIFT_POSITION_MODE))
+		{
+			return (true);
+		}
 
 		return (false);
 	}
-	
-	public static void setVelocitySetpoint(double setpoint) {
-		velocitySetpoint = setpoint;
-	}
+
 
 	// Called once after isFinished returns true
 	protected void end()
@@ -138,5 +134,16 @@ public class ForkliftMoveToPosition extends Command
 	protected void interrupted()
 	{
 
+	}
+	
+	public static void setForkliftPosition(double position)
+	{
+		// remember the desired position
+		ForkliftMoveToPosition.position = position;
+	}
+	
+	public static void setVelocitySetpoint(double setpoint)
+	{
+		velocitySetpoint = setpoint;
 	}
 }

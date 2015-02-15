@@ -33,7 +33,7 @@ public class Forklift extends Subsystem
 
 	// set the present PID mode to invalid to ensure the mode is set properly
 	// in the initialization
-	static int     presentPIDmode    = -1;
+	static int presentPIDmode = -1;
 
 	PIDController velocityPID = new PIDController(Constants.FORKLIFT_VELOCITY_P, 
 	                                              Constants.FORKLIFT_VELOCITY_I, 
