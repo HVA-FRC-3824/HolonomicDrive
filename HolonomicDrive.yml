@@ -447,7 +447,7 @@ Children:
           name: Command
           type: Command
           validators: *id005
-          value: Forklift Move To Position
+          value: Forklift Move Continuous
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id006
           default: whileHeld
@@ -471,13 +471,13 @@ Children:
           name: Command
           type: Command
           validators: *id005
-          value: Forklift Move To Position
+          value: Forklift Move Continuous
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id006
           default: whileHeld
           name: When to Run
           validators: null
-          value: whenPressed
+          value: whileHeld
       Base: Joystick Button
       Name: Forklift Jog Down
     - Children: []
@@ -753,11 +753,19 @@ Children:
         name: Button on SmartDashboard, validators: null, value: false}
     Base: Command
     Name: ForkliftSetSpeed
+  - Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Forklift}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command
+    Name: Forklift Move Continuous
   Properties: {}
   Base: Commands
   Name: Commands
 Properties:
-  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\First\workspace',
+  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Jackson\workspace',
     extension: null, folder: true, name: Eclipse Workspace, validators: null, value: ..\}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
