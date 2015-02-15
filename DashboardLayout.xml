@@ -1,63 +1,69 @@
 <xml version="1.0">
 <dashboard>
-	<widget field="Autonomous Stack Three Tote Container" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="10" y="10"/>
-	</widget>
-	<widget field="Autonomous Stack Two Tote Container" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1" y="30"/>
-	</widget>
-	<widget field="Current 15" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="537" y="42"/>
-	</widget>
-	<widget field="Current 14" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="537" y="21"/>
-	</widget>
-	<widget field="Current 13" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="537" y="0"/>
-	</widget>
-	<widget field="Current 12" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="289" y="563"/>
-	</widget>
-	<widget field="Current 11" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="289" y="542"/>
-	</widget>
-	<widget field="Current 10" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="289" y="521"/>
-	</widget>
-	<widget field="Current 9" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="289" y="500"/>
-	</widget>
-	<widget field="Current 8" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="289" y="479"/>
-	</widget>
-	<widget field="Current 7" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="289" y="458"/>
-	</widget>
-	<widget field="Current 6" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="289" y="437"/>
+	<widget field="Current 4" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="345" y="576"/>
 	</widget>
 	<widget field="Current 5" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="289" y="149"/>
+		<location x="345" y="555"/>
 	</widget>
-	<widget field="Current 4" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="273" y="34"/>
+	<widget field="Current 6" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="345" y="534"/>
 	</widget>
-	<widget field="Current 3" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="449"/>
+	<widget field="Current 7" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="345" y="513"/>
 	</widget>
-	<widget field="Current 0" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="34"/>
+	<widget field="Current 8" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="345" y="492"/>
+	</widget>
+	<widget field="Current 9" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="139" y="34"/>
+	</widget>
+	<widget field="Current 10" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="345" y="471"/>
+	</widget>
+	<widget field="Current 11" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="345" y="149"/>
+	</widget>
+	<widget field="Current 12" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="345" y="42"/>
+	</widget>
+	<widget field="Autonomous Stack Three Tote Container" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="345" y="437"/>
+	</widget>
+	<widget field="Current 13" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="345" y="21"/>
+	</widget>
+	<widget field="Current 14" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="345" y="0"/>
+	</widget>
+	<widget field="Current 15" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="42"/>
+	</widget>
+	<widget field="Autonomous Drag Tote Left" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="133" y="0"/>
 	</widget>
 	<widget field="Autonomous Stack Container and Tote" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="273" y="0"/>
+		<location x="0" y="551"/>
+	</widget>
+	<widget field="Autonomous Drag Tote Right" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="517"/>
 	</widget>
 	<widget field="Autonomous Get Container To Autozone" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="37" y="483"/>
+	</widget>
+	<widget field="Autonomous Stack Two Tote Container" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="37" y="449"/>
+	</widget>
+	<widget field="Current 0" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="21"/>
+	</widget>
+	<widget field="Current 3" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="0" y="0"/>
 	</widget>
 	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.VideoStreamViewerExtension">
-		<location x="760" y="9"/>
-		<width>813</width>
-		<height>677</height>
+		<location x="804" y="32"/>
+		<width>508</width>
+		<height>385</height>
 	</static-widget>
 	<widget field="Chassis Drive Straight" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
 		<location x="96" y="383"/>
@@ -125,7 +131,7 @@
 		<location x="64" y="320"/>
 	</widget>
 	<widget field="Autonomous Stack One Tote" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="73" y="224"/>
+		<location x="534" y="19"/>
 	</widget>
 	<widget field="Autonomous Drive To Auto Zone" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
 		<location x="54" y="192"/>

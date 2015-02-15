@@ -48,8 +48,6 @@ public class ForkliftMoveToPosition extends Command
 	protected void initialize()
 	{
 		// Determine which button was pressed
-//		if (Robot.oi.totePickUp.get() == true)
-//			position = Constants.FORKLIFT_TOTEPICKUP_POSITION;
 		if (Robot.oi.totePickUp.get() == true)
 			positionSetpoint = Constants.FORKLIFT_TOTEPICKUP_POSITION;
 		else if (Robot.oi.tote0.get() == true)
@@ -70,18 +68,18 @@ public class ForkliftMoveToPosition extends Command
 			positionSetpoint -= Constants.FORKLIFT_JOG_STEP;
 
 		// ensure the range of the position
-//		if (position < 0.0)
-//			position = 0.0;
-//
-//		if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
-//			position = Constants.FORKLIFT_MAXIMUM_POSITION;
+		// if (position < 0.0)
+		// position = 0.0;
+		//
+		// if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
+		// position = Constants.FORKLIFT_MAXIMUM_POSITION;
 
 		SmartDashboard.putNumber("Forklift Position Setpoint", positionSetpoint);
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
-	{	
+	{
 		// determine if the distance from set point is close enough to use the
 		// position PID
 		if (Math.abs(Robot.forklift.getPosition() - positionSetpoint) < Constants.FORKLIFT_SWITCH_TO_POSITION_DISTANCE)
@@ -128,6 +126,12 @@ public class ForkliftMoveToPosition extends Command
 	}
 	
 	public static void setPositionSetpoint(double setpoint) {
+		positionSetpoint = setpoint;
+	}
+
+	public static void setForkliftPosition(double setpoint)
+	{
+		// remember the desired position
 		positionSetpoint = setpoint;
 	}
 

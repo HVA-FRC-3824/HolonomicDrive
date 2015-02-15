@@ -8,8 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
-
 package org.usfirst.frc3824.HolonomicDrive.commands;
+
 import org.usfirst.frc3824.HolonomicDrive.Constants;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
@@ -17,14 +17,14 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class AutonomousGetContainerToAutozone extends CommandGroup {
-    
-    public  AutonomousGetContainerToAutozone() {
-        
-    	addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION));
+public class AutonomousGetContainerToAutozone extends CommandGroup
+{
+	public AutonomousGetContainerToAutozone()
+	{
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION));
 		addSequential(new ChassisDriveStraight(2.0, 0.7, -90));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION));
 		addSequential(new ChassisDriveStraight(1.0, 0.5, 180));
-    	
-    }
+
+	}
 }
