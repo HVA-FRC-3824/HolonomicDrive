@@ -19,11 +19,11 @@ public class AutonomousStackOneTote extends CommandGroup
 	public AutonomousStackOneTote()
 	{
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION));
-		
+
 		addSequential(new ChassisDriveStraight(2.0, 0.7, 90));
-		
+
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION));
-		
+
 		addSequential(new ChassisDriveStraight(1.0, 0.5, 180));
 	}
 }

@@ -18,7 +18,7 @@ import org.usfirst.frc3824.HolonomicDrive.Constants;
 
 public class ChassisDriveStraight extends Command
 {
-	private Timer timer;
+	private Timer  timer;
 	private double driveDuration;
 	private double drivePower;
 	private double driveDirection;
@@ -50,8 +50,8 @@ public class ChassisDriveStraight extends Command
 		timer = new Timer();
 
 		// copy the parameters to the class variables
-		driveDuration = duration;
-		drivePower = power;
+		driveDuration  = duration;
+		drivePower     = power;
 		driveDirection = direction;
 	}
 
@@ -59,14 +59,10 @@ public class ChassisDriveStraight extends Command
 	protected void initialize()
 	{
 		// Set the PID up for driving straight
-		Robot.driveTrain.getAngleGyroController().setPID(
-				Constants.DrivetrainAngleGyroControllerP,
-				Constants.DrivetrainAngleGyroControllerI,
-				Constants.DrivetrainAngleGyroControllerD);
+		Robot.driveTrain.getAngleGyroController().setPID(Constants.DrivetrainAngleGyroControllerP, Constants.DrivetrainAngleGyroControllerI, Constants.DrivetrainAngleGyroControllerD);
 
 		// Robot.drivetrain.resetGyro();
-		Robot.driveTrain.getAngleGyroController().setSetpoint(
-				Robot.driveTrain.getGyroValue());
+		Robot.driveTrain.getAngleGyroController().setSetpoint(Robot.driveTrain.getGyroValue());
 
 		// update the PID direction and power
 		Robot.driveTrain.setDirection(driveDirection);

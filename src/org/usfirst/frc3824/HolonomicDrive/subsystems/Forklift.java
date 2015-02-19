@@ -11,7 +11,6 @@
 package org.usfirst.frc3824.HolonomicDrive.subsystems;
 
 import org.usfirst.frc3824.HolonomicDrive.Constants;
-import org.usfirst.frc3824.HolonomicDrive.Robot;
 import org.usfirst.frc3824.HolonomicDrive.RobotMap;
 
 import edu.wpi.first.wpilibj.*;
@@ -36,13 +35,11 @@ public class Forklift extends Subsystem
 	static int presentPIDmode = -1;
 
 	PIDController velocityPID = new PIDController(Constants.FORKLIFT_VELOCITY_P, 
-	                                              Constants.FORKLIFT_VELOCITY_I, 
-	                                              Constants.FORKLIFT_VELOCITY_D, 
-	                                              encoder, motor);
+	                                              Constants.FORKLIFT_VELOCITY_I,
+	                                              Constants.FORKLIFT_VELOCITY_D, encoder, motor);
 	PIDController positionPID = new PIDController(Constants.FORKLIFT_POSITION_P, 
-	                                              Constants.FORKLIFT_POSITION_I, 
-	                                              Constants.FORKLIFT_POSITION_D, 
-	                                              encoder, motor);
+	                                              Constants.FORKLIFT_POSITION_I,
+	                                              Constants.FORKLIFT_POSITION_D, encoder, motor);
 
 	/*
 	 * Method which is used to set the default command for the subsystem
@@ -56,15 +53,15 @@ public class Forklift extends Subsystem
 	}
 
 	/*
-	 * Method to set the specified PID setpoint. The method determines which
-	 * PID controller is enabled and will automatically switch the PID controller
-	 * to the specified mode.
+	 * Method to set the specified PID setpoint. The method determines which PID
+	 * controller is enabled and will automatically switch the PID controller to
+	 * the specified mode.
 	 */
 	public void setPIDmodeAndSetpoint(int mode, double setPoint)
 	{
 		SmartDashboard.putNumber("PID Mode", mode);
 		SmartDashboard.putNumber("PID Setpoint", setPoint);
-				
+
 		// determine the PID mode
 		if (mode == Constants.FORKLIFT_POSITION_MODE)
 		{
@@ -75,7 +72,8 @@ public class Forklift extends Subsystem
 				positionPID.setSetpoint(setPoint);
 				positionPID.enable();
 			}
-			else  // changing from velocity PID to position PID	
+			else
+			// changing from velocity PID to position PID
 			{
 				// disable the velocity PID
 				velocityPID.disable();
@@ -93,7 +91,8 @@ public class Forklift extends Subsystem
 				positionPID.enable();
 			}
 		}
-		else  // velocity PID
+		else
+		// velocity PID
 		{
 			// determine if the PID mode is changing
 			if (mode == presentPIDmode)
@@ -102,7 +101,7 @@ public class Forklift extends Subsystem
 				velocityPID.setSetpoint(setPoint);
 				velocityPID.enable();
 			}
-			else  // changing from position to velocity PID		
+			else  // changing from position to velocity PID
 			{
 				// disable the position PID
 				positionPID.disable();
@@ -143,8 +142,8 @@ public class Forklift extends Subsystem
 
 		return (enabled);
 	}
-	
-	/* 
+
+	/*
 	 * Method to set the specified PID gains
 	 */
 	public void setPIDvalues(int PID, double P, double I, double D)
@@ -159,7 +158,7 @@ public class Forklift extends Subsystem
 			velocityPID.setPID(P, I, D);
 		}
 	}
-	
+
 	public void setSetpoint(int PID, double setpoint)
 	{
 		if (PID == Constants.FORKLIFT_POSITION_MODE)
@@ -185,9 +184,9 @@ public class Forklift extends Subsystem
 	 */
 	public double getVelocity()
 	{
-	    return (encoder.getRate());
+		return (encoder.getRate());
 	}
-	
+
 	/*
 	 * Method to return the PID error value for the specified PID controller
 	 */
@@ -208,9 +207,9 @@ public class Forklift extends Subsystem
 		// return the PID error value
 		return (error);
 	}
-	
+
 	public int getPIDMode()
 	{
-		return (presentPIDmode);		
+		return (presentPIDmode);
 	}
 }

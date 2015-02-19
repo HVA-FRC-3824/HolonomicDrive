@@ -22,15 +22,14 @@ public class AutonomousDragToteLeft extends CommandGroup
 
 	public AutonomousDragToteLeft()
 	{
-		// The robot start with the tote in the forklift 
+		// The robot start with the tote in the forklift
 		// Lift the tote
-//		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION));
-		
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION));
+
 		// drive sideways to the autozone
-//		addSequential(new ChassisDriveStraight(2.5, 0.5, 90));
-		
+		addSequential(new ChassisDriveStraight(2.5, 0.5, 90));
+
 		// lower the tote
-//		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION));
 	}
 }

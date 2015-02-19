@@ -18,6 +18,6 @@ public class AutonomousDriveToAutoZone extends CommandGroup
 	public AutonomousDriveToAutoZone()
 	{
 		// drive forward at half power for one second
-		addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_AUTOZONE_DRIVE_TIME, Constants.AUTONOMOUS_AUTOZONE_DRIVER_POWER, Constants.AUTONOMOUS_AUTOZONE_DRIVE_ANGLE));	
+		addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_AUTOZONE_DRIVE_TIME, Constants.AUTONOMOUS_AUTOZONE_DRIVER_POWER, Constants.AUTONOMOUS_AUTOZONE_DRIVE_ANGLE));
 	}
 }

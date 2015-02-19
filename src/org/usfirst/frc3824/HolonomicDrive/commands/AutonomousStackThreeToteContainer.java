@@ -8,7 +8,7 @@ public class AutonomousStackThreeToteContainer extends CommandGroup
 	public AutonomousStackThreeToteContainer()
 	{
 		ChassisTurnAngle chassisTurn45 = new ChassisTurnAngle(-45.0, 0.0);
-		ChassisTurnAngle chassisTurn0  = new ChassisTurnAngle(  0.0, 0.0);
+		ChassisTurnAngle chassisTurn0 = new ChassisTurnAngle(0.0, 0.0);
 
 		// goes for first tote
 		addParallel(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION));
