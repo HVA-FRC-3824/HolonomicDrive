@@ -46,7 +46,7 @@ public class OI
         forkliftJoystick = new Joystick(1);
         
         setSpeed = new JoystickButton(forkliftJoystick, 2);
-        setSpeed.whileHeld(new ForkliftSetSpeed());
+        setSpeed.whenPressed(new ForkliftSetSpeed());
         resetSpeed = new JoystickButton(forkliftJoystick, 2);
         resetSpeed.whenReleased(new ForkliftSetSpeed());
         forkliftJogDown = new JoystickButton(forkliftJoystick, 3);
