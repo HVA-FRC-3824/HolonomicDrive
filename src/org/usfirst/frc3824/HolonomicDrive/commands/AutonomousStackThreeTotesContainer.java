@@ -14,28 +14,35 @@ import org.usfirst.frc3824.HolonomicDrive.Constants;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-public class AutonomousStackThreeTotes extends CommandGroup
+/**
+ *
+ */
+public class AutonomousStackThreeTotesContainer extends CommandGroup
 {
-	public AutonomousStackThreeTotes()
+	public AutonomousStackThreeTotesContainer()
 	{
+		ChassisTurnAngle chassisTurn45 = new ChassisTurnAngle(-45.0, 0.0);
+		ChassisTurnAngle chassisTurn0  = new ChassisTurnAngle(0.0, 0.0);
+
 		// goes for first tote
-		addParallel(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		addParallel(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		addSequential(chassisTurn45);
 
 		// goes for second tote
-		addSequential(new ChassisDriveStraight(2.4, 0.4, 0));
+		addSequential(new ChassisDriveStraight(1.0, 0.5, 45));
+		addSequential(chassisTurn0);
+		addSequential(new ChassisDriveStraight(1.0, 0.5, 0));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
 		// goes for third tote
-		addSequential(new ChassisDriveStraight(2.2, 0.4, 0));
+		addSequential(new ChassisDriveStraight(1.0, 0.5, 0));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
 		// takes robot and totes to autozone
-		addSequential(new ChassisDriveStraight(3.0, 0.7, 90));
+		addSequential(new ChassisDriveStraight(2.0, 0.7, 90));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
-		
-		// back away from totes
-		addSequential(new ChassisDriveStraight(1.6, 0.4, 180));
+		addSequential(new ChassisDriveStraight(1.0, 0.5, 180));
 	}
 }

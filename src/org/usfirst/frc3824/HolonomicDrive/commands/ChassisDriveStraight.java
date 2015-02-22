@@ -59,9 +59,11 @@ public class ChassisDriveStraight extends Command
 	protected void initialize()
 	{
 		// Set the PID up for driving straight
-		Robot.driveTrain.getAngleGyroController().setPID(Constants.DrivetrainAngleGyroControllerP, Constants.DrivetrainAngleGyroControllerI, Constants.DrivetrainAngleGyroControllerD);
+		Robot.driveTrain.getAngleGyroController().setPID(Constants.DRIVETRAIN_DRIVE_STRAIGHT_P, 
+		                                                 Constants.DRIVETRAIN_DRIVE_STRAIGHT_I, 
+		                                                 Constants.DRIVETRAIN_DRIVE_STRAIGHT_D);
 
-		// Robot.drivetrain.resetGyro();
+		Robot.driveTrain.getAngleGyroController().reset();
 		Robot.driveTrain.getAngleGyroController().setSetpoint(Robot.driveTrain.getGyroValue());
 
 		// update the PID direction and power

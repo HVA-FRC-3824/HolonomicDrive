@@ -59,8 +59,8 @@ public class Forklift extends Subsystem
 	 */
 	public void setPIDmodeAndSetpoint(int mode, double setPoint)
 	{
-		SmartDashboard.putNumber("PID Mode", mode);
-		SmartDashboard.putNumber("PID Setpoint", setPoint);
+//		SmartDashboard.putNumber("PID Mode", mode);
+//		SmartDashboard.putNumber("PID Setpoint", setPoint);
 
 		// determine the PID mode
 		if (mode == Constants.FORKLIFT_POSITION_MODE)

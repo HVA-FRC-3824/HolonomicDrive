@@ -3,48 +3,31 @@ package org.usfirst.frc3824.HolonomicDrive;
 public class Constants
 {
     //***************************************************************************************
-    // tote capture arm constants
-	public final static double TOTE_CAPTURE_RIGHT_ARM_ZERO_POSITION          = 0.5;
-	public final static double TOTE_CAPTURE_LEFT_ARM_ZERO_POSITION           = 0.5;
-	
-    //***************************************************************************************
-    /* Contants which might require tuning */
-    public final static double DrivetrainAngleGyroControllerP                = 0.040;  // 0.04;	John Young's nums
-    public final static double DrivetrainAngleGyroControllerI                = 0.004;  // 0.004;
-    public final static double DrivetrainAngleGyroControllerD                = 0.040;  // 0.04;
-
-    public final static double DrivetrainAngleGyroControllerTurnP            = 0.005;
-    public final static double DrivetrainAngleGyroControllerTurnI            = 0.00005;
-    public final static double DrivetrainAngleGyroControllerTurnD            = 0.0004;
-
-    public final static double TURN_THRESHOLD                                = 10.0; //works with 1 but is a bit slow;    was 1.5
-    
-    //***************************************************************************************
     // forklift positions for each tote height
-    public final static double FORKLIFT_TOTEPICKUP_POSITION                  = 0.0;
-    public final static double FORKLIFT_TOTE0_POSITION                       = 5.0; //going to be well over the height of one tote
+    public final static double FORKLIFT_TOTEPICKUP_POSITION                  =  0.0;
+    public final static double FORKLIFT_TOTE0_POSITION                       =  5.0;  //going to be well over the height of one tote
     public final static double FORKLIFT_TOTE1_POSITION                       = 17.0;
     public final static double FORKLIFT_TOTE2_POSITION                       = 23.0;
     public final static double FORKLIFT_TOTE3_POSITION                       = 30.5;
     public final static double FORKLIFT_TOTE4_POSITION                       = 38.0;
     public final static double FORKLIFT_TOTE5_POSITION                       = 45.5;
-    
+    	
     //***************************************************************************************
-    // autonomous command constants
-    public final static double AUTONOMOUS_AUTOZONE_DRIVE_TIME                = 1.25;
-    public final static double AUTONOMOUS_AUTOZONE_DRIVER_POWER              = 0.5;
-    public final static double AUTONOMOUS_AUTOZONE_DRIVE_ANGLE               = 0.0;
+    // Drive train turn constants
+    public final static double DRIVETRAIN_DRIVE_STRAIGHT_P                   = 0.040;
+    public final static double DRIVETRAIN_DRIVE_STRAIGHT_I                   = 0.004;
+    public final static double DRIVETRAIN_DRIVE_STRAIGHT_D                   = 0.040;
+
+    public final static double DRIVETRAIN_TURN_ANGLE_P                       = 0.005;   // 0.005
+    public final static double DRIVETRAIN_TURN_ANGLE_I                       = 0.0001;  // 0.0005
+    public final static double DRIVETRAIN_TURN_ANGLE_D                       = 0.005;
     
-    public final static double AUTONOMOUS_CONTAINER_DRIVE_TIME               = 1.25;
-    public final static double AUTONOMOUS_CONTAINER_DRIVER_POWER             = 0.5;
-    public final static double AUTONOMOUS_CONTAINER_DRIVE_REVERSE_DIRECTION  = 180.0;
-    public final static double AUTONOMOUS_CONTAINER_DRIVE_FORWARD_DIRECTION  = 0;
-    
-    //***************************************************************************************
-    // robot motor controller power  
-    public final static int    FORKLIFT_MOTOR1_PDP_CHANNEL                   = 14;
-    public final static int    FORKLIFT_MOTOR2_PDP_CHANNEL                   = 15;   
-    
+    public final static double DRIVETRAIN_DRIVE_AND_TURN_P                   = 0.005;
+    public final static double DRIVETRAIN_DRIVE_AND_TURN_I                   = 0.00001;
+    public final static double DRIVETRAIN_DRIVE_AND_TURN_D                   = 0.005;
+
+    public final static double TURN_THRESHOLD                                = 3.0; // works with 1, but is a bit slow
+
     //***************************************************************************************
     // forklift velocity and position PID parameters
     public final static int    FORKLIFT_POSITION_MODE                        = 0;
@@ -59,7 +42,7 @@ public class Constants
     public final static double FORKLIFT_JOG_STEP                             = 2.5;
     
     public final static double FORKLIFT_VELOCITY_SETPOINT_LOW                = 10.0;                         
-    public final static double FORKLIFT_VELOCITY_SETPOINT_HIGH               = 25.0;                       
+    public final static double FORKLIFT_VELOCITY_SETPOINT_HIGH               = 20.0;                       
     
     public final static double FORKLIFT_VELOCITY_P                           = 0.01;
     public final static double FORKLIFT_VELOCITY_I                           = 0.01;
@@ -68,5 +51,24 @@ public class Constants
     public final static double FORKLIFT_POSITION_P                           = 0.20;
     public final static double FORKLIFT_POSITION_I                           = 0.01;
     public final static double FORKLIFT_POSITION_D                           = 0.15;
+    
+    //***************************************************************************************
+    // AUTONOMOUS: Drive to Autozone
+    public final static double AUTONOMOUS_AUTOZONE_DRIVE_TIME                = 1.25;
+    public final static double AUTONOMOUS_AUTOZONE_DRIVER_POWER              =  0.5;
+    public final static double AUTONOMOUS_AUTOZONE_DRIVE_ANGLE               =  0.0;
+    
+    //***************************************************************************************
+    // AUTONOMOUS: Tote
+    public final static double AUTONOMOUS_TOTE_DRIVE_TIME                    =   2.2;
+    public final static double AUTONOMOUS_TOTE_DRIVE_POWER                   =   0.75;
+    public final static double AUTONOMOUS_TOTE_DRIVE_ANGLE                   =  90.0;
+    
+    //***************************************************************************************
+    // AUTONOMOUS: Tote and Container
+    public final static double AUTONOMOUS_TOTE_AND_CONTAINER_DRIVE_TIME      =   0.7;
+    public final static double AUTONOMOUS_TOTE_AND_CONTAINER_DRIVE_POWER     =   0.6;
+    public final static double AUTONOMOUS_TOTE_AND_CONTAINER_DRIVE_ANGLE     =   0.0;
+      
     
 }

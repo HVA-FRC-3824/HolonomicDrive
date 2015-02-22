@@ -17,19 +17,26 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class AutonomousDragToteLeft extends CommandGroup
+public class AutonomousTote extends CommandGroup
 {
 
-	public AutonomousDragToteLeft()
+	public AutonomousTote()
 	{
+		ChassisTurnAngle chassisTurn90 = new ChassisTurnAngle(90.0, 0.0);
+		
 		// The robot start with the tote in the forklift
 		// Lift the tote
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION));
+		addParallel(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
 		// drive sideways to the autozone
-		addSequential(new ChassisDriveStraight(2.5, 0.5, 90));
-
+		addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_TOTE_DRIVE_TIME, 
+		                                       Constants.AUTONOMOUS_TOTE_DRIVE_POWER,
+		                                       Constants.AUTONOMOUS_TOTE_DRIVE_ANGLE));
+		
+        // turn 90 degrees to face wall
+		addSequential(chassisTurn90);
+		
 		// lower the tote
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));	
 	}
 }

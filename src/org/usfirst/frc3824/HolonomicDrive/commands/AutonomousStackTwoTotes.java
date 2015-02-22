@@ -18,17 +18,30 @@ public class AutonomousStackTwoTotes extends CommandGroup
 {
 	public AutonomousStackTwoTotes()
 	{
+		ChassisTurnAngle chassisTurn45 = new ChassisTurnAngle(-45.0, 0.0);
+		ChassisTurnAngle chassisTurn0  = new ChassisTurnAngle(0.0, 0.0);
+
 		// goes for first tote
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION));
+		addParallel(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		addSequential(chassisTurn45);
+
+		// goes for second tote
+		addSequential(new ChassisDriveStraight(1.0, 0.5, 45));
+		addSequential(chassisTurn0);
+		
+		
+		
+		// goes for first tote
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
 		// goes for second tote
 		addSequential(new ChassisDriveStraight(1.0, 0.5, 0));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
 		// takes robot and totes to autozone
 		addSequential(new ChassisDriveStraight(2.0, 0.7, 90));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 		addSequential(new ChassisDriveStraight(1.0, 0.5, 180));
 	}
 }

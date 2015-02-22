@@ -32,9 +32,10 @@ public class DriveTrain extends Subsystem
 
 	private AnglePIDOutput angleOutput = new AnglePIDOutput();
 
-	private PIDController angleGyroController = new PIDController(Constants.DrivetrainAngleGyroControllerP, 
-	                                                              Constants.DrivetrainAngleGyroControllerI, 
-	                                                              Constants.DrivetrainAngleGyroControllerD, gyro, angleOutput);
+	private PIDController angleGyroController = new PIDController(Constants.DRIVETRAIN_DRIVE_STRAIGHT_P, 
+	                                                              Constants.DRIVETRAIN_DRIVE_STRAIGHT_I, 
+	                                                              Constants.DRIVETRAIN_DRIVE_STRAIGHT_D,
+	                                                              gyro, angleOutput);
 
 	// used as the value for drive while running under PIDControl. Those values
 	// not set by the controller can be set by a command directly
@@ -58,9 +59,9 @@ public class DriveTrain extends Subsystem
 	 */
 	public void holonomicDrive(Joystick joy)
 	{
-		SmartDashboard.putNumber("magnitude", joy.getMagnitude());
-		SmartDashboard.putNumber("direction", joy.getDirectionDegrees());
-		SmartDashboard.putNumber("angle",     joy.getTwist() * 0.5);
+//		SmartDashboard.putNumber("magnitude", joy.getMagnitude());
+//		SmartDashboard.putNumber("direction", joy.getDirectionDegrees());
+//		SmartDashboard.putNumber("angle",     joy.getTwist() * 0.5);
 
 		holonomicDrive.mecanumDrive_Polar(joy.getMagnitude(), joy.getDirectionDegrees(), joy.getTwist() * 0.5);
 	}
@@ -151,7 +152,7 @@ public class DriveTrain extends Subsystem
 		{
 			SmartDashboard.putNumber("magnitude", magnitude);
 			SmartDashboard.putNumber("direction", direction);
-			SmartDashboard.putNumber("angle", angle);
+			SmartDashboard.putNumber("angle",     angle);
 
 			// set the local angle value
 			setAngle(d);
