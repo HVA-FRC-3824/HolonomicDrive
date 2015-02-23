@@ -37,7 +37,7 @@ public class AutonomousStackTwoTotesContainer extends CommandGroup
 		addSequential(new ChassisDriveAndTurn(1.0, 0.9, -80.0, -50.0));
 		
 		// back up to release container
-		addSequential(new ChassisDriveAndTurn(1.4, -0.9, -80.0, -50.0));
+		addSequential(new ChassisDriveAndTurn(1.4, -0.9, -90.0, -50.0));
 		
         // lower the forklift
 		addParallel(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));

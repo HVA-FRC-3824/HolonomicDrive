@@ -74,7 +74,8 @@ public class Robot extends IterativeRobot
         chooser.addObject("5) Stack Two Totes Container",    new AutonomousStackTwoTotesContainer());
 		chooser.addObject("6) Stake Three Totes",            new AutonomousStackThreeTotes());
 		//chooser.addObject("8) Stack Three Totes Container", new AutonomousStackThreeTotesContainer());
-
+		chooser.addObject("7) Container And Totes",          new AutonomousContainerAndTote());
+		
 		// show the autonomous modes
 		SmartDashboard.putData("AutonomousModes", chooser);
 	}
