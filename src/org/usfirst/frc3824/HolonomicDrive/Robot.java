@@ -95,7 +95,7 @@ public class Robot extends IterativeRobot
 		Scheduler.getInstance().run();
 
 		// add current gyro angle to smart dashboard
-		SmartDashboard.putNumber("Gyro Angle", RobotMap.driveTrainGyro.getAngle());
+//		SmartDashboard.putNumber("Gyro Angle", RobotMap.driveTrainGyro.getAngle());
 	}
 
 	public void autonomousInit()
@@ -116,7 +116,7 @@ public class Robot extends IterativeRobot
 		Scheduler.getInstance().run();
 
 		// add current gyro angle to smart dashboard
-		SmartDashboard.putNumber("Gyro Angle", RobotMap.driveTrainGyro.getAngle());
+//		SmartDashboard.putNumber("Gyro Angle", RobotMap.driveTrainGyro.getAngle());
 	}
 
 	public void teleopInit()
@@ -137,7 +137,7 @@ public class Robot extends IterativeRobot
 		Scheduler.getInstance().run();
 
 		// add current gyro angle to smart dashboard
-		SmartDashboard.putNumber("Gyro Angle", RobotMap.driveTrainGyro.getAngle());
+//		SmartDashboard.putNumber("Gyro Angle", RobotMap.driveTrainGyro.getAngle());
 
 		// SmartDashboard.putNumber("Current 0",
 		// RobotMap.powerDistributionPanel.getCurrent(0));

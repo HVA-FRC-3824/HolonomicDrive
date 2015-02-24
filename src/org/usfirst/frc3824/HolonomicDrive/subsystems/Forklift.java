@@ -16,7 +16,6 @@ import org.usfirst.frc3824.HolonomicDrive.RobotMap;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /*
  * Forklift subsystem which uses a velocity PID followed by a position PID to move
