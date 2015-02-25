@@ -11,9 +11,11 @@
 package org.usfirst.frc3824.HolonomicDrive.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc3824.HolonomicDrive.Constants;
 import org.usfirst.frc3824.HolonomicDrive.Robot;
+import org.usfirst.frc3824.HolonomicDrive.RobotMap;
 
 /*
  *
@@ -51,7 +53,7 @@ public class ForkliftSetSpeed extends Command
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-
+		SmartDashboard.putNumber("Set Speed", ForkliftMoveToPosition.velocitySetpoint);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

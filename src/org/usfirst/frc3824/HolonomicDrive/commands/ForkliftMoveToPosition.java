@@ -11,6 +11,7 @@
 package org.usfirst.frc3824.HolonomicDrive.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc3824.HolonomicDrive.Robot;
 import org.usfirst.frc3824.HolonomicDrive.Constants;
@@ -21,6 +22,8 @@ import org.usfirst.frc3824.HolonomicDrive.Constants;
  */
 public class ForkliftMoveToPosition extends Command
 {
+	static boolean staticUpdatePositionFlag = false;
+	static boolean staticUpdateVelocityFlag = false;
 	static double positionSetpoint = 0.0;
 	static double velocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_LOW;
 
@@ -63,11 +66,19 @@ public class ForkliftMoveToPosition extends Command
 			mPositionSetpoint = Constants.FORKLIFT_TOTE4_POSITION;
 		else if (Robot.oi.tote5.get() == true)
 			mPositionSetpoint = Constants.FORKLIFT_TOTE5_POSITION;
+		else if (Robot.oi.step.get() == true)
+			mPositionSetpoint = Constants.FORKLIFT_STEP;
+		else if (Robot.oi.containerPickup.get() == true)
+			mPositionSetpoint = Constants.FORKLIFT_CONTAINER_PICKUP;
+		else if (Robot.oi.containerLift.get() == true)
+			mPositionSetpoint = Constants.FORKLIFT_CONTAINER_LIFT;
 		else if (Robot.oi.forkliftJogUp.get() == true)
 			mPositionSetpoint = positionSetpoint + Constants.FORKLIFT_JOG_STEP;
 		else if (Robot.oi.forkliftJogDown.get() == true)
 			mPositionSetpoint = positionSetpoint - Constants.FORKLIFT_JOG_STEP;
 
+		mVelocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_LOW;
+		
 		// ensure the range of the position
 		// if (position < 0.0)
 		// position = 0.0;
@@ -75,18 +86,45 @@ public class ForkliftMoveToPosition extends Command
 		// if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
 		// position = Constants.FORKLIFT_MAXIMUM_POSITION;
 
-		// SmartDashboard.putNumber("Forklift Position Setpoint", mPositionSetpoint);
-		// SmartDashboard.putNumber("Static Position Setpoint", positionSetpoint);
+		 SmartDashboard.putNumber("Local Position Setpoint", mPositionSetpoint);
+		 SmartDashboard.putNumber("Static Position Setpoint", positionSetpoint);
 	}
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{
-		// determine if the local setup point and velocity are the same as the static values
-		if (positionSetpoint != mPositionSetpoint)
-			positionSetpoint = mPositionSetpoint;
-		if (velocitySetpoint != mVelocitySetpoint)
-			velocitySetpoint = mVelocitySetpoint;
+		// determine if the static value should override the local variable
+		if (staticUpdatePositionFlag == true)
+		{
+			// clear the update flag
+			staticUpdatePositionFlag = false;
+			
+			// determine if the local setup point and velocity are the same as the static values
+			if (positionSetpoint != mPositionSetpoint)
+				mPositionSetpoint = positionSetpoint; 
+		}
+		else
+		{
+			// determine if the local setup point and velocity are the same as the static values
+			if (positionSetpoint != mPositionSetpoint)
+				positionSetpoint = mPositionSetpoint;
+		}
+		
+		if (staticUpdateVelocityFlag == true)
+		{
+			// clear the update flag
+			staticUpdateVelocityFlag = false;
+			
+			// determine if the local setup point and velocity are the same as the static values
+			if (velocitySetpoint != mVelocitySetpoint)
+				mVelocitySetpoint = velocitySetpoint; 
+		}
+		else
+		{
+			// determine if the local setup point and velocity are the same as the static values
+			if (velocitySetpoint != mVelocitySetpoint)
+				velocitySetpoint = mVelocitySetpoint;
+		}
 		
 		// determine if the distance from set point is close enough to use the
 		// position PID
@@ -111,8 +149,10 @@ public class ForkliftMoveToPosition extends Command
 			}
 		}
 
-		// SmartDashboard.putNumber("Forklift Position", Robot.forklift.getPosition());
-		// SmartDashboard.putNumber("Error", Robot.forklift.getError());
+		 SmartDashboard.putNumber("Velocity Setpoint", velocitySetpoint);
+		 SmartDashboard.putNumber("Forklift Position", Robot.forklift.getPosition());
+		 SmartDashboard.putNumber("Error", Robot.forklift.getError());
+		 SmartDashboard.putNumber("Forklift Mode", Robot.forklift.getPIDMode());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
@@ -133,7 +173,7 @@ public class ForkliftMoveToPosition extends Command
 	// Called once after isFinished returns true
 	protected void end()
 	{
-
+		System.out.println("Ended");
 	}
 
 	// Called when another command which requires one or more of the same
@@ -146,10 +186,22 @@ public class ForkliftMoveToPosition extends Command
 	public static void setVelocitySetpoint(double setpoint)
 	{
 		velocitySetpoint = setpoint;
+		staticUpdateVelocityFlag = true;	
 	}
 
 	public static void setPositionSetpoint(double setpoint)
 	{
 		positionSetpoint = setpoint;
+		staticUpdatePositionFlag = true;
+	}
+	
+	public static double getVelocitySetpoint()
+	{
+		return velocitySetpoint;
+	}
+	
+	public static double getPositionSetpoint()
+	{
+		return positionSetpoint;
 	}
 }

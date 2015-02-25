@@ -11,6 +11,10 @@ public class Constants
     public final static double FORKLIFT_TOTE3_POSITION                       = 30.5;
     public final static double FORKLIFT_TOTE4_POSITION                       = 38.0;
     public final static double FORKLIFT_TOTE5_POSITION                       = 45.5;
+    
+    public final static double FORKLIFT_STEP                                 = 17.0;
+    public final static double FORKLIFT_CONTAINER_PICKUP                     =  7.0;
+    public final static double FORKLIFT_CONTAINER_LIFT                       = 18.0;
     	
     //***************************************************************************************
     // Drive train turn constants
