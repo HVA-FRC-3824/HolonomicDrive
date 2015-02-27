@@ -26,7 +26,8 @@ public class AutonomousTote extends CommandGroup
 		
 		// The robot start with the tote in the forklift
 		// Lift the tote
-		addParallel(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
 		// drive sideways to the autozone
 		addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_TOTE_DRIVE_TIME, 
@@ -34,7 +35,7 @@ public class AutonomousTote extends CommandGroup
 		                                       Constants.AUTONOMOUS_TOTE_DRIVE_ANGLE));
 		
         // turn 90 degrees to face wall
-		addSequential(chassisTurn90);
+		//addSequential(chassisTurn90);
 		
 		// lower the tote
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));	

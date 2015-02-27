@@ -23,6 +23,7 @@ public class AutonomousContainerAndTote extends CommandGroup
 	{
 		// Pickup container
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
 		// drive forward to get the tote
 		addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_TOTE_AND_CONTAINER_DRIVE_TIME,

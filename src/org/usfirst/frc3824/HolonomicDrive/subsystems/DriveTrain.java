@@ -150,9 +150,9 @@ public class DriveTrain extends Subsystem
 	{
 		public void pidWrite(double d)
 		{
-			SmartDashboard.putNumber("magnitude", magnitude);
-			SmartDashboard.putNumber("direction", direction);
-			SmartDashboard.putNumber("angle",     angle);
+//			SmartDashboard.putNumber("magnitude", magnitude);
+//			SmartDashboard.putNumber("direction", direction);
+//			SmartDashboard.putNumber("angle",     angle);
 
 			// set the local angle value
 			setAngle(d);

@@ -10,12 +10,14 @@
 
 package org.usfirst.frc3824.HolonomicDrive.commands;
 
+import org.usfirst.frc3824.HolonomicDrive.Constants;
+
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class AutonomousDoNothing extends CommandGroup
 {
 	public AutonomousDoNothing()
 	{
-
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 	}
 }

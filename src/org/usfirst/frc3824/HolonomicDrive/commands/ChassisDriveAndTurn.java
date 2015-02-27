@@ -61,9 +61,9 @@ public class ChassisDriveAndTurn extends Command
 	{
 		double goToGyro = Robot.driveTrain.getGyro().getAngle() + degreesToTurn;
 		
-		SmartDashboard.putNumber("gyroAngle",     Robot.driveTrain.getGyroValue());		
-		SmartDashboard.putNumber("degreesToTurn", degreesToTurn);
-		SmartDashboard.putNumber("goToGyro",      goToGyro);
+//		SmartDashboard.putNumber("gyroAngle",     Robot.driveTrain.getGyroValue());		
+//		SmartDashboard.putNumber("degreesToTurn", degreesToTurn);
+//		SmartDashboard.putNumber("goToGyro",      goToGyro);
 
 		// Set the PID up for driving straight
 		Robot.driveTrain.getAngleGyroController().setPID(Constants.DRIVETRAIN_DRIVE_AND_TURN_P, 

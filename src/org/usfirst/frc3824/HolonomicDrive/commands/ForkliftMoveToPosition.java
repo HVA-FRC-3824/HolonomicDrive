@@ -86,8 +86,8 @@ public class ForkliftMoveToPosition extends Command
 		// if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
 		// position = Constants.FORKLIFT_MAXIMUM_POSITION;
 
-		 SmartDashboard.putNumber("Local Position Setpoint", mPositionSetpoint);
-		 SmartDashboard.putNumber("Static Position Setpoint", positionSetpoint);
+//		 SmartDashboard.putNumber("Local Position Setpoint", mPositionSetpoint);
+//		 SmartDashboard.putNumber("Static Position Setpoint", positionSetpoint);
 	}
 
 	// Called repeatedly when this Command is scheduled to run
@@ -149,10 +149,10 @@ public class ForkliftMoveToPosition extends Command
 			}
 		}
 
-		 SmartDashboard.putNumber("Velocity Setpoint", velocitySetpoint);
+//		 SmartDashboard.putNumber("Velocity Setpoint", velocitySetpoint);
 		 SmartDashboard.putNumber("Forklift Position", Robot.forklift.getPosition());
-		 SmartDashboard.putNumber("Error", Robot.forklift.getError());
-		 SmartDashboard.putNumber("Forklift Mode", Robot.forklift.getPIDMode());
+//		 SmartDashboard.putNumber("Error", Robot.forklift.getError());
+//		 SmartDashboard.putNumber("Forklift Mode", Robot.forklift.getPIDMode());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
@@ -173,7 +173,7 @@ public class ForkliftMoveToPosition extends Command
 	// Called once after isFinished returns true
 	protected void end()
 	{
-		System.out.println("Ended");
+
 	}
 
 	// Called when another command which requires one or more of the same

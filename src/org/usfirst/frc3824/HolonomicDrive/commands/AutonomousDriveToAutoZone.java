@@ -11,12 +11,15 @@
 package org.usfirst.frc3824.HolonomicDrive.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+
 import org.usfirst.frc3824.HolonomicDrive.Constants;
 
 public class AutonomousDriveToAutoZone extends CommandGroup
 {
 	public AutonomousDriveToAutoZone()
 	{
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+
 		// drive forward at half power for one second
 		addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_AUTOZONE_DRIVE_TIME, 
 		                                       Constants.AUTONOMOUS_AUTOZONE_DRIVER_POWER, 

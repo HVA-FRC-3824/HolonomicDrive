@@ -42,13 +42,13 @@ public class ForkliftSetPIDs extends Command
 	// Called just before this Command runs the first time
 	protected void initialize()
 	{
-		Robot.forklift.setSetpoint(Constants.FORKLIFT_VELOCITY_MODE, SmartDashboard.getNumber("Velocity PID Setpoint"));
+//		Robot.forklift.setSetpoint(Constants.FORKLIFT_VELOCITY_MODE, SmartDashboard.getNumber("Velocity PID Setpoint"));
 
 		// read the smart dashboard position PID values
-		Robot.forklift.setPIDvalues(Constants.FORKLIFT_POSITION_MODE, SmartDashboard.getNumber("Position P"), SmartDashboard.getNumber("Position I"), SmartDashboard.getNumber("Position D"));
+//		Robot.forklift.setPIDvalues(Constants.FORKLIFT_POSITION_MODE, SmartDashboard.getNumber("Position P"), SmartDashboard.getNumber("Position I"), SmartDashboard.getNumber("Position D"));
 
 		// read the smart dashboard velocity PID values
-		Robot.forklift.setPIDvalues(Constants.FORKLIFT_VELOCITY_MODE, SmartDashboard.getNumber("Velocity P"), SmartDashboard.getNumber("Velocity I"), SmartDashboard.getNumber("Velocity D"));
+//		Robot.forklift.setPIDvalues(Constants.FORKLIFT_VELOCITY_MODE, SmartDashboard.getNumber("Velocity P"), SmartDashboard.getNumber("Velocity I"), SmartDashboard.getNumber("Velocity D"));
 	}
 
 	// Called repeatedly when this Command is scheduled to run

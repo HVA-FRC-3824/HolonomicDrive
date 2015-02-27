@@ -19,6 +19,7 @@ public class AutonomousStackThreeTotes extends CommandGroup
 	public AutonomousStackThreeTotes()
 	{
 		// goes for first tote
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 		addParallel(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
 		// goes for second tote
