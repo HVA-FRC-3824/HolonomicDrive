@@ -8,8 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
-
 package org.usfirst.frc3824.HolonomicDrive.commands;
+
 import org.usfirst.frc3824.HolonomicDrive.Constants;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
@@ -17,22 +17,23 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class AutonomousDriveBackwardsWithContainerTurnRight extends CommandGroup {
-    
-    public  AutonomousDriveBackwardsWithContainerTurnRight() {
+public class AutonomousDriveBackwardsWithContainerTurnRight extends CommandGroup
+{
+	public AutonomousDriveBackwardsWithContainerTurnRight()
+	{
 		ChassisTurnAngle chassisTurn90Right = new ChassisTurnAngle(90.0, 0.0);
-		
+
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
 		// drive forward at half power for one second
 		addSequential(new ChassisDriveStraight( Constants.AUTONOMOUS_CONATINER_DRIVE_TIME, 
-		                                       -Constants.AUTONOMOUS_CONATINER_DRIVER_POWER, 
+		                                       -Constants.AUTONOMOUS_CONATINER_DRIVER_POWER,
 		                                        Constants.AUTONOMOUS_CONATINER_DRIVE_ANGLE));
-		
-        // turn 90 degrees to face wall
+
+		// turn 90 degrees to face wall
 		addSequential(chassisTurn90Right);
-		
+
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
-    }
+	}
 }
