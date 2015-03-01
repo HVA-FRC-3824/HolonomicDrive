@@ -18,6 +18,9 @@ public class AutonomousStackThreeTotes extends CommandGroup
 {
 	public AutonomousStackThreeTotes()
 	{
+		// reset the gyro
+		addSequential(new ResetGyro());
+		
 		// goes for first tote
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 		addParallel(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE1_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));

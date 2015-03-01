@@ -24,6 +24,9 @@ public class AutonomousStackTwoTotesContainer extends CommandGroup
 //		ChassisTurnAngle chassisTurn0   = new ChassisTurnAngle(  0.0, 0.0);
 //		ChassisTurnAngle chassisTurnM45 = new ChassisTurnAngle(-45.0, 0.0);
 
+		// reset the gyro
+		addSequential(new ResetGyro());
+		
 		// lift the tote over the container
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_LOW));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_LOW));

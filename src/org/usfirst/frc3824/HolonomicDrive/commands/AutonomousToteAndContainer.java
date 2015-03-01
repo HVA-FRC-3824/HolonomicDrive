@@ -24,6 +24,9 @@ public class AutonomousToteAndContainer extends CommandGroup
 		ChassisTurnAngle chassisTurn90  = new ChassisTurnAngle( 90.0, 0.0);		
 		ChassisTurnAngle chassisTurnM90 = new ChassisTurnAngle(-90.0, 0.0);
 		
+		// reset the gyro
+		addSequential(new ResetGyro());
+		
 		// lift the tote over the container
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));

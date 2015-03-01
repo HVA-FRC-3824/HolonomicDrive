@@ -18,6 +18,9 @@ public class AutonomousDriveToAutoZone extends CommandGroup
 {
 	public AutonomousDriveToAutoZone()
 	{
+		// reset the gyro
+		addSequential(new ResetGyro());
+		
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
 		// drive forward at half power for one second

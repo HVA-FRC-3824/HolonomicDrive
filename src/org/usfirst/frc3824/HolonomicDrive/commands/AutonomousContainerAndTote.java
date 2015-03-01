@@ -21,6 +21,9 @@ public class AutonomousContainerAndTote extends CommandGroup
 {
 	public AutonomousContainerAndTote()
 	{
+		// reset the gyro
+		addSequential(new ResetGyro());
+		
 		// Pickup container
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));

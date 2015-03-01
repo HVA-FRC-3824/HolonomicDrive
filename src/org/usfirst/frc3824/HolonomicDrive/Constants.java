@@ -45,8 +45,8 @@ public class Constants
     
     public final static double FORKLIFT_JOG_STEP                             = 2.5;
     
-    public final static double FORKLIFT_VELOCITY_SETPOINT_LOW                = 18.0;                         
-    public final static double FORKLIFT_VELOCITY_SETPOINT_HIGH               = 25.0;                       
+    public final static double FORKLIFT_VELOCITY_SETPOINT_LOW                = 12.5;                         
+    public final static double FORKLIFT_VELOCITY_SETPOINT_HIGH               = 28.0;                       
     
     public final static double FORKLIFT_VELOCITY_P                           = 0.01;
     public final static double FORKLIFT_VELOCITY_I                           = 0.01;
@@ -64,9 +64,9 @@ public class Constants
     
     //***************************************************************************************
     // AUTONOMOUS: Tote
-    public final static double AUTONOMOUS_TOTE_DRIVE_TIME                    =  2.75;
+    public final static double AUTONOMOUS_TOTE_DRIVE_TIME                    =  3.0;
     public final static double AUTONOMOUS_TOTE_DRIVE_POWER                   =  0.75;
-    public final static double AUTONOMOUS_TOTE_DRIVE_ANGLE                   = 90.0;
+    public final static double AUTONOMOUS_TOTE_DRIVE_ANGLE                   =  90.0;
     
     //***************************************************************************************
     // AUTONOMOUS: Tote and Container
@@ -74,9 +74,16 @@ public class Constants
     public final static double AUTONOMOUS_TOTE_AND_CONTAINER_DRIVE_POWER     =  0.6;
     public final static double AUTONOMOUS_TOTE_AND_CONTAINER_DRIVE_ANGLE     =  0.0;
     
+  //***************************************************************************************
+    // AUTONOMOUS: Get Container in Autozone
+    public final static double AUTONOMOUS_CONTAINER_DRIVE_TIME                =  1.9;
+    public final static double AUTONOMOUS_CONTAINER_STEP_DRIVE_TIME           =  2.4;
+    public final static double AUTONOMOUS_CONTAINER_DRIVE_POWER               =  0.5;
+    public final static double AUTONOMOUS_CONTAINER_DRIVE_ANGLE               =  0.0;
+
     //***************************************************************************************
-    // AUTONOMOUS: Drive to Autozone
-    public final static double AUTONOMOUS_CONATINER_DRIVE_TIME                =  1.7;
-    public final static double AUTONOMOUS_CONATINER_DRIVER_POWER              =  0.5;
-    public final static double AUTONOMOUS_CONATINER_DRIVE_ANGLE               =  0.0;
+    // AUTONOMOUS: Get Container in Autozone
+    public final static double AUTONOMOUS_REMOVE_CONTAINER_DRIVE_TIME                =  2.2;
+    public final static double AUTONOMOUS_REMOVE_CONTAINER_DRIVE_POWER              =  0.5;
+    public final static double AUTONOMOUS_REMOVE_CONTAINER_DRIVE_ANGLE               =  0.0;
 }

@@ -24,6 +24,9 @@ public class AutonomousTote extends CommandGroup
 	{
 		ChassisTurnAngle chassisTurn90 = new ChassisTurnAngle(90.0, 0.0);
 		
+		// reset the gyro
+		addSequential(new ResetGyro());
+		
 		// The robot start with the tote in the forklift
 		// Lift the tote
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));

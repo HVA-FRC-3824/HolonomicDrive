@@ -17,11 +17,12 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *
  */
-public class AutonomousDriveBackwardsWithContainerTurnLeft extends CommandGroup
+public class AutonomousDriveBackwardsWithContainerOverStep extends CommandGroup
 {
-	public AutonomousDriveBackwardsWithContainerTurnLeft()
+
+	public AutonomousDriveBackwardsWithContainerOverStep()
 	{
-		ChassisTurnAngle chassisTurn90 = new ChassisTurnAngle(-90.0, 0.0);
+		ChassisTurnAngle chassisTurn90Right = new ChassisTurnAngle(90.0, 0.0);
 
 		// reset the gyro
 		addSequential(new ResetGyro());
@@ -30,13 +31,14 @@ public class AutonomousDriveBackwardsWithContainerTurnLeft extends CommandGroup
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
 		// drive forward at half power for one second
-		addSequential(new ChassisDriveStraight( Constants.AUTONOMOUS_CONTAINER_DRIVE_TIME, 
+		addSequential(new ChassisDriveStraight( Constants.AUTONOMOUS_CONTAINER_STEP_DRIVE_TIME, 
 		                                       -Constants.AUTONOMOUS_CONTAINER_DRIVE_POWER,
 		                                        Constants.AUTONOMOUS_CONTAINER_DRIVE_ANGLE));
 
 		// turn 90 degrees to face wall
-		addSequential(chassisTurn90);
+		addSequential(chassisTurn90Right);
 
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+
 	}
 }
