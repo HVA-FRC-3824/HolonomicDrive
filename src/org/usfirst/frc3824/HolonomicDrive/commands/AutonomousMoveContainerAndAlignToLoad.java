@@ -17,23 +17,26 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /*
  *
  */
-public class AutonomousRemoveContainer extends CommandGroup
+public class AutonomousMoveContainerAndAlignToLoad extends CommandGroup
 {
-	public AutonomousRemoveContainer()
+	public AutonomousMoveContainerAndAlignToLoad()
 	{
+		ChassisTurnAngle chassisTurn90Right = new ChassisTurnAngle(-90.0, 0.0);
+
 		// reset the gyro
 		addSequential(new ResetGyro());
-
-		// pickup container
+		
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
-		// drive backward at half power for one second
-		addSequential(new ChassisDriveStraight( Constants.AUTONOMOUS_REMOVE_CONTAINER_DRIVE_TIME, 
-		                                       -Constants.AUTONOMOUS_REMOVE_CONTAINER_DRIVE_POWER, 
-		                                        Constants.AUTONOMOUS_REMOVE_CONTAINER_DRIVE_ANGLE));
+		// drive forward at half power for one second
+		addSequential(new ChassisDriveStraight( Constants.AUTONOMOUS_CONTAINER_STORE_TIME, 
+		                                       -Constants.AUTONOMOUS_CONTAINER_STORE_POWER,
+		                                        Constants.AUTONOMOUS_CONTAINER_STORE_ANGLE));
 
-		// return forklift to ground
+		// turn 90 degrees to face wall
+		addSequential(chassisTurn90Right);
+
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 	}
 }

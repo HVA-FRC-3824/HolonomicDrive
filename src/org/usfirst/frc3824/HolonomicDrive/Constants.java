@@ -83,7 +83,13 @@ public class Constants
 
     //***************************************************************************************
     // AUTONOMOUS: Get Container in Autozone
-    public final static double AUTONOMOUS_REMOVE_CONTAINER_DRIVE_TIME                =  2.2;
-    public final static double AUTONOMOUS_REMOVE_CONTAINER_DRIVE_POWER              =  0.5;
-    public final static double AUTONOMOUS_REMOVE_CONTAINER_DRIVE_ANGLE               =  0.0;
+    public final static double AUTONOMOUS_REMOVE_CONTAINER_DRIVE_TIME         =  2.2;
+    public final static double AUTONOMOUS_REMOVE_CONTAINER_DRIVE_POWER        =  0.5;
+    public final static double AUTONOMOUS_REMOVE_CONTAINER_DRIVE_ANGLE        =  0.0;
+
+    //***************************************************************************************
+    // AUTONOMOUS: Move Container to store area and align with loading station
+    public final static double AUTONOMOUS_CONTAINER_STORE_TIME                =  2.2;
+    public final static double AUTONOMOUS_CONTAINER_STORE_POWER               =  0.5;
+    public final static double AUTONOMOUS_CONTAINER_STORE_ANGLE               =  0.0;
 }
