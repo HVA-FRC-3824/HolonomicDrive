@@ -34,6 +34,10 @@ public class Constants
 
     public final static double TURN_THRESHOLD                                = 3.0; // works with 1, but is a bit slow
 
+    //**************************************************************************************
+    // TELEOP: Bring totes in and out
+    public final static double ROLLER_MOTOR_POWER                               =  1.0;
+
     //***************************************************************************************
     // forklift velocity and position PID parameters
     public final static int    FORKLIFT_POSITION_MODE                        = 0;
@@ -94,8 +98,4 @@ public class Constants
     public final static double AUTONOMOUS_CONTAINER_STORE_TIME                =  1.0;
     public final static double AUTONOMOUS_CONTAINER_STORE_POWER               =  0.5;
     public final static double AUTONOMOUS_CONTAINER_STORE_ANGLE               =  0.0;
-    
-    //**************************************************************************************
-    // TELEOP: Bring totes in and out
-    public final static double ROLLER_MOTOR_POWER                               =  1.0;
 }
