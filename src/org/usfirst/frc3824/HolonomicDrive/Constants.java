@@ -56,6 +56,11 @@ public class Constants
     public final static double FORKLIFT_POSITION_I                           = 0.01;
     public final static double FORKLIFT_POSITION_D                           = 0.15;
     
+    public final static double FORKLIFT_SWITCH_TO_DECELERATE_DISTANCE        = 100.0;
+    public final static double FORKLIFT_ACCEL_VALUE                          = 0.5; // 0 -> 12.5 in about 1/2 sec (may be too fast)
+    public final static double FORKLIFT_DECEL_VALUE                          = 0.5; // 12.5 -> 0 in about 1/2 sec
+    public final static double FORKLIFT_DECEL_VELOCITY_MIN_VALUE             = 1.0; // min value so the forklift keeps moving until switching to POS mode
+    
     //***************************************************************************************
     // AUTONOMOUS: Drive to Autozone
     public final static double AUTONOMOUS_AUTOZONE_DRIVE_TIME                =  1.5;
