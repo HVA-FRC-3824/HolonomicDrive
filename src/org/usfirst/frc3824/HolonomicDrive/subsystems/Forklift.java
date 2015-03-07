@@ -71,9 +71,21 @@ public class Forklift extends Subsystem
 	 */
 	public void setPIDmodeAndSetpoint(int mode, double setPoint)
 	{
+		double sp;
+		
 //		SmartDashboard.putNumber("PID Mode", mode);
 //		SmartDashboard.putNumber("PID Setpoint", setPoint);
 
+		if( (override == true) && (mode != Constants.FORKLIFT_POSITION_MODE) )
+		{
+			sp = overrideVelocity;
+			originalVelocity = setPoint;
+		}
+		else
+		{
+			sp = setPoint;
+		}
+		
 		// determine the PID mode
 		if (mode == Constants.FORKLIFT_POSITION_MODE)
 		{
@@ -81,7 +93,7 @@ public class Forklift extends Subsystem
 			if (mode == presentPIDmode)
 			{
 				// update the position set point
-				positionPID.setSetpoint(setPoint);
+				positionPID.setSetpoint(sp);
 				positionPID.enable();
 			}
 			else
@@ -94,7 +106,7 @@ public class Forklift extends Subsystem
 				encoder.setPIDSourceParameter(PIDSourceParameter.kDistance);
 
 				// update the position set point
-				positionPID.setSetpoint(setPoint);
+				positionPID.setSetpoint(sp);
 
 				// reset the PID error
 				positionPID.reset();
@@ -110,7 +122,7 @@ public class Forklift extends Subsystem
 			if (mode == presentPIDmode)
 			{
 				// update the position set point
-				velocityPID.setSetpoint(setPoint);
+				velocityPID.setSetpoint(sp);
 				velocityPID.enable();
 			}
 			else  // changing from position to velocity PID
@@ -122,7 +134,7 @@ public class Forklift extends Subsystem
 				encoder.setPIDSourceParameter(PIDSourceParameter.kRate);
 
 				// update the position set point
-				velocityPID.setSetpoint(setPoint);
+				velocityPID.setSetpoint(sp);
 
 				// reset the PID error
 				velocityPID.reset();
