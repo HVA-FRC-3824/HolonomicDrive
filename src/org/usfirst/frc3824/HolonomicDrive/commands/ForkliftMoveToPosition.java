@@ -76,6 +76,9 @@ public class ForkliftMoveToPosition extends Command
 			mPositionSetpoint = positionSetpoint + Constants.FORKLIFT_JOG_STEP;
 		else if (Robot.oi.forkliftJogDown.get() == true)
 			mPositionSetpoint = positionSetpoint - Constants.FORKLIFT_JOG_STEP;
+		else if (Robot.oi.toteLoadHeight.get() == true)
+			mPositionSetpoint = Constants.FORKLIFT_TOTE_LOAD_HEIGHT;
+
 
 		mVelocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_LOW;
 		
