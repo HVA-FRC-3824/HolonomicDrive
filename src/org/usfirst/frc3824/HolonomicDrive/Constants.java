@@ -89,7 +89,7 @@ public class Constants
 
     //***************************************************************************************
     // AUTONOMOUS: Move Container to store area and align with loading station
-    public final static double AUTONOMOUS_CONTAINER_STORE_TIME                =  2.2;
+    public final static double AUTONOMOUS_CONTAINER_STORE_TIME                =  1.0;
     public final static double AUTONOMOUS_CONTAINER_STORE_POWER               =  0.5;
     public final static double AUTONOMOUS_CONTAINER_STORE_ANGLE               =  0.0;
 }

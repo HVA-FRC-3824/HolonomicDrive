@@ -21,13 +21,13 @@ public class AutonomousMoveContainerAndAlignToLoad extends CommandGroup
 {
 	public AutonomousMoveContainerAndAlignToLoad()
 	{
-		ChassisTurnAngle chassisTurn90Right = new ChassisTurnAngle(-90.0, 0.0);
+		ChassisTurnAngle chassisTurn90Left = new ChassisTurnAngle(-90.0, 0.0);
 
 		// reset the gyro
 		addSequential(new ResetGyro());
 		
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		//addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		//addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
 		// drive forward at half power for one second
 		addSequential(new ChassisDriveStraight( Constants.AUTONOMOUS_CONTAINER_STORE_TIME, 
@@ -35,8 +35,12 @@ public class AutonomousMoveContainerAndAlignToLoad extends CommandGroup
 		                                        Constants.AUTONOMOUS_CONTAINER_STORE_ANGLE));
 
 		// turn 90 degrees to face wall
-		addSequential(chassisTurn90Right);
+		//addSequential(chassisTurn90Right);
 
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		
+		addSequential(new ChassisDriveStraight(0.5, 0.5, 180));
+		addSequential(chassisTurn90Left);
+		//addSequential(new ChassisDriveStraight(0.1, 0.5, 90))
 	}
 }
