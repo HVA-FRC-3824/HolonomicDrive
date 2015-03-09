@@ -3,6 +3,10 @@ package org.usfirst.frc3824.HolonomicDrive;
 public class Constants
 {
     //***************************************************************************************
+	// gyro center value
+	public final static int GYRO_CENTER                                      = 1975175;
+	
+    //***************************************************************************************
     // forklift positions for each tote height
     public final static double FORKLIFT_TOTEPICKUP_POSITION                  =  0.0;
     public final static double FORKLIFT_TOTE0_POSITION                       =  5.0;  //going to be well over the height of one tote

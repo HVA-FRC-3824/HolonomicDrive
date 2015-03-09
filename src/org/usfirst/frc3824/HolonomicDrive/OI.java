@@ -84,8 +84,6 @@ public class OI
 
 	    
         // SmartDashboard Buttons
-        SmartDashboard.putData("Autonomous Remove Container", new AutonomousRemoveContainer());
-
         SmartDashboard.putData("Chassis Drive Straight", new ChassisDriveStraight());
 
         SmartDashboard.putData("Chassis Turn Angle", new ChassisTurnAngle());
@@ -93,6 +91,8 @@ public class OI
         SmartDashboard.putData("Chassis Drive And Turn", new ChassisDriveAndTurn());
 
         SmartDashboard.putData("Chassis Drive And Turn Test", new ChassisDriveAndTurnTest());
+
+        SmartDashboard.putData("Set Gyro Center", new SetGyroCenter());
 
         SmartDashboard.putData("Reset Gyro", new ResetGyro());
 
