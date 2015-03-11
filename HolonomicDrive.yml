@@ -223,7 +223,7 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '1'
+          value: '6'
         Command: !!robotbuilder.data.properties.TypeSelectionProperty
           default: None
           name: Command
@@ -247,7 +247,7 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '12'
+          value: '1'
         Command: !!robotbuilder.data.properties.TypeSelectionProperty
           default: None
           name: Command
@@ -535,7 +535,7 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '13'
+          value: '4'
         Command: !!robotbuilder.data.properties.TypeSelectionProperty
           default: None
           name: Command
@@ -559,7 +559,7 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '4'
+          value: '12'
         Command: !!robotbuilder.data.properties.TypeSelectionProperty
           default: None
           name: Command

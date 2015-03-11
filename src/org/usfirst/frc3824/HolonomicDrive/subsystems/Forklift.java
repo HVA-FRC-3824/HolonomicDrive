@@ -16,6 +16,7 @@ import org.usfirst.frc3824.HolonomicDrive.RobotMap;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.PIDSource.PIDSourceParameter;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /*
  * Forklift subsystem which uses a velocity PID followed by a position PID to move
@@ -58,8 +59,9 @@ public class Forklift extends Subsystem
 	 */
 	public void setPIDmodeAndSetpoint(int mode, double setPoint)
 	{
-//		SmartDashboard.putNumber("PID Mode", mode);
-//		SmartDashboard.putNumber("PID Setpoint", setPoint);
+		SmartDashboard.putNumber("PID Mode", mode);
+		SmartDashboard.putNumber("PID Setpoint", setPoint);
+		SmartDashboard.putNumber("PID Position Error", positionPID.getError());
 
 		// determine the PID mode
 		if (mode == Constants.FORKLIFT_POSITION_MODE)

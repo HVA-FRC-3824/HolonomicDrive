@@ -8,19 +8,20 @@ public class Constants
 	
     //***************************************************************************************
     // forklift positions for each tote height
-    public final static double FORKLIFT_TOTEPICKUP_POSITION                  =  0.0;
-    public final static double FORKLIFT_TOTE0_POSITION                       =  5.0;  //going to be well over the height of one tote
-    public final static double FORKLIFT_TOTE1_POSITION                       = 18.5;
-    public final static double FORKLIFT_TOTE2_POSITION                       = 30.0;
-    public final static double FORKLIFT_TOTE3_POSITION                       = 40.0;
-    public final static double FORKLIFT_TOTE4_POSITION                       = 49.0;
-    public final static double FORKLIFT_TOTE5_POSITION                       = 55.5;
+	                                                                                 //  Competition Robot settings
+    public final static double FORKLIFT_TOTEPICKUP_POSITION                  =  0.0; //  0.0;
+    public final static double FORKLIFT_TOTE0_POSITION                       =  4.0; //  5.0;  //going to be well over the height of one tote
+    public final static double FORKLIFT_TOTE1_POSITION                       = 12.0; // 18.5;
+    public final static double FORKLIFT_TOTE2_POSITION                       = 22.0; // 30.0;
+    public final static double FORKLIFT_TOTE3_POSITION                       = 28.75; // 40.0;
+    public final static double FORKLIFT_TOTE4_POSITION                       = 35.0; // 49.0;
+    public final static double FORKLIFT_TOTE5_POSITION                       = 55.5; // 55.5;
     
-    public final static double FORKLIFT_STEP                                 = 10.5;
-    public final static double FORKLIFT_CONTAINER_PICKUP                     =  6.6;
-    public final static double FORKLIFT_CONTAINER_LIFT                       = 21.0;
+    public final static double FORKLIFT_STEP                                 = 10.5; // 10.5;
+    public final static double FORKLIFT_CONTAINER_PICKUP                     =  6.6; //  6.6;
+    public final static double FORKLIFT_CONTAINER_LIFT                       = 21.0; // 21.0;
     
-    public final static double FORKLIFT_TOTE_LOAD_HEIGHT                     = 25.0;
+    public final static double FORKLIFT_TOTE_LOAD_HEIGHT                     = 18.5; // 25.0;
     	
     //***************************************************************************************
     // Drive train turn constants

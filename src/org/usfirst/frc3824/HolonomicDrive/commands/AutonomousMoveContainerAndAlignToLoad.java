@@ -26,21 +26,22 @@ public class AutonomousMoveContainerAndAlignToLoad extends CommandGroup
 		// reset the gyro
 		addSequential(new ResetGyro());
 		
+		// do not need to move the forklift
 		//addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 		//addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
-		// drive forward at half power for one second
-		addSequential(new ChassisDriveStraight( Constants.AUTONOMOUS_CONTAINER_STORE_TIME, 
-		                                       -Constants.AUTONOMOUS_CONTAINER_STORE_POWER,
-		                                        Constants.AUTONOMOUS_CONTAINER_STORE_ANGLE));
-
-		// turn 90 degrees to face wall
-		//addSequential(chassisTurn90Right);
-
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		// push container forward out of the way
+		addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_CONTAINER_STORE_TIME, 
+		                                       Constants.AUTONOMOUS_CONTAINER_STORE_POWER,
+		                                       Constants.AUTONOMOUS_CONTAINER_STORE_ANGLE));
 		
+		// return forklift to down position
+		//addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		
+		// drive backward releasing the container
 		addSequential(new ChassisDriveStraight(0.5, 0.5, 180));
+		
+		// turn robot to have the back at the loading station
 		addSequential(chassisTurn90Left);
-		//addSequential(new ChassisDriveStraight(0.1, 0.5, 90))
 	}
 }
