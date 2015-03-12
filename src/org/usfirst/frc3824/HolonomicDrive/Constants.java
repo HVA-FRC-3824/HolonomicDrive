@@ -14,7 +14,7 @@ public class Constants
     public final static double FORKLIFT_TOTE1_POSITION                       = 12.0; // 18.5;
     public final static double FORKLIFT_TOTE2_POSITION                       = 22.0; // 30.0;
     public final static double FORKLIFT_TOTE3_POSITION                       = 28.75; // 40.0;
-    public final static double FORKLIFT_TOTE4_POSITION                       = 35.0; // 49.0;
+    public final static double FORKLIFT_TOTE4_POSITION                       = 38.0; // 49.0;
     public final static double FORKLIFT_TOTE5_POSITION                       = 55.5; // 55.5;
     
     public final static double FORKLIFT_STEP                                 = 10.5; // 10.5;
@@ -100,7 +100,7 @@ public class Constants
 
     //***************************************************************************************
     // AUTONOMOUS: Move Container to store area and align with loading station
-    public final static double AUTONOMOUS_CONTAINER_STORE_TIME                =  1.0;
+    public final static double AUTONOMOUS_CONTAINER_STORE_TIME                =  1.8; //adjust for battery level
     public final static double AUTONOMOUS_CONTAINER_STORE_POWER               =  0.5;
     public final static double AUTONOMOUS_CONTAINER_STORE_ANGLE               =  0.0;
 }

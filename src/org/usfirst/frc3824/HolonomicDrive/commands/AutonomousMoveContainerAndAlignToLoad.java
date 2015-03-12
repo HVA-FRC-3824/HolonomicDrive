@@ -21,7 +21,7 @@ public class AutonomousMoveContainerAndAlignToLoad extends CommandGroup
 {
 	public AutonomousMoveContainerAndAlignToLoad()
 	{
-		ChassisTurnAngle chassisTurn90Left = new ChassisTurnAngle(-90.0, 0.0);
+		ChassisTurnAngle chassisTurn105Left = new ChassisTurnAngle(-105.0, 0.0);
 
 		// reset the gyro
 		addSequential(new ResetGyro());
@@ -39,9 +39,12 @@ public class AutonomousMoveContainerAndAlignToLoad extends CommandGroup
 		//addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 		
 		// drive backward releasing the container
-		addSequential(new ChassisDriveStraight(0.5, 0.5, 180));
+		addSequential(new ChassisDriveStraight(0.6, 0.5, 180));
 		
 		// turn robot to have the back at the loading station
-		addSequential(chassisTurn90Left);
+		addSequential(chassisTurn105Left);
+		
+		
+		addSequential(new ChassisDriveStraight(0.25, -0.5, 0));
 	}
 }
