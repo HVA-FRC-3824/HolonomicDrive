@@ -92,13 +92,24 @@ public class Robot extends IterativeRobot
 	public void disabledInit()
 	{
 		// Reset Position to 0.0 when disabled
-		ForkliftMoveToPosition.setPositionSetpoint(0.0);
+		forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_POSITION_MODE, 0.0);
 	}
 
 	public void disabledPeriodic()
 	{
 		Scheduler.getInstance().run();
 
+		// This is in disablePeriodic because we know that when disabled, the forklift
+		// will slowly fall to it's rest position, this will keep reseting while disabled
+		// One might think to put the reset in autonomousInit() or in teleopInit() the problem
+		// with this approach is, if you put it in autonomousInit(), it won't initialize during
+		// testing when you go straight to teleop.  If you put the reset in teleop, then during
+		// a game, it will reset when it transitions from auto to teleop.  This would be bad
+		// if autonomous had moved the forklift.  By putting it in disabled, we can be sure
+		// that it will be reset RIGHT BEFORE either init is called and will not get
+		// reset in between.
+		forklift.resetEncoder();
+		
 		// add current gyro angle to smart dashboard
 		SmartDashboard.putNumber("Gyro Angle", RobotMap.driveTrainGyro.getAngle());
 	}
