@@ -74,11 +74,18 @@ public class Forklift extends Subsystem
 		double sp;
 		
 //		SmartDashboard.putNumber("PID Mode", mode);
-//		SmartDashboard.putNumber("PID Setpoint", setPoint);
+		//SmartDashboard.putNumber("PID Setpoint", setPoint);
 
 		if( (override == true) && (mode != Constants.FORKLIFT_POSITION_MODE) )
 		{
-			sp = overrideVelocity;
+			if(setPoint < 0)
+			{
+				sp = -Math.abs(overrideVelocity);
+			}
+			else
+			{
+				sp = Math.abs(overrideVelocity);
+			}
 			originalVelocity = setPoint;
 		}
 		else
@@ -199,6 +206,12 @@ public class Forklift extends Subsystem
 	 */	
 	public void enableVelocityOverrideWithVelocity(double velocity)
 	{
+		if(velocityPID.getSetpoint() < 0)
+		{
+			velocity = -velocity;
+		}
+				
+		// do the override
 		if(override == false)
 		{
 			override = true;
@@ -206,6 +219,7 @@ public class Forklift extends Subsystem
 			originalVelocity = velocityPID.getSetpoint();
 			velocityPID.setSetpoint(overrideVelocity);
 		}
+		// just update the value, already in override
 		else
 		{
 			overrideVelocity = velocity;
