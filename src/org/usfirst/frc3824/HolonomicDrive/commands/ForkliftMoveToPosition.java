@@ -36,7 +36,7 @@ public class ForkliftMoveToPosition extends Command
 {
 	double mVelocitySetpoint;
 	double mPositionSetpoint;
-	double mIncVelocity;
+	double mIncVelocityMagnitude;
 	
 	public ForkliftMoveToPosition()
 	{
@@ -89,7 +89,7 @@ public class ForkliftMoveToPosition extends Command
 		else if (Robot.oi.forkliftJogDown.get() == true)
 			mPositionSetpoint = Robot.forklift.getPositionSetpoint() - Constants.FORKLIFT_JOG_STEP;
 		
-		mIncVelocity = Robot.forklift.getVelocity();
+		mIncVelocityMagnitude = Math.abs(Robot.forklift.getVelocity());
 		
 		// ensure the range of the position
 		// if (position < 0.0)
@@ -116,12 +116,12 @@ public class ForkliftMoveToPosition extends Command
 		// as we approach target position, decelerate
 		else if (Math.abs(Robot.forklift.getPosition() - mPositionSetpoint) < Constants.FORKLIFT_SWITCH_TO_DECELERATE_DISTANCE)
 		{
-			if(mIncVelocity > 0)
+			if(mIncVelocityMagnitude > 0)
 			{
-				mIncVelocity -= Constants.FORKLIFT_DECEL_VALUE;
-				if(mIncVelocity < Constants.FORKLIFT_DECEL_VELOCITY_MIN_VALUE)
+				mIncVelocityMagnitude -= Constants.FORKLIFT_DECEL_VALUE;
+				if(mIncVelocityMagnitude < Constants.FORKLIFT_DECEL_VELOCITY_MIN_VALUE)
 				{
-					mIncVelocity = Constants.FORKLIFT_DECEL_VELOCITY_MIN_VALUE;
+					mIncVelocityMagnitude = Constants.FORKLIFT_DECEL_VELOCITY_MIN_VALUE;
 				}
 			}
 			
@@ -129,23 +129,23 @@ public class ForkliftMoveToPosition extends Command
 			if (Robot.forklift.getPosition() < mPositionSetpoint)
 			{
 				// set the fork-lift mode to position and set the position
-				Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, mIncVelocity);
+				Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, mIncVelocityMagnitude);
 			}
 			else
 			{
 				// set the fork-lift mode to position and set the position
-				Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, -mIncVelocity);
+				Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, -mIncVelocityMagnitude);
 			}
 		}
 		// as we start off, accelerate
 		else // called when first starts and during long transitions
 		{
-			if(mIncVelocity < mVelocitySetpoint)
+			if(mIncVelocityMagnitude < mVelocitySetpoint)
 			{
-				mIncVelocity += Constants.FORKLIFT_ACCEL_VALUE;
-				if( mIncVelocity > mVelocitySetpoint)
+				mIncVelocityMagnitude += Constants.FORKLIFT_ACCEL_VALUE;
+				if( mIncVelocityMagnitude > mVelocitySetpoint)
 				{
-					mIncVelocity = mVelocitySetpoint;
+					mIncVelocityMagnitude = mVelocitySetpoint;
 				}
 			}
 			
@@ -153,12 +153,12 @@ public class ForkliftMoveToPosition extends Command
 			if (Robot.forklift.getPosition() < mPositionSetpoint)
 			{
 				// set the fork-lift mode to position and set the position
-				Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, mIncVelocity);
+				Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, mIncVelocityMagnitude);
 			}
 			else
 			{
 				// set the fork-lift mode to position and set the position
-				Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, -mIncVelocity);
+				Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, -mIncVelocityMagnitude);
 			}
 		}
 		
