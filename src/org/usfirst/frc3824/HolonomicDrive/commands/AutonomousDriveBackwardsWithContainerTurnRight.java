@@ -27,7 +27,6 @@ public class AutonomousDriveBackwardsWithContainerTurnRight extends CommandGroup
 		addSequential(new ResetGyro());
 		
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
 		// drive forward at half power for one second
 		addSequential(new ChassisDriveStraight( Constants.AUTONOMOUS_CONTAINER_DRIVE_TIME, 

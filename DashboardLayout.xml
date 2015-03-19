@@ -1,5 +1,53 @@
 <xml version="1.0">
 <dashboard>
+	<widget field="PID Position Error" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="284" y="168"/>
+	</widget>
+	<widget field="PID Setpoint" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="284" y="147"/>
+	</widget>
+	<widget field="PID Mode" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="284" y="126"/>
+	</widget>
+	<widget field="Set Gyro Center" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="190" y="285"/>
+	</widget>
+	<widget field="m_center" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="284" y="105"/>
+	</widget>
+	<widget field="result.count" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="284" y="84"/>
+	</widget>
+	<widget field="result.value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="284" y="63"/>
+	</widget>
+	<widget field="sampleRate" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="284" y="42"/>
+	</widget>
+	<widget field="m_offset" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="284" y="21"/>
+	</widget>
+	<widget field="Roller Off" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="137" y="339"/>
+	</widget>
+	<widget field="Autonomous Remove Container" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="190" y="251"/>
+	</widget>
+	<widget field="Gyro Angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="284" y="0"/>
+	</widget>
+	<widget field="Roller In" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="423"/>
+	</widget>
+	<widget field="Forklift Position" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="402"/>
+	</widget>
+	<widget field="Roller Out" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="660" y="75"/>
+	</widget>
+	<widget field="Reset Gyro" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="591" y="-2"/>
+	</widget>
 	<widget field="angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="0" y="381"/>
 	</widget>
@@ -16,10 +64,10 @@
 		<location x="0" y="271"/>
 	</widget>
 	<widget field="Chassis Drive And Turn Test" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="0" y="216"/>
+		<location x="696" y="130"/>
 	</widget>
 	<widget field="Chassis Turn Angle" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="0" y="182"/>
+		<location x="734" y="97"/>
 	</widget>
 	<widget field="AutonomousModes" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
 		<location x="0" y="0"/>
@@ -27,5 +75,4 @@
 </dashboard>
 <live-window>
 </live-window>
-	<hidden field="Gyro Angle"/>
 </xml>

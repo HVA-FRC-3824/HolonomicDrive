@@ -29,7 +29,6 @@ public class AutonomousStackTwoTotesContainer extends CommandGroup
 		
 		// lift the tote over the container
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_LOW));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_LOW));
 		
 		// drive forward to get the container
 		addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_TOTE_AND_CONTAINER_DRIVE_TIME,

@@ -18,6 +18,6 @@ public class AutonomousDoNothing extends CommandGroup
 {
 	public AutonomousDoNothing()
 	{
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+
 	}
 }

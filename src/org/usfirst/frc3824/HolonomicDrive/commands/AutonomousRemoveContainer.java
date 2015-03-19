@@ -26,7 +26,6 @@ public class AutonomousRemoveContainer extends CommandGroup
 
 		// pickup container
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
-		//addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
 		// drive backward at half power for one second
 		addSequential(new ChassisDriveStraight( Constants.AUTONOMOUS_REMOVE_CONTAINER_DRIVE_TIME, 

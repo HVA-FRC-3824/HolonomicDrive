@@ -86,7 +86,15 @@ public class ForkliftMoveToPosition extends Command
 		else if (Robot.oi.forkliftJogUp.get() == true)
 			mPositionSetpoint = Robot.forklift.getPositionSetpoint() + Constants.FORKLIFT_JOG_STEP;
 		else if (Robot.oi.forkliftJogDown.get() == true)
+//<<<<<<< HEAD
 			mPositionSetpoint = Robot.forklift.getPositionSetpoint() - Constants.FORKLIFT_JOG_STEP;
+//=======
+//			mPositionSetpoint = positionSetpoint - Constants.FORKLIFT_JOG_STEP;
+		else if (Robot.oi.toteLoadHeight.get() == true)
+			mPositionSetpoint = Constants.FORKLIFT_TOTE_LOAD_HEIGHT;
+		
+		mVelocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_LOW;
+//>>>>>>> Roller
 		
 		// ensure the range of the position
 		// if (position < 0.0)

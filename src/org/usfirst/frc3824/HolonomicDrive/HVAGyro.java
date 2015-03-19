@@ -75,22 +75,19 @@ public class HVAGyro extends SensorBase implements PIDSource, LiveWindowSendable
 		m_analog.resetAccumulator();
 
 		// allow time for the Gyro run through the calibration
-		//Timer.delay(kCalibrationSampleTime);
+		Timer.delay(kCalibrationSampleTime);
 
 		// read the accumulated value and the number of samples
 		m_analog.getAccumulatorOutput(result);
 
 		// the gyro center is the average of the accumulated counts, while if offset
 		// is the fraction from the center (decimal)
-		//m_center = (int) ((double) result.value / (double) result.count + 0.5);
-		//m_offset =       ((double) result.value / (double) result.count) - m_center;
+		m_center = (int) ((double) result.value / (double) result.count + 0.5);
+		m_offset =       ((double) result.value / (double) result.count) - m_center;
 
-		m_center = 1974000;
+		m_center = 1962500;
 		m_offset = 0.0;
-		
-		//Sean toll is awesome
-		//s
-		
+			
 		// set the gyro center (integer) for the integration
 		m_analog.setAccumulatorCenter(m_center);
 		m_analog.resetAccumulator();
@@ -104,11 +101,7 @@ public class HVAGyro extends SensorBase implements PIDSource, LiveWindowSendable
 		UsageReporting.report(tResourceType.kResourceType_Gyro, m_analog.getChannel());
 		
 		LiveWindow.addSensor("HVAGyro", m_analog.getChannel(), this);
-		SmartDashboard.putNumber("sampleRate",   sampleRate);
-		SmartDashboard.putNumber("m_center",     m_center);
-		SmartDashboard.putNumber("m_offset",     m_offset);
-		SmartDashboard.putNumber("result.value", result.value);
-		SmartDashboard.putNumber("result.count", result.count);
+		SmartDashboard.putNumber("m_center", m_center);
 	}
 
 	/**
@@ -158,6 +151,15 @@ public class HVAGyro extends SensorBase implements PIDSource, LiveWindowSendable
 		}
 	}
 
+	public void setGyroCenter(int center)
+	{
+		m_center = center;
+		
+		// set the gyro center (integer) for the integration
+		m_analog.setAccumulatorCenter(m_center);
+		m_analog.resetAccumulator();
+	}
+	   
 	/**
 	 * Delete (free) the accumulator and the analog components used for the
 	 * gyro.

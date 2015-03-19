@@ -19,7 +19,6 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  */
 public class AutonomousDriveBackwardsWithContainerOverStep extends CommandGroup
 {
-
 	public AutonomousDriveBackwardsWithContainerOverStep()
 	{
 		ChassisTurnAngle chassisTurn90Right = new ChassisTurnAngle(90.0, 0.0);
@@ -27,7 +26,6 @@ public class AutonomousDriveBackwardsWithContainerOverStep extends CommandGroup
 		// reset the gyro
 		addSequential(new ResetGyro());
 		
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
 
 		// drive forward at half power for one second
