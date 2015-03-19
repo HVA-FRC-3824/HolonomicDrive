@@ -89,7 +89,7 @@ public class ForkliftMoveToPosition extends Command
 		else if (Robot.oi.forkliftJogDown.get() == true)
 			mPositionSetpoint = Robot.forklift.getPositionSetpoint() - Constants.FORKLIFT_JOG_STEP;
 		
-		mIncVelocityMagnitude = Math.abs(Robot.forklift.getVelocity());
+		mIncVelocityMagnitude = Math.abs(Robot.forklift.getVelocitySetpoint());
 		
 		// ensure the range of the position
 		// if (position < 0.0)
@@ -116,10 +116,10 @@ public class ForkliftMoveToPosition extends Command
 		// as we approach target position, decelerate
 		else if (Math.abs(Robot.forklift.getPosition() - mPositionSetpoint) < Constants.FORKLIFT_SWITCH_TO_DECELERATE_DISTANCE)
 		{
-			if(mIncVelocityMagnitude > 0)
+			if (mIncVelocityMagnitude > 0)
 			{
 				mIncVelocityMagnitude -= Constants.FORKLIFT_DECEL_VALUE;
-				if(mIncVelocityMagnitude < Constants.FORKLIFT_DECEL_VELOCITY_MIN_VALUE)
+				if (mIncVelocityMagnitude < Constants.FORKLIFT_DECEL_VELOCITY_MIN_VALUE)
 				{
 					mIncVelocityMagnitude = Constants.FORKLIFT_DECEL_VELOCITY_MIN_VALUE;
 				}
@@ -140,10 +140,10 @@ public class ForkliftMoveToPosition extends Command
 		// as we start off, accelerate
 		else // called when first starts and during long transitions
 		{
-			if(mIncVelocityMagnitude < mVelocitySetpoint)
+			if (mIncVelocityMagnitude < mVelocitySetpoint)
 			{
 				mIncVelocityMagnitude += Constants.FORKLIFT_ACCEL_VALUE;
-				if( mIncVelocityMagnitude > mVelocitySetpoint)
+				if (mIncVelocityMagnitude > mVelocitySetpoint)
 				{
 					mIncVelocityMagnitude = mVelocitySetpoint;
 				}
@@ -161,11 +161,11 @@ public class ForkliftMoveToPosition extends Command
 				Robot.forklift.setPIDmodeAndSetpoint(Constants.FORKLIFT_VELOCITY_MODE, -mIncVelocityMagnitude);
 			}
 		}
-		
-//		 SmartDashboard.putNumber("Velocity Setpoint", velocitySetpoint);
+	
+		 SmartDashboard.putNumber("mIncVelocityMagnitude", mIncVelocityMagnitude + Math.random() / 10.0);
 		 SmartDashboard.putNumber("Forklift Position", Robot.forklift.getPosition());
-//		 SmartDashboard.putNumber("Error", Robot.forklift.getError());
-//		 SmartDashboard.putNumber("Forklift Mode", Robot.forklift.getPIDMode());
+		 SmartDashboard.putNumber("Error", Robot.forklift.getError());
+		 SmartDashboard.putNumber("Forklift Mode", Robot.forklift.getPIDMode());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()
