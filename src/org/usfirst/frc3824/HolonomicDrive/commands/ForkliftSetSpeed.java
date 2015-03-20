@@ -35,7 +35,7 @@ public class ForkliftSetSpeed extends Command
 	{
 		if (Robot.oi.setSpeed.get() == true)
 		{
-			Robot.forklift.enableVelocityOverrideWithVelocity(Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH);
+			Robot.forklift.enableVelocityOverrideWithVelocity(Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE);
 		}
 		else
 		{

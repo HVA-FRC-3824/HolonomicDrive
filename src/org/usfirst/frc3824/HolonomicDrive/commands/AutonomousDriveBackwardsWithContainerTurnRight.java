@@ -26,7 +26,7 @@ public class AutonomousDriveBackwardsWithContainerTurnRight extends CommandGroup
 		// reset the gyro
 		addSequential(new ResetGyro());
 		
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE));
 
 		// drive forward at half power for one second
 		addSequential(new ChassisDriveStraight( Constants.AUTONOMOUS_CONTAINER_DRIVE_TIME, 
@@ -36,6 +36,6 @@ public class AutonomousDriveBackwardsWithContainerTurnRight extends CommandGroup
 		// turn 90 degrees to face wall
 		addSequential(chassisTurn90Right);
 
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE));
 	}
 }

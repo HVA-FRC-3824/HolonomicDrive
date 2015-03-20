@@ -25,7 +25,7 @@ public class AutonomousContainerAndTote extends CommandGroup
 		addSequential(new ResetGyro());
 		
 		// Pickup container
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE2_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE));
 
 		// drive forward to get the tote
 		addSequential(new ChassisDriveStraight(Constants.AUTONOMOUS_TOTE_AND_CONTAINER_DRIVE_TIME,
@@ -40,6 +40,6 @@ public class AutonomousContainerAndTote extends CommandGroup
 		                                       Constants.AUTONOMOUS_TOTE_DRIVE_POWER,
 		                                       -Constants.AUTONOMOUS_TOTE_DRIVE_ANGLE));
 
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_LOW));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_NORMAL));
 	}
 }
