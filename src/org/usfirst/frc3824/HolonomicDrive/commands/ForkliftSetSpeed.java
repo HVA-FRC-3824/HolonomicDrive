@@ -33,7 +33,7 @@ public class ForkliftSetSpeed extends Command
 	// Called just before this Command runs the first time
 	protected void initialize()
 	{
-		if (Robot.oi.setSpeed.get() == true)
+		if (Robot.oi.speedOverride.get() == true)
 		{
 			Robot.forklift.enableVelocityOverrideWithVelocity(Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE);
 		}
