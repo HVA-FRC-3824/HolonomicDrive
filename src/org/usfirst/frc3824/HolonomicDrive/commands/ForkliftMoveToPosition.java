@@ -119,6 +119,15 @@ public class ForkliftMoveToPosition extends Command
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute()
 	{				
+		if (Robot.oi.speedOverride.get() == true)
+		{
+	        mVelocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE;
+		}
+		else
+		{
+	        mVelocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_NORMAL;
+		}
+		
 		// determine if the distance from set point is close enough to use the
 		// position PID - servo in place
 		if (Math.abs(Robot.forklift.getPosition() - mPositionSetpoint) < Constants.FORKLIFT_SWITCH_TO_POSITION_DISTANCE)
