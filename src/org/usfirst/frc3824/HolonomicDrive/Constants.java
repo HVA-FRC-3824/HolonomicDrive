@@ -118,7 +118,7 @@ public class Constants
     public final static double PRACTICE_FORKLIFT_TOTE1_POSITION                   = 12.0;
     public final static double PRACTICE_FORKLIFT_TOTE2_POSITION                   = 22.0;
     public final static double PRACTICE_FORKLIFT_TOTE3_POSITION                   = 28.75;
-    public final static double PRACTICE_FORKLIFT_TOTE4_POSITION                   = 38.0;
+    public final static double PRACTICE_FORKLIFT_TOTE4_POSITION                   = 40.5;
     public final static double PRACTICE_FORKLIFT_TOTE5_POSITION                   = 55.5;
     
     public final static double PRACTICE_FORKLIFT_STEP                             = 10.5;
