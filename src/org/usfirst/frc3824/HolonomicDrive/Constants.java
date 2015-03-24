@@ -254,7 +254,7 @@ public class Constants
     public final static double AUTONOMOUS_CONTAINER_BACKUP_POWER             =  0.5;
     public final static double AUTONOMOUS_CONTAINER_BACKUP_ANGLE             = 180.0;
     
-    public final static double AUTONOMOUS_CONTAINER_STATION_TIME             =  0.4; //adjust for battery level
+    public final static double AUTONOMOUS_CONTAINER_STATION_TIME             =  0.5; //adjust for battery level
     public final static double AUTONOMOUS_CONTAINER_STATION_POWER            = -0.5;
     public final static double AUTONOMOUS_CONTAINER_STATION_ANGLE            =  0.0; 
 }
