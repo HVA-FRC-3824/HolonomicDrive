@@ -105,6 +105,8 @@ public class ForkliftMoveToPosition extends Command
 		
 		mIncVelocityMagnitude = Math.abs(Robot.forklift.getVelocitySetpoint());
 		
+		Robot.forklift.setPositionSetpoint(mPositionSetpoint);
+		
 		// ensure the range of the position
 		// if (position < 0.0)
 		// position = 0.0;

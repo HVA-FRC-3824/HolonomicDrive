@@ -169,7 +169,7 @@ public class Forklift extends Subsystem
 		positionPID.setPID(P, I, D);
 	}
 
-	public void setPositionSetpoint(int PID, double setpoint)
+	public void setPositionSetpoint(double setpoint)
 	{
 		positionPID.setSetpoint(setpoint);
 	}
