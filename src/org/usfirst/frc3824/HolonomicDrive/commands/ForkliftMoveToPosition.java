@@ -130,6 +130,15 @@ public class ForkliftMoveToPosition extends Command
 	        mVelocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_NORMAL;
 		}
 		
+		if (Robot.oi.speedOverrideHigh.get() == true)
+		{
+	        mVelocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH_OVERRIDE;
+		}
+		else
+		{
+	        mVelocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_NORMAL;
+		}
+		
 		// determine if the distance from set point is close enough to use the
 		// position PID - servo in place
 		if (Math.abs(Robot.forklift.getPosition() - mPositionSetpoint) < Constants.FORKLIFT_SWITCH_TO_POSITION_DISTANCE)
@@ -189,8 +198,8 @@ public class ForkliftMoveToPosition extends Command
 	
 		 SmartDashboard.putNumber("mIncVelocityMagnitude", mIncVelocityMagnitude + Math.random() / 10.0);
 		 SmartDashboard.putNumber("Forklift Position", Robot.forklift.getPosition());
-		 SmartDashboard.putNumber("Error", Robot.forklift.getError());
-		 SmartDashboard.putNumber("Forklift Mode", Robot.forklift.getPIDMode());
+		 // SmartDashboard.putNumber("Error", Robot.forklift.getError());
+		 // SmartDashboard.putNumber("Forklift Mode", Robot.forklift.getPIDMode());
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

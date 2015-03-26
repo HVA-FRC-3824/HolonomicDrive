@@ -196,6 +196,7 @@ public class Constants
     
     public final static double FORKLIFT_JOG_STEP                             = 2.5;
     
+    public final static double FORKLIFT_VELOCITY_SETPOINT_HIGH_OVERRIDE      = 36.0;                        
     public final static double FORKLIFT_VELOCITY_SETPOINT_NORMAL             = 28.0;                        
     public final static double FORKLIFT_VELOCITY_SETPOINT_OVERRIDE           = 12.0;                       
     
