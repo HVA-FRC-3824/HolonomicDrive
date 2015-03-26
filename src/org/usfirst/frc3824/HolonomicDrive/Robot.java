@@ -115,6 +115,12 @@ public class Robot extends IterativeRobot
 		
 		// add current gyro angle to smart dashboard
 		SmartDashboard.putNumber("Gyro Angle", RobotMap.driveTrainGyro.getAngle());
+		
+		int max = oi.joystick.getButtonCount();
+		for(int i=1; i<max; i++)
+		{
+			SmartDashboard.putBoolean("Button " + String.valueOf(i), oi.joystick.getRawButton(i));
+		}
 	}
 
 	public void autonomousInit()
