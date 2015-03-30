@@ -126,13 +126,7 @@ public class ForkliftMoveToPosition extends Command
 	        mVelocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE;
 	        SmartDashboard.putBoolean("Speed Override SLOW", true);
 		}
-		else
-		{
-	        mVelocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_NORMAL;
-	        SmartDashboard.putBoolean("Speed Override SLOW", false);
-		}
-		
-		if (Robot.oi.speedOverrideHigh.get() == true)
+		else if (Robot.oi.speedOverrideHigh.get() == true)
 		{
 	        mVelocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_HIGH_OVERRIDE;
 	        SmartDashboard.putBoolean("Speed Override FAST", true);
@@ -141,6 +135,7 @@ public class ForkliftMoveToPosition extends Command
 		{
 	        mVelocitySetpoint = Constants.FORKLIFT_VELOCITY_SETPOINT_NORMAL;
 	        SmartDashboard.putBoolean("Speed Override FAST", false);
+	        SmartDashboard.putBoolean("Speed Override SLOW", false);
 		}
 		
 		// determine if the distance from set point is close enough to use the
@@ -185,6 +180,10 @@ public class ForkliftMoveToPosition extends Command
 				{
 					mIncVelocityMagnitude = mVelocitySetpoint;
 				}
+			}
+			else 
+			{
+				mIncVelocityMagnitude = mVelocitySetpoint;
 			}
 			
 			// determine if above or below the desired set point
