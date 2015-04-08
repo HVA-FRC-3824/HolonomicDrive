@@ -1,82 +1,79 @@
 <xml version="1.0">
 <dashboard>
-	<widget field="Button 20" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="1274" y="321"/>
+	<widget field="Button 1" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="417"/>
 	</widget>
-	<widget field="Button 13" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="1271" y="549"/>
+	<widget field="Button 2" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="396"/>
 	</widget>
-	<widget field="Button 2" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="1180" y="548"/>
+	<widget field="Button 3" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="375"/>
 	</widget>
-	<widget field="Button 15" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="1084" y="546"/>
+	<widget field="Button 4" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="354"/>
 	</widget>
-	<widget field="Button 14" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="1085" y="504"/>
+	<widget field="Button 5" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="333"/>
 	</widget>
-	<widget field="Button 3" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="1087" y="461"/>
+	<widget field="Button 6" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="312"/>
 	</widget>
-	<widget field="Button 5" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="1085" y="420"/>
+	<widget field="Button 7" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="265"/>
 	</widget>
-	<widget field="Button 6" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="981" y="548"/>
+	<widget field="Button 8" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="244"/>
 	</widget>
-	<widget field="Button 1" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="983" y="502"/>
+	<widget field="Button 9" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="223"/>
 	</widget>
-	<widget field="Button 12" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="980" y="479"/>
-	</widget>
-	<widget field="Button 11" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="980" y="459"/>
-	</widget>
-	<widget field="Button 10" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="981" y="437"/>
-	</widget>
-	<widget field="Button 9" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="981" y="417"/>
-	</widget>
-	<widget field="Button 8" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="981" y="396"/>
-	</widget>
-	<widget field="Button 7" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="981" y="376"/>
-	</widget>
-	<widget field="Button 4" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="920" y="356"/>
-	</widget>
-	<widget field="Button 19" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="982" y="334"/>
-	</widget>
-	<widget field="Button 18" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="982" y="312"/>
-	</widget>
-	<widget field="Button 16" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="845" y="333"/>
-	</widget>
-	<widget field="Button 17" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.BooleanBox">
-		<location x="845" y="312"/>
-	</widget>
-	<widget field="Forklift Mode" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="126"/>
+	<widget field="mIncVelocityMagnitude" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="492" y="21"/>
 	</widget>
 	<widget field="Speed Override SLOW" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="105"/>
+		<location x="483" y="0"/>
 	</widget>
-	<widget field="Error" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="84"/>
+	<widget field="Button 10" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="202"/>
+	</widget>
+	<widget field="Button 11" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="181"/>
+	</widget>
+	<widget field="Button 12" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="160"/>
+	</widget>
+	<widget field="Button 13" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="139"/>
+	</widget>
+	<widget field="Button 14" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="118"/>
+	</widget>
+	<widget field="Button 15" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="97"/>
+	</widget>
+	<widget field="Button 16" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="76"/>
+	</widget>
+	<widget field="Button 17" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="55"/>
+	</widget>
+	<widget field="Button 18" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="42"/>
+	</widget>
+	<widget field="Local Position Setpoint" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="190" y="291"/>
+	</widget>
+	<widget field="Button 19" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="21"/>
+	</widget>
+	<widget field="Forklift Position" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="332" y="34"/>
 	</widget>
 	<widget field="Speed Override FAST" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="21" y="63"/>
+		<location x="0" y="291"/>
 	</widget>
-	<widget field="Forklift Position" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.LinePlot">
-		<location x="939" y="-5"/>
-	</widget>
-	<widget field="mIncVelocityMagnitude" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.LinePlot">
-		<location x="536" y="-1"/>
+	<widget field="Button 20" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="0"/>
 	</widget>
 	<widget field="Roller Off" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
 		<location x="170" y="382"/>
@@ -88,27 +85,24 @@
 		<location x="144" y="21"/>
 	</widget>
 	<widget field="Set Gyro Center" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="326" y="0"/>
+		<location x="510" y="57"/>
 	</widget>
 	<widget field="Active Robot Values" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="143" y="0"/>
 		<width>188</width>
 		<height>20</height>
 	</widget>
-	<widget field="result.count" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="560"/>
-	</widget>
 	<widget field="Chassis Drive Straight" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="0" y="526"/>
+		<location x="211" y="460"/>
 	</widget>
 	<widget field="m_center" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="505"/>
+		<location x="539" y="96"/>
 	</widget>
 	<widget field="Chassis Drive And Turn" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
 		<location x="0" y="471"/>
 	</widget>
 	<widget field="Gyro Angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="450"/>
+		<location x="543" y="123"/>
 	</widget>
 	<widget field="Chassis Drive And Turn Test" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
 		<location x="0" y="416"/>
@@ -120,19 +114,10 @@
 		<location x="0" y="348"/>
 	</widget>
 	<widget field="Reset Gyro" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="0" y="314"/>
+		<location x="549" y="152"/>
 	</widget>
 	<widget field="AutonomousModes" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
 		<location x="0" y="63"/>
-	</widget>
-	<widget field="result.value" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="42"/>
-	</widget>
-	<widget field="m_offset" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="21"/>
-	</widget>
-	<widget field="sampleRate" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="0"/>
 	</widget>
 </dashboard>
 <live-window>

@@ -85,7 +85,7 @@ public class HVAGyro extends SensorBase implements PIDSource, LiveWindowSendable
 		m_center = (int) ((double) result.value / (double) result.count + 0.5);
 		m_offset =       ((double) result.value / (double) result.count) - m_center;
 
-		m_center = 1962500;
+		m_center = Constants.GYRO_CENTER;
 		m_offset = 0.0;
 			
 		// set the gyro center (integer) for the integration

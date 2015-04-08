@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Constants
 {
-	static final boolean IS_COMP_ROBOT = false;
+	static final boolean IS_COMP_ROBOT = true;
 	
 	public static void InitConstants()
 	{
@@ -70,11 +70,11 @@ public class Constants
 		    DRIVETRAIN_DRIVE_AND_TURN_I                   = PRACTICE_DRIVETRAIN_DRIVE_AND_TURN_I;
 		    DRIVETRAIN_DRIVE_AND_TURN_D                   = PRACTICE_DRIVETRAIN_DRIVE_AND_TURN_D;			
 		}
-
 	}
+	
     //***************************************************************************************
 	// gyro center value
-	public final static int GYRO_CENTER                                      = 1975175;
+	public final static int GYRO_CENTER                   = 2030000;  // 2030200; // 2029000; // 2030800; // 2031000; // 2023000;  // 2093700; // 2020800; //= 2022350; //1962500;
 	
     //***************************************************************************************
     //**************** Values that differ between practice and competition ******************
@@ -147,9 +147,9 @@ public class Constants
 	                                                                                 
     public final static double COMP_FORKLIFT_TOTEPICKUP_POSITION             =  0.0;
     public final static double COMP_FORKLIFT_TOTE0_POSITION                  =  5.0;  //going to be well over the height of one tote
-    public final static double COMP_FORKLIFT_TOTE1_POSITION                  = 18.5;
-    public final static double COMP_FORKLIFT_TOTE2_POSITION                  = 30.0;
-    public final static double COMP_FORKLIFT_TOTE3_POSITION                  = 40.0;
+    public final static double COMP_FORKLIFT_TOTE1_POSITION                  = 16.0;
+    public final static double COMP_FORKLIFT_TOTE2_POSITION                  = 27.5;
+    public final static double COMP_FORKLIFT_TOTE3_POSITION                  = 39.0;
     public final static double COMP_FORKLIFT_TOTE4_POSITION                  = 49.0;
     public final static double COMP_FORKLIFT_TOTE5_POSITION                  = 55.5;
     
@@ -157,7 +157,7 @@ public class Constants
     public final static double COMP_FORKLIFT_CONTAINER_PICKUP                =  6.6;
     public final static double COMP_FORKLIFT_CONTAINER_LIFT                  = 21.0;
     
-    public final static double COMP_FORKLIFT_TOTE_LOAD_HEIGHT                = 25.0;
+    public final static double COMP_FORKLIFT_TOTE_LOAD_HEIGHT                = 22.0;
     	
     //***************************************************************************************
     // Drive train turn constants
@@ -235,7 +235,7 @@ public class Constants
   //***************************************************************************************
     // AUTONOMOUS: Get Container in Autozone
     public final static double AUTONOMOUS_CONTAINER_DRIVE_TIME               =  1.7;
-    public final static double AUTONOMOUS_CONTAINER_STEP_DRIVE_TIME          =  1.9;
+    public final static double AUTONOMOUS_CONTAINER_STEP_DRIVE_TIME          =  2.0;
     public final static double AUTONOMOUS_CONTAINER_DRIVE_POWER              =  0.5;
     public final static double AUTONOMOUS_CONTAINER_DRIVE_ANGLE              =  0.0;
 

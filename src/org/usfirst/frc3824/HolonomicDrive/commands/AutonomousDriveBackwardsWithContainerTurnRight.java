@@ -21,7 +21,8 @@ public class AutonomousDriveBackwardsWithContainerTurnRight extends CommandGroup
 {
 	public AutonomousDriveBackwardsWithContainerTurnRight()
 	{
-		ChassisTurnAngle chassisTurn90Right = new ChassisTurnAngle(90.0, 0.0);
+		// desire a turn on 90 degrees, but tend to overshoot
+		ChassisTurnAngle chassisTurn80Right = new ChassisTurnAngle(80.0, 0.0);
 
 		// reset the gyro
 		addSequential(new ResetGyro());
@@ -34,7 +35,7 @@ public class AutonomousDriveBackwardsWithContainerTurnRight extends CommandGroup
 		                                        Constants.AUTONOMOUS_CONTAINER_DRIVE_ANGLE));
 
 		// turn 90 degrees to face wall
-		addSequential(chassisTurn90Right);
+		addSequential(chassisTurn80Right);
 
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE));
 	}

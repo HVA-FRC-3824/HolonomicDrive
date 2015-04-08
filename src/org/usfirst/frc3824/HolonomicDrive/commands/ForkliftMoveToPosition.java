@@ -114,7 +114,7 @@ public class ForkliftMoveToPosition extends Command
 		// if (position >= Constants.FORKLIFT_MAXIMUM_POSITION)
 		//   position = Constants.FORKLIFT_MAXIMUM_POSITION;
 
-//		 SmartDashboard.putNumber("Local Position Setpoint", mPositionSetpoint);
+		 SmartDashboard.putNumber("Local Position Setpoint", mPositionSetpoint);
 //		 SmartDashboard.putNumber("Static Position Setpoint", positionSetpoint);
 	}
 
