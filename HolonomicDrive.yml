@@ -198,6 +198,33 @@ Children:
         name: Default Command, type: Command, validators: null, value: None}
     Base: Subsystem
     Name: Roller
+  - Children:
+    - Children: []
+      Properties:
+        Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
+          choices: &id004 ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+            '11', '12', '13', '14', '15', '16', '17', '18', '19']
+          default: '0'
+          name: Output Channel (PWM)
+          validators: &id005 [PWMOutput]
+          value: '6'
+      Base: Servo
+      Name: Servo Right
+    - Children: []
+      Properties:
+        Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id004
+          default: '0'
+          name: Output Channel (PWM)
+          validators: *id005
+          value: '7'
+      Base: Servo
+      Name: Servo Left
+    Properties:
+      Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Default Command, type: Command, validators: null, value: None}
+    Base: Subsystem
+    Name: Container Gripper
   Properties: {}
   Base: Subsystems
   Name: Subsystems
@@ -205,10 +232,10 @@ Children:
   - Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: &id007 ['0', '1', '2', '3', '4', '5']
+        choices: &id009 ['0', '1', '2', '3', '4', '5']
         default: 1
         name: Number
-        validators: &id008 [Joystick]
+        validators: &id010 [Joystick]
         value: '0'
     Base: Joystick
     Name: Joystick
@@ -218,7 +245,7 @@ Children:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Forklift Joystick}
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id004 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
+          choices: &id006 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
             '12', '13', '14', '15', '16']
           default: '1'
           name: Button
@@ -228,10 +255,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: &id005 [TypeDropdownSelected]
+          validators: &id007 [TypeDropdownSelected]
           value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id006 [whileHeld, whenPressed, whenReleased]
+          choices: &id008 [whileHeld, whenPressed, whenReleased]
           default: whileHeld
           name: When to Run
           validators: null
@@ -243,7 +270,7 @@ Children:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Forklift Joystick}
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -252,10 +279,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whileHeld
           name: When to Run
           validators: null
@@ -267,7 +294,7 @@ Children:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Forklift Joystick}
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -276,10 +303,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whileHeld
           name: When to Run
           validators: null
@@ -291,7 +318,7 @@ Children:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Forklift Joystick}
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -300,10 +327,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whileHeld
           name: When to Run
           validators: null
@@ -315,7 +342,7 @@ Children:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Forklift Joystick}
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -324,10 +351,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whileHeld
           name: When to Run
           validators: null
@@ -339,7 +366,7 @@ Children:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Forklift Joystick}
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -348,10 +375,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whileHeld
           name: When to Run
           validators: null
@@ -363,7 +390,7 @@ Children:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Forklift Joystick}
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -372,10 +399,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whileHeld
           name: When to Run
           validators: null
@@ -387,7 +414,7 @@ Children:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Forklift Joystick}
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -396,10 +423,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whileHeld
           name: When to Run
           validators: null
@@ -411,7 +438,7 @@ Children:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Forklift Joystick}
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -420,10 +447,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whileHeld
           name: When to Run
           validators: null
@@ -435,7 +462,7 @@ Children:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Forklift Joystick}
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -444,10 +471,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whileHeld
           name: When to Run
           validators: null
@@ -459,7 +486,7 @@ Children:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Forklift Joystick}
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -468,10 +495,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whileHeld
           name: When to Run
           validators: null
@@ -483,7 +510,7 @@ Children:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Forklift Joystick}
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -492,10 +519,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whileHeld
           name: When to Run
           validators: null
@@ -507,7 +534,7 @@ Children:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Forklift Joystick}
         Button: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
+          choices: *id006
           default: '1'
           name: Button
           validators: null
@@ -516,10 +543,10 @@ Children:
           default: None
           name: Command
           type: Command
-          validators: *id005
+          validators: *id007
           value: Forklift Move To Position
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id006
+          choices: *id008
           default: whileHeld
           name: When to Run
           validators: null
@@ -528,10 +555,10 @@ Children:
       Name: Tote Load Height
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id007
+        choices: *id009
         default: 1
         name: Number
-        validators: *id008
+        validators: *id010
         value: '1'
     Base: Joystick
     Name: Forklift Joystick
@@ -717,6 +744,22 @@ Children:
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
     Name: Roller Off
+  - Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Container Gripper}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command
+    Name: Container Grip
+  - Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Container Gripper}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+    Base: Command
+    Name: Container Release
   Properties: {}
   Base: Commands
   Name: Commands

@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Constants
 {
-	static final boolean IS_COMP_ROBOT = true;
+	static final boolean IS_COMP_ROBOT = false;
 	
 	public static void InitConstants()
 	{
@@ -123,7 +123,7 @@ public class Constants
     
     public final static double PRACTICE_FORKLIFT_STEP                             = 10.5;
     public final static double PRACTICE_FORKLIFT_CONTAINER_PICKUP                 =  6.6;
-    public final static double PRACTICE_FORKLIFT_CONTAINER_LIFT                   = 21.0;
+    public final static double PRACTICE_FORKLIFT_CONTAINER_LIFT                   = 17.5;
     
     public final static double PRACTICE_FORKLIFT_TOTE_LOAD_HEIGHT                 = 18.5;
     	
@@ -176,7 +176,9 @@ public class Constants
     //***************************************************************************************
     //***************************************************************************************
     //***************************************************************************************
-   
+    public final static double CONTAINER_GRIP                                = 1.0;
+    public final static double CONTAINER_RELEASE                             = -1.0;
+      
     public final static double TURN_THRESHOLD                                = 3.0; // works with 1, but is a bit slow
 
     //**************************************************************************************
