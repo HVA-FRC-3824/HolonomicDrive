@@ -1,5 +1,11 @@
 <xml version="1.0">
 <dashboard>
+	<widget field="Container Grip" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="332" y="0"/>
+	</widget>
+	<widget field="Container Release" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="689" y="0"/>
+	</widget>
 	<widget field="Button 1" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="332" y="417"/>
 	</widget>
