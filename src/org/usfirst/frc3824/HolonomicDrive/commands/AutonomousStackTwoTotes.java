@@ -25,8 +25,8 @@ public class AutonomousStackTwoTotes extends CommandGroup
 		addSequential(new ResetGyro());
 		
 		// goes for first tote
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE));
-		addParallel(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_PLATFORM_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE));
+		addParallel(new ForkliftMoveToPosition(Constants.FORKLIFT_PLATFORM_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE));
 		addSequential(chassisTurn45);
 
 		// goes for second tote
@@ -34,12 +34,12 @@ public class AutonomousStackTwoTotes extends CommandGroup
 		addSequential(chassisTurn0);
 		
 		// goes for first tote
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_PLATFORM_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE));
 
 		// goes for second tote
 		addSequential(new ChassisDriveStraight(1.0, 0.5, 0));
 		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTEPICKUP_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE));
-		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_TOTE0_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE));
+		addSequential(new ForkliftMoveToPosition(Constants.FORKLIFT_PLATFORM_POSITION, Constants.FORKLIFT_VELOCITY_SETPOINT_OVERRIDE));
 
 		// takes robot and totes to autozone
 		addSequential(new ChassisDriveStraight(2.0, 0.7, 90));

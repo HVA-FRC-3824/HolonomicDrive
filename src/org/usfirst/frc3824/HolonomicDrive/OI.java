@@ -27,7 +27,7 @@ public class OI
     public JoystickButton retract;
     public Joystick joystick;
     public JoystickButton totePickUp;
-    public JoystickButton tote0;
+    public JoystickButton platform;
     public JoystickButton tote1;
     public JoystickButton tote2;
     public JoystickButton tote3;
@@ -78,8 +78,8 @@ public class OI
         tote2.whenPressed(new ForkliftMoveToPosition());
         tote1 = new JoystickButton(forkliftJoystick, 11);
         tote1.whenPressed(new ForkliftMoveToPosition());
-        tote0 = new JoystickButton(forkliftJoystick, 1);
-        tote0.whenPressed(new ForkliftMoveToPosition());
+        platform = new JoystickButton(forkliftJoystick, 1);
+        platform.whenPressed(new ForkliftMoveToPosition());
         totePickUp = new JoystickButton(forkliftJoystick, 6);
         totePickUp.whenPressed(new ForkliftMoveToPosition());
         joystick = new Joystick(0);
@@ -91,6 +91,10 @@ public class OI
 
 	    
         // SmartDashboard Buttons
+        SmartDashboard.putData("Autonomous Stack Three Totes", new AutonomousStackThreeTotes());
+
+        SmartDashboard.putData("Autonomous Stack Three Totes Container", new AutonomousStackThreeTotesContainer());
+
         SmartDashboard.putData("Chassis Drive Straight", new ChassisDriveStraight());
 
         SmartDashboard.putData("Chassis Turn Angle", new ChassisTurnAngle());

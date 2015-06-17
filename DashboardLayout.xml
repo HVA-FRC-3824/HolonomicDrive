@@ -1,5 +1,14 @@
 <xml version="1.0">
 <dashboard>
+	<widget field="Autonomous Get Ready For Litter" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="492" y="254"/>
+	</widget>
+	<widget field="Autonomous Stack Three Totes Container" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="492" y="220"/>
+	</widget>
+	<widget field="Autonomous Stack Three Totes" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="492" y="186"/>
+	</widget>
 	<widget field="Container Grip" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
 		<location x="332" y="0"/>
 	</widget>

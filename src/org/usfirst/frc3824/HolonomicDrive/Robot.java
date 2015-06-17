@@ -81,10 +81,10 @@ public class Robot extends IterativeRobot
 		chooser.addObject("7) Drive with Container And Turn Right Over Step", new AutonomousDriveBackwardsWithContainerOverStep());
         chooser.addObject("8) Move Container and Ready to Load",              new AutonomousMoveContainerAndAlignToLoad());
 		chooser.addObject("9) Remove Container For 3 Stack",                  new AutonomousRemoveContainer());
-        //chooser.addObject("9) Stack Two Totes Container",                     new AutonomousStackTwoTotesContainer());
-		//chooser.addObject("6) Stake Three Totes",                             new AutonomousStackThreeTotes());
-		//chooser.addObject("8) Stack Three Totes Container",                   new AutonomousStackThreeTotesContainer());
-		//chooser.addObject("7) Container And Totes",                           new AutonomousContainerAndTote());
+		chooser.addObject("10) Stack Two Totes",                              new AutonomousStackTwoTotes());
+		chooser.addObject("11) Stack Two Totes Container",                    new AutonomousStackTwoTotesContainer());
+		chooser.addObject("12) Stake Three Totes",                            new AutonomousStackThreeTotes());
+		chooser.addObject("13) Stack Three Totes Container",                  new AutonomousStackThreeTotesContainer());
 		
 		// show the autonomous modes
 		SmartDashboard.putData("AutonomousModes", chooser);

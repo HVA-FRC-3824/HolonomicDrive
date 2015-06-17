@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Constants
 {
-	static final boolean IS_COMP_ROBOT = false;
+	static final boolean IS_COMP_ROBOT = true;
 	
 	public static void InitConstants()
 	{
@@ -12,7 +12,7 @@ public class Constants
 		{
 			SmartDashboard.putString("Active Robot Values", "COMPETITION");
 		    FORKLIFT_TOTEPICKUP_POSITION                  = COMP_FORKLIFT_TOTEPICKUP_POSITION;
-		    FORKLIFT_TOTE0_POSITION                       = COMP_FORKLIFT_TOTE0_POSITION;
+		    FORKLIFT_PLATFORM_POSITION                    = COMP_FORKLIFT_PLATFORM_POSITION;
 		    FORKLIFT_TOTE1_POSITION                       = COMP_FORKLIFT_TOTE1_POSITION;
 		    FORKLIFT_TOTE2_POSITION                       = COMP_FORKLIFT_TOTE2_POSITION;
 		    FORKLIFT_TOTE3_POSITION                       = COMP_FORKLIFT_TOTE3_POSITION;
@@ -43,7 +43,7 @@ public class Constants
 		{
 			SmartDashboard.putString("Active Robot Values", "PRACTICE");
 		    FORKLIFT_TOTEPICKUP_POSITION                  = PRACTICE_FORKLIFT_TOTEPICKUP_POSITION;
-		    FORKLIFT_TOTE0_POSITION                       = PRACTICE_FORKLIFT_TOTE0_POSITION;
+		    FORKLIFT_PLATFORM_POSITION                    = PRACTICE_FORKLIFT_PLATFORM_POSITION;
 		    FORKLIFT_TOTE1_POSITION                       = PRACTICE_FORKLIFT_TOTE1_POSITION;
 		    FORKLIFT_TOTE2_POSITION                       = PRACTICE_FORKLIFT_TOTE2_POSITION;
 		    FORKLIFT_TOTE3_POSITION                       = PRACTICE_FORKLIFT_TOTE3_POSITION;
@@ -74,14 +74,14 @@ public class Constants
 	
     //***************************************************************************************
 	// gyro center value
-	public final static int GYRO_CENTER                   = 2030000;  // 2030200; // 2029000; // 2030800; // 2031000; // 2023000;  // 2093700; // 2020800; //= 2022350; //1962500;
+	public final static int GYRO_CENTER                   = 2030300; //2045000; //2043200; //2041500; //2030000;  // 2030200; // 2029000; // 2030800; // 2031000; // 2023000;  // 2093700; // 2020800; //= 2022350; //1962500;
 	
     //***************************************************************************************
     //**************** Values that differ between practice and competition ******************
     //***************************************************************************************
    
     public static double FORKLIFT_TOTEPICKUP_POSITION;
-    public static double FORKLIFT_TOTE0_POSITION;  //going to be well over the height of one tote
+    public static double FORKLIFT_PLATFORM_POSITION;  //going to be well over the height of one tote
     public static double FORKLIFT_TOTE1_POSITION;
     public static double FORKLIFT_TOTE2_POSITION;
     public static double FORKLIFT_TOTE3_POSITION;
@@ -113,8 +113,8 @@ public class Constants
     //			                            ------- PRACTICE ROBOT SETTINGS ------
     // forklift positions for each tote height
 	                                                                                 
-    public final static double PRACTICE_FORKLIFT_TOTEPICKUP_POSITION              =  0.0;
-    public final static double PRACTICE_FORKLIFT_TOTE0_POSITION                   =  4.0;
+    public final static double PRACTICE_FORKLIFT_TOTEPICKUP_POSITION              = 0.0;
+    public final static double PRACTICE_FORKLIFT_PLATFORM_POSITION                = 11.0;
     public final static double PRACTICE_FORKLIFT_TOTE1_POSITION                   = 12.0;
     public final static double PRACTICE_FORKLIFT_TOTE2_POSITION                   = 22.0;
     public final static double PRACTICE_FORKLIFT_TOTE3_POSITION                   = 28.75;
@@ -122,7 +122,7 @@ public class Constants
     public final static double PRACTICE_FORKLIFT_TOTE5_POSITION                   = 55.5;
     
     public final static double PRACTICE_FORKLIFT_STEP                             = 10.5;
-    public final static double PRACTICE_FORKLIFT_CONTAINER_PICKUP                 =  6.6;
+    public final static double PRACTICE_FORKLIFT_CONTAINER_PICKUP                 = 6.6;
     public final static double PRACTICE_FORKLIFT_CONTAINER_LIFT                   = 17.5;
     
     public final static double PRACTICE_FORKLIFT_TOTE_LOAD_HEIGHT                 = 18.5;
@@ -146,7 +146,7 @@ public class Constants
     // forklift positions for each tote height
 	                                                                                 
     public final static double COMP_FORKLIFT_TOTEPICKUP_POSITION             =  0.0;
-    public final static double COMP_FORKLIFT_TOTE0_POSITION                  =  5.0;  //going to be well over the height of one tote
+    public final static double COMP_FORKLIFT_PLATFORM_POSITION               = 15.2;  //going to be well over the height of one tote
     public final static double COMP_FORKLIFT_TOTE1_POSITION                  = 16.0;
     public final static double COMP_FORKLIFT_TOTE2_POSITION                  = 27.5;
     public final static double COMP_FORKLIFT_TOTE3_POSITION                  = 39.0;
@@ -154,7 +154,7 @@ public class Constants
     public final static double COMP_FORKLIFT_TOTE5_POSITION                  = 55.5;
     
     public final static double COMP_FORKLIFT_STEP                            = 10.5;
-    public final static double COMP_FORKLIFT_CONTAINER_PICKUP                =  6.6;
+    public final static double COMP_FORKLIFT_CONTAINER_PICKUP                = 6.6;
     public final static double COMP_FORKLIFT_CONTAINER_LIFT                  = 21.0;
     
     public final static double COMP_FORKLIFT_TOTE_LOAD_HEIGHT                = 22.0;
@@ -224,7 +224,7 @@ public class Constants
     
     //***************************************************************************************
     // AUTONOMOUS: Tote
-    public final static double AUTONOMOUS_TOTE_DRIVE_TIME                    =  2.70;
+    public final static double AUTONOMOUS_TOTE_DRIVE_TIME                    =  4.00;
     public final static double AUTONOMOUS_TOTE_DRIVE_POWER                   =  0.75;
     public final static double AUTONOMOUS_TOTE_DRIVE_ANGLE                   =  90.0;
     
@@ -243,7 +243,7 @@ public class Constants
 
     //***************************************************************************************
     // AUTONOMOUS: Get Container in Autozone
-    public final static double AUTONOMOUS_REMOVE_CONTAINER_DRIVE_TIME        =  2.2;
+    public final static double AUTONOMOUS_REMOVE_CONTAINER_DRIVE_TIME        =  1.5;
     public final static double AUTONOMOUS_REMOVE_CONTAINER_DRIVE_POWER       =  0.5;
     public final static double AUTONOMOUS_REMOVE_CONTAINER_DRIVE_ANGLE       =  0.0;
 

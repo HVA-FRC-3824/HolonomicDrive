@@ -356,7 +356,7 @@ Children:
           validators: null
           value: whenPressed
       Base: Joystick Button
-      Name: Tote 0
+      Name: Platform
     - Children: []
       Properties:
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
@@ -685,7 +685,7 @@ Children:
   - Children: []
     Properties:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: false}
+        name: Button on SmartDashboard, validators: null, value: true}
     Base: Command Group
     Name: Autonomous Stack Three Totes
   - Children: []
@@ -715,7 +715,7 @@ Children:
   - Children: []
     Properties:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: false}
+        name: Button on SmartDashboard, validators: null, value: true}
     Base: Command Group
     Name: Autonomous Stack Three Totes Container
   - Children: []

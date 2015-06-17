@@ -42,7 +42,7 @@ public class AutonomousToteAndContainer extends CommandGroup
 //		addSequential(new ChassisDriveStraight(2.85, 0.5, 0.0));
 		
 		// drive and turn to keep the container captured
-		addSequential(new ChassisDriveAndTurn(2.7, 0.5, 0.0, 90.0));
+		addSequential(new ChassisDriveAndTurn(4.9, 0.35, 0.0, 90.0));
 	
 		// turn towards the autozone
 		addSequential(chassisTurnM90);

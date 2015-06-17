@@ -70,8 +70,8 @@ public class ForkliftMoveToPosition extends Command
 		// Determine which button was pressed
 		if (Robot.oi.totePickUp.get() == true)
 			mPositionSetpoint = Constants.FORKLIFT_TOTEPICKUP_POSITION;
-		else if (Robot.oi.tote0.get() == true)
-			mPositionSetpoint = Constants.FORKLIFT_TOTE0_POSITION;
+		else if (Robot.oi.platform.get() == true)
+			mPositionSetpoint = Constants.FORKLIFT_PLATFORM_POSITION;
 		else if (Robot.oi.tote1.get() == true)
 			mPositionSetpoint = Constants.FORKLIFT_TOTE1_POSITION;
 		else if (Robot.oi.tote2.get() == true)
